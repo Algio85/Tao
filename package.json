@@ -1,0 +1,15 @@
+{
+  "name": "design-system",
+  "version": "1.0.0",
+  "description": "Design System with OKLCH color shades via StyleDictionary",
+  "scripts": {
+    "generate-shades": "node scripts/generate-shades.js",
+    "build-tokens": "cd style-dictionary && style-dictionary build --config config.js",
+    "build": "npm run generate-shades && npm run build-tokens",
+    "storybook": "cd storybook && npm run storybook",
+    "storybook:build": "cd storybook && npm run build-storybook"
+  },
+  "devDependencies": {
+    "style-dictionary": "^3.9.2"
+  }
+}

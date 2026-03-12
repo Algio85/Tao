@@ -1,0 +1,17 @@
+{
+  "color": {
+    "base": {
+      "blue":    { "value": "#2563EB", "comment": "Brand Blue" },
+      "indigo":  { "value": "#4F46E5", "comment": "Brand Indigo" },
+      "violet":  { "value": "#7C3AED", "comment": "Brand Violet" },
+      "pink":    { "value": "#DB2777", "comment": "Brand Pink" },
+      "red":     { "value": "#DC2626", "comment": "Brand Red" },
+      "orange":  { "value": "#EA580C", "comment": "Brand Orange" },
+      "amber":   { "value": "#D97706", "comment": "Brand Amber" },
+      "green":   { "value": "#16A34A", "comment": "Brand Green" },
+      "teal":    { "value": "#0D9488", "comment": "Brand Teal" },
+      "cyan":    { "value": "#0891B2", "comment": "Brand Cyan" },
+      "neutral": { "value": "#525252", "comment": "Brand Neutral" }
+    }
+  }
+}

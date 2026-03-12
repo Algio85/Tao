@@ -1,0 +1,778 @@
+{
+  "color": {
+    "shade": {
+      "blue": {
+        "1": {
+          "value": "oklch(97.00% 0.1076 262.88)",
+          "comment": "blue shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.1545 262.88)",
+          "comment": "blue shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.1841 262.88)",
+          "comment": "blue shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.2013 262.88)",
+          "comment": "blue shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.2101 262.88)",
+          "comment": "blue shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.2139 262.88)",
+          "comment": "blue shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.2150 262.88)",
+          "comment": "blue shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.2152 262.88)",
+          "comment": "blue shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.2152 262.88)",
+          "comment": "blue shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.2150 262.88)",
+          "comment": "blue shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.2139 262.88)",
+          "comment": "blue shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.2101 262.88)",
+          "comment": "blue shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.2013 262.88)",
+          "comment": "blue shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.1841 262.88)",
+          "comment": "blue shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.1545 262.88)",
+          "comment": "blue shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.1076 262.88)",
+          "comment": "blue shade 16 — lightness 10%"
+        }
+      },
+      "indigo": {
+        "1": {
+          "value": "oklch(97.00% 0.1150 276.97)",
+          "comment": "indigo shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.1652 276.97)",
+          "comment": "indigo shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.1968 276.97)",
+          "comment": "indigo shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.2151 276.97)",
+          "comment": "indigo shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.2246 276.97)",
+          "comment": "indigo shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.2286 276.97)",
+          "comment": "indigo shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.2299 276.97)",
+          "comment": "indigo shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.2301 276.97)",
+          "comment": "indigo shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.2301 276.97)",
+          "comment": "indigo shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.2299 276.97)",
+          "comment": "indigo shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.2286 276.97)",
+          "comment": "indigo shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.2246 276.97)",
+          "comment": "indigo shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.2151 276.97)",
+          "comment": "indigo shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.1968 276.97)",
+          "comment": "indigo shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.1652 276.97)",
+          "comment": "indigo shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.1150 276.97)",
+          "comment": "indigo shade 16 — lightness 10%"
+        }
+      },
+      "violet": {
+        "1": {
+          "value": "oklch(97.00% 0.1233 293.01)",
+          "comment": "violet shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.1770 293.01)",
+          "comment": "violet shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.2109 293.01)",
+          "comment": "violet shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.2306 293.01)",
+          "comment": "violet shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.2407 293.01)",
+          "comment": "violet shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.2451 293.01)",
+          "comment": "violet shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.2464 293.01)",
+          "comment": "violet shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.2466 293.01)",
+          "comment": "violet shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.2466 293.01)",
+          "comment": "violet shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.2464 293.01)",
+          "comment": "violet shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.2451 293.01)",
+          "comment": "violet shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.2407 293.01)",
+          "comment": "violet shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.2306 293.01)",
+          "comment": "violet shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.2109 293.01)",
+          "comment": "violet shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.1770 293.01)",
+          "comment": "violet shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.1233 293.01)",
+          "comment": "violet shade 16 — lightness 10%"
+        }
+      },
+      "pink": {
+        "1": {
+          "value": "oklch(97.00% 0.1090 0.58)",
+          "comment": "pink shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.1565 0.58)",
+          "comment": "pink shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.1865 0.58)",
+          "comment": "pink shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.2039 0.58)",
+          "comment": "pink shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.2128 0.58)",
+          "comment": "pink shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.2166 0.58)",
+          "comment": "pink shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.2178 0.58)",
+          "comment": "pink shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.2180 0.58)",
+          "comment": "pink shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.2180 0.58)",
+          "comment": "pink shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.2178 0.58)",
+          "comment": "pink shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.2166 0.58)",
+          "comment": "pink shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.2128 0.58)",
+          "comment": "pink shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.2039 0.58)",
+          "comment": "pink shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.1865 0.58)",
+          "comment": "pink shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.1565 0.58)",
+          "comment": "pink shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.1090 0.58)",
+          "comment": "pink shade 16 — lightness 10%"
+        }
+      },
+      "red": {
+        "1": {
+          "value": "oklch(97.00% 0.1076 27.33)",
+          "comment": "red shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.1545 27.33)",
+          "comment": "red shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.1840 27.33)",
+          "comment": "red shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.2012 27.33)",
+          "comment": "red shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.2101 27.33)",
+          "comment": "red shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.2138 27.33)",
+          "comment": "red shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.2150 27.33)",
+          "comment": "red shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.2152 27.33)",
+          "comment": "red shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.2152 27.33)",
+          "comment": "red shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.2150 27.33)",
+          "comment": "red shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.2138 27.33)",
+          "comment": "red shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.2101 27.33)",
+          "comment": "red shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.2012 27.33)",
+          "comment": "red shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.1840 27.33)",
+          "comment": "red shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.1545 27.33)",
+          "comment": "red shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.1076 27.33)",
+          "comment": "red shade 16 — lightness 10%"
+        }
+      },
+      "orange": {
+        "1": {
+          "value": "oklch(97.00% 0.0972 41.12)",
+          "comment": "orange shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.1395 41.12)",
+          "comment": "orange shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.1662 41.12)",
+          "comment": "orange shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.1817 41.12)",
+          "comment": "orange shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.1897 41.12)",
+          "comment": "orange shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.1931 41.12)",
+          "comment": "orange shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.1942 41.12)",
+          "comment": "orange shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.1943 41.12)",
+          "comment": "orange shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.1943 41.12)",
+          "comment": "orange shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.1942 41.12)",
+          "comment": "orange shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.1931 41.12)",
+          "comment": "orange shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.1897 41.12)",
+          "comment": "orange shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.1817 41.12)",
+          "comment": "orange shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.1662 41.12)",
+          "comment": "orange shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.1395 41.12)",
+          "comment": "orange shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.0972 41.12)",
+          "comment": "orange shade 16 — lightness 10%"
+        }
+      },
+      "amber": {
+        "1": {
+          "value": "oklch(97.00% 0.0787 58.32)",
+          "comment": "amber shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.1130 58.32)",
+          "comment": "amber shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.1347 58.32)",
+          "comment": "amber shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.1472 58.32)",
+          "comment": "amber shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.1537 58.32)",
+          "comment": "amber shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.1565 58.32)",
+          "comment": "amber shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.1573 58.32)",
+          "comment": "amber shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.1574 58.32)",
+          "comment": "amber shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.1574 58.32)",
+          "comment": "amber shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.1573 58.32)",
+          "comment": "amber shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.1565 58.32)",
+          "comment": "amber shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.1537 58.32)",
+          "comment": "amber shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.1472 58.32)",
+          "comment": "amber shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.1347 58.32)",
+          "comment": "amber shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.1130 58.32)",
+          "comment": "amber shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.0787 58.32)",
+          "comment": "amber shade 16 — lightness 10%"
+        }
+      },
+      "green": {
+        "1": {
+          "value": "oklch(97.00% 0.0850 149.21)",
+          "comment": "green shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.1220 149.21)",
+          "comment": "green shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.1453 149.21)",
+          "comment": "green shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.1589 149.21)",
+          "comment": "green shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.1659 149.21)",
+          "comment": "green shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.1689 149.21)",
+          "comment": "green shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.1698 149.21)",
+          "comment": "green shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.1699 149.21)",
+          "comment": "green shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.1699 149.21)",
+          "comment": "green shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.1698 149.21)",
+          "comment": "green shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.1689 149.21)",
+          "comment": "green shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.1659 149.21)",
+          "comment": "green shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.1589 149.21)",
+          "comment": "green shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.1453 149.21)",
+          "comment": "green shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.1220 149.21)",
+          "comment": "green shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.0850 149.21)",
+          "comment": "green shade 16 — lightness 10%"
+        }
+      },
+      "teal": {
+        "1": {
+          "value": "oklch(97.00% 0.0519 184.70)",
+          "comment": "teal shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.0745 184.70)",
+          "comment": "teal shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.0888 184.70)",
+          "comment": "teal shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.0971 184.70)",
+          "comment": "teal shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.1014 184.70)",
+          "comment": "teal shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.1032 184.70)",
+          "comment": "teal shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.1038 184.70)",
+          "comment": "teal shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.1038 184.70)",
+          "comment": "teal shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.1038 184.70)",
+          "comment": "teal shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.1038 184.70)",
+          "comment": "teal shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.1032 184.70)",
+          "comment": "teal shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.1014 184.70)",
+          "comment": "teal shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.0971 184.70)",
+          "comment": "teal shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.0888 184.70)",
+          "comment": "teal shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.0745 184.70)",
+          "comment": "teal shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.0519 184.70)",
+          "comment": "teal shade 16 — lightness 10%"
+        }
+      },
+      "cyan": {
+        "1": {
+          "value": "oklch(97.00% 0.0555 221.72)",
+          "comment": "cyan shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.0796 221.72)",
+          "comment": "cyan shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.0949 221.72)",
+          "comment": "cyan shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.1037 221.72)",
+          "comment": "cyan shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.1083 221.72)",
+          "comment": "cyan shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.1103 221.72)",
+          "comment": "cyan shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.1109 221.72)",
+          "comment": "cyan shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.1109 221.72)",
+          "comment": "cyan shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.1109 221.72)",
+          "comment": "cyan shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.1109 221.72)",
+          "comment": "cyan shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.1103 221.72)",
+          "comment": "cyan shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.1083 221.72)",
+          "comment": "cyan shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.1037 221.72)",
+          "comment": "cyan shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.0949 221.72)",
+          "comment": "cyan shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.0796 221.72)",
+          "comment": "cyan shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.0555 221.72)",
+          "comment": "cyan shade 16 — lightness 10%"
+        }
+      },
+      "neutral": {
+        "1": {
+          "value": "oklch(97.00% 0.0000 89.88)",
+          "comment": "neutral shade 1 — lightness 97%"
+        },
+        "2": {
+          "value": "oklch(91.20% 0.0000 89.88)",
+          "comment": "neutral shade 2 — lightness 91%"
+        },
+        "3": {
+          "value": "oklch(85.40% 0.0000 89.88)",
+          "comment": "neutral shade 3 — lightness 85%"
+        },
+        "4": {
+          "value": "oklch(79.60% 0.0000 89.88)",
+          "comment": "neutral shade 4 — lightness 80%"
+        },
+        "5": {
+          "value": "oklch(73.80% 0.0000 89.88)",
+          "comment": "neutral shade 5 — lightness 74%"
+        },
+        "6": {
+          "value": "oklch(68.00% 0.0000 89.88)",
+          "comment": "neutral shade 6 — lightness 68%"
+        },
+        "7": {
+          "value": "oklch(62.20% 0.0000 89.88)",
+          "comment": "neutral shade 7 — lightness 62%"
+        },
+        "8": {
+          "value": "oklch(56.40% 0.0000 89.88)",
+          "comment": "neutral shade 8 — lightness 56%"
+        },
+        "9": {
+          "value": "oklch(50.60% 0.0000 89.88)",
+          "comment": "neutral shade 9 — lightness 51%"
+        },
+        "10": {
+          "value": "oklch(44.80% 0.0000 89.88)",
+          "comment": "neutral shade 10 — lightness 45%"
+        },
+        "11": {
+          "value": "oklch(39.00% 0.0000 89.88)",
+          "comment": "neutral shade 11 — lightness 39%"
+        },
+        "12": {
+          "value": "oklch(33.20% 0.0000 89.88)",
+          "comment": "neutral shade 12 — lightness 33%"
+        },
+        "13": {
+          "value": "oklch(27.40% 0.0000 89.88)",
+          "comment": "neutral shade 13 — lightness 27%"
+        },
+        "14": {
+          "value": "oklch(21.60% 0.0000 89.88)",
+          "comment": "neutral shade 14 — lightness 22%"
+        },
+        "15": {
+          "value": "oklch(15.80% 0.0000 89.88)",
+          "comment": "neutral shade 15 — lightness 16%"
+        },
+        "16": {
+          "value": "oklch(10.00% 0.0000 89.88)",
+          "comment": "neutral shade 16 — lightness 10%"
+        }
+      }
+    },
+    "brand": {
+      "blue": {
+        "value": "#2563EB",
+        "comment": "Brand Blue — exact brand color, use only for specific brand moments"
+      },
+      "indigo": {
+        "value": "#4F46E5",
+        "comment": "Brand Indigo — exact brand color, use only for specific brand moments"
+      },
+      "violet": {
+        "value": "#7C3AED",
+        "comment": "Brand Violet — exact brand color, use only for specific brand moments"
+      },
+      "pink": {
+        "value": "#DB2777",
+        "comment": "Brand Pink — exact brand color, use only for specific brand moments"
+      },
+      "red": {
+        "value": "#DC2626",
+        "comment": "Brand Red — exact brand color, use only for specific brand moments"
+      },
+      "orange": {
+        "value": "#EA580C",
+        "comment": "Brand Orange — exact brand color, use only for specific brand moments"
+      },
+      "amber": {
+        "value": "#D97706",
+        "comment": "Brand Amber — exact brand color, use only for specific brand moments"
+      },
+      "green": {
+        "value": "#16A34A",
+        "comment": "Brand Green — exact brand color, use only for specific brand moments"
+      },
+      "teal": {
+        "value": "#0D9488",
+        "comment": "Brand Teal — exact brand color, use only for specific brand moments"
+      },
+      "cyan": {
+        "value": "#0891B2",
+        "comment": "Brand Cyan — exact brand color, use only for specific brand moments"
+      },
+      "neutral": {
+        "value": "#525252",
+        "comment": "Brand Neutral — exact brand color, use only for specific brand moments"
+      }
+    }
+  }
+}
