@@ -24,20 +24,46 @@ const meta = {
     },
     docs: {
       description: {
-        component: `
-Full design system color palette.
-
-Each hue has **16 OKLCH shades** (1 = nearest white, 16 = nearest black).
-Chroma follows a natural curve — peak at mid-range, compressed at extremes.
-
-Each shade shows:
-- WCAG contrast ratio vs ⬜ white and ⬛ black
-- WCAG level badge (AAA / AA / AA Large / Fail)
-- Click swatch or shade number to **copy the token name**
-
-The **brand token** \`color.brand.<name>\` is the exact original hex color,
-kept outside the shade scale for moments that require the precise brand color.
-        `.trim(),
+        description: {
+          component: `
+    Full design system color palette.
+    
+    Each hue has **16 OKLCH shades** (1 = nearest white, 16 = nearest black).
+    Chroma follows a natural curve — peak at mid-range, compressed at extremes.
+    Base colors are editable live — use the color pickers at the top to update all shades in real time.
+    
+    ---
+    
+    ### Contrast — APCA vs WCAG
+    
+    Contrast is measured using **APCA (Accessible Perceptual Contrast Algorithm)**, not WCAG 2.x.
+    
+    WCAG 2.x uses a simple luminance ratio that is inconsistent across hues — a yellow and a blue at the same OKLCH lightness will report very different contrast ratios against white, even though they appear equally light to the human eye.
+    
+    APCA models how the visual cortex actually perceives contrast. It accounts for spatial frequency, polarity (light-on-dark vs dark-on-light), and the non-linear response of human vision. The result is **Lc (Lightness Contrast)** — a signed value where polarity matters.
+    
+    **APCA thresholds used here:**
+    
+    | Lc (absolute) | Use case |
+    |---|---|
+    | 75+ | Body text, small UI labels |
+    | 60+ | Large text, navigation, UI components |
+    | 45+ | Large bold text, icons, non-text elements |
+    | 30+ | Placeholder text, decorative elements |
+    | < 30 | Insufficient for any meaningful use |
+    
+    Each swatch shows Lc vs ⬜ white and ⬛ black independently, so you can immediately see which background a shade works on.
+    
+    ---
+    
+    ### Tokens
+    
+    - **\`color.shade.<name>.<1-16>\`** — OKLCH shade values, ready for CSS custom properties
+    - **\`color.brand.<name>\`** — exact original hex, outside the shade scale. Use only for specific brand moments (logo, brand illustrations), not for UI scale.
+    
+    Click any swatch to copy the token name to clipboard.
+          `.trim(),
+        },
       },
     },
   },
