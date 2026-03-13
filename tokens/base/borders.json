@@ -1,0 +1,20 @@
+{
+  "radius": {
+    "none":     { "value": "0px",   "type": "borderRadius" },
+    "xs":       { "value": "2px",   "type": "borderRadius" },
+    "sm":       { "value": "4px",   "type": "borderRadius" },
+    "md":       { "value": "8px",   "type": "borderRadius" },
+    "lg":       { "value": "16px",  "type": "borderRadius" },
+    "xl":       { "value": "24px",  "type": "borderRadius" },
+    "circular": { "value": "100px", "type": "borderRadius", "comment": "Use on square elements to make circles" },
+    "pill":     { "value": "100px", "type": "borderRadius", "comment": "Use on rectangular elements for pill shape" }
+  },
+  "border": {
+    "width": {
+      "sm": { "value": "1px", "type": "borderWidth" },
+      "md": { "value": "2px", "type": "borderWidth" },
+      "lg": { "value": "4px", "type": "borderWidth" },
+      "xl": { "value": "8px", "type": "borderWidth" }
+    }
+  }
+}
