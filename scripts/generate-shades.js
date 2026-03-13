@@ -49,7 +49,7 @@ const baseTokens = JSON.parse(
   )
 );
 
-const baseColors = baseTokens.color.base;
+const baseColors = baseTokens.color.brand;
 const NUM_SHADES = 16;
 
 // Lightness range: shade 1 (lightest) → 0.97, shade 16 (darkest) → 0.10

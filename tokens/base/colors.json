@@ -1,17 +1,17 @@
 {
   "color": {
-    "base": {
-      "blue":    { "value": "#2563EB", "comment": "Brand Blue" },
-      "indigo":  { "value": "#4F46E5", "comment": "Brand Indigo" },
-      "violet":  { "value": "#7C3AED", "comment": "Brand Violet" },
-      "pink":    { "value": "#DB2777", "comment": "Brand Pink" },
-      "red":     { "value": "#DC2626", "comment": "Brand Red" },
-      "orange":  { "value": "#EA580C", "comment": "Brand Orange" },
-      "amber":   { "value": "#D97706", "comment": "Brand Amber" },
-      "green":   { "value": "#16A34A", "comment": "Brand Green" },
-      "teal":    { "value": "#0D9488", "comment": "Brand Teal" },
-      "cyan":    { "value": "#0891B2", "comment": "Brand Cyan" },
-      "neutral": { "value": "#525252", "comment": "Brand Neutral" }
+    "brand": {
+      "palette-1":  { "value": "#2563EB" },
+      "palette-2":  { "value": "#4F46E5" },
+      "palette-3":  { "value": "#7C3AED" },
+      "palette-4":  { "value": "#DB2777" },
+      "palette-5":  { "value": "#DC2626" },
+      "palette-6":  { "value": "#EA580C" },
+      "palette-7":  { "value": "#D97706" },
+      "palette-8":  { "value": "#16A34A" },
+      "palette-9":  { "value": "#0D9488" },
+      "palette-10": { "value": "#0891B2" },
+      "palette-11": { "value": "#525252" }
     }
   }
 }
