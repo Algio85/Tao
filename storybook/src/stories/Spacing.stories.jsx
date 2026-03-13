@@ -32,8 +32,24 @@ Spacing scale for the design system.
 | \`spacing.xxl\`  | 48px | 3rem    | \`--dao-spacing-xxl\` |
 | \`spacing.xxxl\` | 64px | 4rem    | \`--dao-spacing-xxxl\` |
 
+---
+
+### Density
+
+Spacing tokens are index-based — each token occupies a position on the scale. Density shifts every token by a fixed number of steps without changing the token name or the base value.
+
+| Density | Step shift | Example: \`spacing.md\` (index 3) |
+|---|---|---|
+| Comfortable | 0 | 16px (unchanged) |
+| Compact | −1 | 12px (one step down) |
+| Dense | −2 | 8px (two steps down) |
+
+This means components always reference the same token — \`spacing.md\` — and the rendered value adapts automatically based on the density context. Typography and border tokens are not affected by density.
+
+Use the **Density** toolbar at the top of the canvas to see the scale shift live.
+
 Click any row to copy the token name to clipboard.
-        `.trim(),
+`.trim(),
       },
     },
   },

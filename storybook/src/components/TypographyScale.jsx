@@ -46,21 +46,21 @@ function TypeRow({ name, px, rem, copied, onCopy }) {
         borderRadius: 8,
         cursor: 'pointer',
         transition: 'background 0.12s',
-        background: copied ? '#0f2a1a' : 'transparent',
-        borderBottom: '1px solid #111',
+        background: copied ? '#f0fdf4' : 'transparent',
+        borderBottom: '1px solid #ebebeb',
       }}
-      onMouseEnter={e => { if (!copied) e.currentTarget.style.background = '#161616'; }}
-      onMouseLeave={e => { if (!copied) e.currentTarget.style.background = copied ? '#0f2a1a' : 'transparent'; }}
+      onMouseEnter={e => { if (!copied) e.currentTarget.style.background = '#f5f5f5'; }}
+      onMouseLeave={e => { if (!copied) e.currentTarget.style.background = copied ? '#f0fdf4' : 'transparent'; }}
     >
-      <span style={{ fontFamily: FONT, fontSize: 11, color: copied ? '#4ade80' : '#555', transition: 'color 0.2s' }}>
+      <span style={{ fontFamily: FONT, fontSize: 11, color: copied ? '#16a34a' : '#888', transition: 'color 0.2s' }}>
         {copied ? '✓ copied' : tokenName}
       </span>
-      <span style={{ fontFamily: FONT, fontSize: 11, color: '#444' }}>{px}px</span>
-      <span style={{ fontFamily: FONT, fontSize: 11, color: '#333' }}>{rem}rem</span>
+      <span style={{ fontFamily: FONT, fontSize: 11, color: '#aaa' }}>{px}px</span>
+      <span style={{ fontFamily: FONT, fontSize: 11, color: '#ccc' }}>{rem}rem</span>
       <span style={{
-        fontFamily: FONT, fontSize: px, color: '#fff',
+        fontFamily: FONT, fontSize: px, color: '#111',
         lineHeight: 1.2, whiteSpace: 'nowrap',
-        overflow: 'hidden', textOverflow: 'ellipsis', opacity: 0.9,
+        overflow: 'hidden', textOverflow: 'ellipsis',
       }}>
         {PREVIEW_TEXT}
       </span>
@@ -106,14 +106,14 @@ export function TypographyScale({ base = 16, ratio = 1.2 }) {
   };
 
   return (
-    <div style={{ background: '#0f0f0f', minHeight: '100vh', padding: '40px 40px', fontFamily: FONT }}>
+    <div style={{ background: '#f5f5f5', minHeight: '100vh', padding: '40px 40px', fontFamily: FONT }}>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" />
 
       <div style={{ marginBottom: 40 }}>
-        <h1 style={{ fontFamily: FONT, fontSize: 26, fontWeight: 300, color: '#fff', letterSpacing: '-0.02em', marginBottom: 4 }}>
+        <h1 style={{ fontFamily: FONT, fontSize: 26, fontWeight: 300, color: '#111', letterSpacing: '-0.02em', marginBottom: 4 }}>
           Typography Scale
         </h1>
-        <p style={{ fontFamily: FONT, fontSize: 10, color: '#444', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+        <p style={{ fontFamily: FONT, fontSize: 10, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           Modular scale · click row to copy token name
         </p>
       </div>
@@ -122,26 +122,26 @@ export function TypographyScale({ base = 16, ratio = 1.2 }) {
       <div style={{
         display: 'flex', gap: 40, flexWrap: 'wrap',
         marginBottom: 48, padding: '20px 24px',
-        background: '#161616', borderRadius: 10, border: '1px solid #222',
+        background: '#fff', borderRadius: 10, border: '1px solid #e5e5e5',
         alignItems: 'flex-end',
       }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          <label style={{ fontFamily: FONT, fontSize: 9, color: '#444', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+          <label style={{ fontFamily: FONT, fontSize: 9, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
             Base size — {liveBase}px
           </label>
           <input
             type="range" min={12} max={24} step={1}
             value={liveBase}
             onChange={e => setLiveBase(Number(e.target.value))}
-            style={{ width: 200, accentColor: 'oklch(62% 0.18 262)' }}
+            style={{ width: 200, accentColor: 'oklch(52% 0.18 262)' }}
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: FONT, fontSize: 9, color: '#333' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: FONT, fontSize: 9, color: '#ccc' }}>
             <span>12px</span><span>24px</span>
           </div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          <label style={{ fontFamily: FONT, fontSize: 9, color: '#444', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+          <label style={{ fontFamily: FONT, fontSize: 9, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
             Scale ratio — {selectedRatio.name} ({liveRatio})
           </label>
           <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap' }}>
@@ -153,7 +153,7 @@ export function TypographyScale({ base = 16, ratio = 1.2 }) {
                   all: 'unset', cursor: 'pointer',
                   padding: '4px 10px', borderRadius: 4,
                   fontFamily: FONT, fontSize: 11,
-                  background: liveRatio === r.value ? 'oklch(62% 0.18 262)' : '#222',
+                  background: liveRatio === r.value ? 'oklch(52% 0.18 262)' : '#ebebeb',
                   color: liveRatio === r.value ? '#fff' : '#666',
                   transition: 'all 0.15s',
                 }}
@@ -171,9 +171,9 @@ export function TypographyScale({ base = 16, ratio = 1.2 }) {
             marginLeft: 'auto',
             padding: '8px 16px', borderRadius: 6,
             fontFamily: FONT, fontSize: 12, fontWeight: 500,
-            background: exported ? '#052e16' : '#1a1a1a',
-            color: exported ? '#4ade80' : '#888',
-            border: `1px solid ${exported ? '#166534' : '#333'}`,
+            background: exported ? '#f0fdf4' : '#fff',
+            color: exported ? '#16a34a' : '#888',
+            border: `1px solid ${exported ? '#86efac' : '#e5e5e5'}`,
             transition: 'all 0.2s',
           }}
         >
@@ -185,10 +185,10 @@ export function TypographyScale({ base = 16, ratio = 1.2 }) {
       <div style={{
         display: 'grid', gridTemplateColumns: '100px 60px 60px 1fr',
         gap: 24, padding: '0 16px 8px',
-        borderBottom: '1px solid #1a1a1a', marginBottom: 0,
+        borderBottom: '1px solid #e5e5e5', marginBottom: 0,
       }}>
         {['Token', 'px', 'rem', 'Preview'].map(h => (
-          <span key={h} style={{ fontFamily: FONT, fontSize: 9, color: '#333', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+          <span key={h} style={{ fontFamily: FONT, fontSize: 9, color: '#bbb', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
             {h}
           </span>
         ))}

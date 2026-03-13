@@ -2,10 +2,10 @@
 const preview = {
   parameters: {
     backgrounds: {
-      default: 'dark',
+      default: 'light',
       values: [
+        { name: 'light', value: '#f5f5f5' },
         { name: 'dark',  value: '#0f0f0f' },
-        { name: 'light', value: '#ffffff' },
       ],
     },
     controls: {
