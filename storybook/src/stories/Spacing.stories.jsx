@@ -23,14 +23,14 @@ Spacing scale for the design system.
 
 | Token | px | rem | CSS |
 |---|---|---|---|
-| \`spacing.xxs\`  | 4px  | 0.25rem | \`--dao-spacing-xxs\` |
-| \`spacing.xs\`   | 8px  | 0.5rem  | \`--dao-spacing-xs\` |
-| \`spacing.sm\`   | 12px | 0.75rem | \`--dao-spacing-sm\` |
-| \`spacing.md\`   | 16px | 1rem    | \`--dao-spacing-md\` |
-| \`spacing.lg\`   | 24px | 1.5rem  | \`--dao-spacing-lg\` |
-| \`spacing.xl\`   | 32px | 2rem    | \`--dao-spacing-xl\` |
-| \`spacing.xxl\`  | 48px | 3rem    | \`--dao-spacing-xxl\` |
-| \`spacing.xxxl\` | 64px | 4rem    | \`--dao-spacing-xxxl\` |
+| \`spacing.xxs\`  | 4px  | 0.25rem | \`--tao-spacing-xxs\` |
+| \`spacing.xs\`   | 8px  | 0.5rem  | \`--tao-spacing-xs\` |
+| \`spacing.sm\`   | 12px | 0.75rem | \`--tao-spacing-sm\` |
+| \`spacing.md\`   | 16px | 1rem    | \`--tao-spacing-md\` |
+| \`spacing.lg\`   | 24px | 1.5rem  | \`--tao-spacing-lg\` |
+| \`spacing.xl\`   | 32px | 2rem    | \`--tao-spacing-xl\` |
+| \`spacing.xxl\`  | 48px | 3rem    | \`--tao-spacing-xxl\` |
+| \`spacing.xxxl\` | 64px | 4rem    | \`--tao-spacing-xxxl\` |
 
 ---
 
