@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
+import { theme } from '../tokens/theme.js';
 import { resolveTokens } from '../tokens/resolve.js';
 import textTokens from '../tokens/semantic/text.json';
 import shades from '../tokens/shades.json';
-
-const FONT = "'DM Sans', system-ui, sans-serif";
 
 const resolved = resolveTokens(textTokens, '', shades);
 
@@ -27,6 +26,7 @@ function TextRow({ name }) {
   const [copied, setCopied] = useState(false);
   const tokenName = `text.${name}`;
   const value = resolved[tokenName];
+  const isInverse = name === 'inverse';
 
   const handleCopy = () => {
     navigator.clipboard?.writeText(tokenName).then(() => {
@@ -34,8 +34,6 @@ function TextRow({ name }) {
       setTimeout(() => setCopied(false), 1400);
     });
   };
-
-  const isInverse = name === 'inverse';
 
   return (
     <div
@@ -45,42 +43,38 @@ function TextRow({ name }) {
         display: 'grid',
         gridTemplateColumns: '160px 140px 1fr',
         alignItems: 'center',
-        gap: 24,
-        padding: '12px 16px',
-        borderRadius: 8,
+        gap: theme.spacing.lg,
+        padding: `${theme.spacing.sm}px ${theme.spacing.md}px`,
+        borderRadius: theme.spacing.xs,
         cursor: 'pointer',
         transition: 'background 0.12s',
         background: copied ? '#f0fdf4' : 'transparent',
-        borderBottom: '1px solid #ebebeb',
+        borderBottom: `1px solid ${theme.border.subtle}`,
       }}
-      onMouseEnter={e => { if (!copied) e.currentTarget.style.background = '#f5f5f5'; }}
+      onMouseEnter={e => { if (!copied) e.currentTarget.style.background = theme.bg.hover; }}
       onMouseLeave={e => { if (!copied) e.currentTarget.style.background = copied ? '#f0fdf4' : 'transparent'; }}
     >
-      <span style={{ fontFamily: FONT, fontSize: 11, color: copied ? '#16a34a' : '#888', transition: 'color 0.2s' }}>
+      <span style={{ fontFamily: theme.font, fontSize: 11, color: copied ? '#16a34a' : theme.text.subtle, transition: 'color 0.2s' }}>
         {copied ? '✓ copied' : tokenName}
       </span>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: theme.spacing.xs }}>
         <div style={{
-          width: 24, height: 24, borderRadius: 6,
+          width: 24, height: 24, borderRadius: theme.spacing.xs,
           background: value,
-          border: '1px solid rgba(0,0,0,0.08)',
+          border: `1px solid ${theme.border.subtle}`,
           flexShrink: 0,
         }} />
-        <span style={{ fontFamily: FONT, fontSize: 10, color: '#bbb' }}>{value}</span>
+        <span style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest }}>{value}</span>
       </div>
 
       <div style={{
-        padding: '8px 12px',
-        borderRadius: 6,
-        background: isInverse ? '#111' : '#fff',
-        border: '1px solid #ebebeb',
+        padding: `${theme.spacing.xs}px ${theme.spacing.sm}px`,
+        borderRadius: theme.spacing.xs,
+        background: isInverse ? theme.text.default : theme.bg.raised,
+        border: `1px solid ${theme.border.subtle}`,
       }}>
-        <span style={{
-          fontFamily: FONT,
-          fontSize: 14,
-          color: value,
-        }}>
+        <span style={{ fontFamily: theme.font, fontSize: 14, color: value }}>
           The quick brown fox jumps over the lazy dog
         </span>
       </div>
@@ -92,27 +86,40 @@ export function TextColors() {
   const groups = [...new Set(TOKENS.map(t => t.group))];
 
   return (
-    <div style={{ background: '#f5f5f5', minHeight: '100vh', padding: '40px 40px', fontFamily: FONT }}>
+    <div style={{ background: theme.bg.page, minHeight: '100vh', padding: `${theme.spacing.xxl}px ${theme.spacing.xxl}px`, fontFamily: theme.font }}>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" />
 
-      <div style={{ marginBottom: 48 }}>
-        <h1 style={{ fontFamily: FONT, fontSize: 26, fontWeight: 300, color: '#111', letterSpacing: '-0.02em', marginBottom: 4 }}>
+      <div style={{ marginBottom: theme.spacing.xxl }}>
+        <h1 style={{ fontFamily: theme.font, fontSize: 26, fontWeight: 300, color: theme.text.default, letterSpacing: '-0.02em', marginBottom: theme.spacing.xxs }}>
           Text Colors
         </h1>
-        <p style={{ fontFamily: FONT, fontSize: 10, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+        <p style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           Semantic text colors · click row to copy token name
         </p>
       </div>
 
       {groups.map(group => (
-        <div key={group} style={{ marginBottom: 48 }}>
-          <div style={{ padding: '6px 16px', background: '#ebebeb', borderRadius: 6, marginBottom: 0, display: 'inline-block', marginBottom: 8 }}>
-            <span style={{ fontFamily: FONT, fontSize: 9, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{group}</span>
+        <div key={group} style={{ marginBottom: theme.spacing.xxl }}>
+          <div style={{
+            padding: `${theme.spacing.xxs}px ${theme.spacing.md}px`,
+            background: theme.bg.surface,
+            borderRadius: theme.spacing.xs,
+            display: 'inline-block',
+            marginBottom: theme.spacing.xs,
+          }}>
+            <span style={{ fontFamily: theme.font, fontSize: 9, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{group}</span>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '160px 140px 1fr', gap: 24, padding: '0 16px 8px', borderBottom: '1px solid #e5e5e5', marginBottom: 0 }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: '160px 140px 1fr',
+            gap: theme.spacing.lg,
+            padding: `0 ${theme.spacing.md}px ${theme.spacing.xs}px`,
+            borderBottom: `1px solid ${theme.border.default}`,
+            marginBottom: 0,
+          }}>
             {['Token', 'Value', 'Preview'].map(h => (
-              <span key={h} style={{ fontFamily: FONT, fontSize: 9, color: '#bbb', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{h}</span>
+              <span key={h} style={{ fontFamily: theme.font, fontSize: 9, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{h}</span>
             ))}
           </div>
 

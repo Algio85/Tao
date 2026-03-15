@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-
-const FONT = "'DM Sans', system-ui, sans-serif";
+import { theme } from '../tokens/theme.js';
 
 const RADIUS_TOKENS = {
   none:     { value: '0px',   px: 0   },
@@ -37,19 +36,19 @@ function CopyRow({ tokenName, children, style = {} }) {
       style={{
         display: 'grid',
         alignItems: 'center',
-        gap: 24,
-        padding: '12px 16px',
-        borderRadius: 8,
+        gap: theme.spacing.lg,
+        padding: `${theme.spacing.sm}px ${theme.spacing.md}px`,
+        borderRadius: theme.spacing.xs,
         cursor: 'pointer',
         transition: 'background 0.12s',
         background: copied ? '#f0fdf4' : 'transparent',
-        borderBottom: '1px solid #ebebeb',
+        borderBottom: `1px solid ${theme.border.subtle}`,
         ...style,
       }}
-      onMouseEnter={e => { if (!copied) e.currentTarget.style.background = '#f5f5f5'; }}
+      onMouseEnter={e => { if (!copied) e.currentTarget.style.background = theme.bg.hover; }}
       onMouseLeave={e => { if (!copied) e.currentTarget.style.background = copied ? '#f0fdf4' : 'transparent'; }}
     >
-      <span style={{ fontFamily: FONT, fontSize: 11, color: copied ? '#16a34a' : '#888', transition: 'color 0.2s' }}>
+      <span style={{ fontFamily: theme.font, fontSize: 11, color: copied ? '#16a34a' : theme.text.subtle, transition: 'color 0.2s' }}>
         {copied ? '✓ copied' : tokenName}
       </span>
       {children}
@@ -59,9 +58,9 @@ function CopyRow({ tokenName, children, style = {} }) {
 
 function SectionHeader({ title, subtitle }) {
   return (
-    <div style={{ marginBottom: 16 }}>
-      <h2 style={{ fontFamily: FONT, fontSize: 16, fontWeight: 400, color: '#111', marginBottom: 4 }}>{title}</h2>
-      {subtitle && <p style={{ fontFamily: FONT, fontSize: 10, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{subtitle}</p>}
+    <div style={{ marginBottom: theme.spacing.md }}>
+      <h2 style={{ fontFamily: theme.font, fontSize: 16, fontWeight: 400, color: theme.text.default, marginBottom: theme.spacing.xxs }}>{title}</h2>
+      {subtitle && <p style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{subtitle}</p>}
     </div>
   );
 }
@@ -71,13 +70,13 @@ function ColumnHeaders({ columns }) {
     <div style={{
       display: 'grid',
       gridTemplateColumns: columns,
-      gap: 24,
-      padding: '0 16px 8px',
-      borderBottom: '1px solid #e5e5e5',
+      gap: theme.spacing.lg,
+      padding: `0 ${theme.spacing.md}px ${theme.spacing.xs}px`,
+      borderBottom: `1px solid ${theme.border.default}`,
       marginBottom: 0,
     }}>
       {['Token', 'Value', 'Preview'].map(h => (
-        <span key={h} style={{ fontFamily: FONT, fontSize: 9, color: '#bbb', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+        <span key={h} style={{ fontFamily: theme.font, fontSize: 9, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           {h}
         </span>
       ))}
@@ -87,46 +86,44 @@ function ColumnHeaders({ columns }) {
 
 export function BorderTokens() {
   return (
-    <div style={{ background: '#f5f5f5', minHeight: '100vh', padding: '40px 40px', fontFamily: FONT }}>
+    <div style={{ background: theme.bg.page, minHeight: '100vh', padding: `${theme.spacing.xxl}px ${theme.spacing.xxl}px`, fontFamily: theme.font }}>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" />
 
-      <div style={{ marginBottom: 48 }}>
-        <h1 style={{ fontFamily: FONT, fontSize: 26, fontWeight: 300, color: '#111', letterSpacing: '-0.02em', marginBottom: 4 }}>
+      <div style={{ marginBottom: theme.spacing.xxl }}>
+        <h1 style={{ fontFamily: theme.font, fontSize: 26, fontWeight: 300, color: theme.text.default, letterSpacing: '-0.02em', marginBottom: theme.spacing.xxs }}>
           Border Tokens
         </h1>
-        <p style={{ fontFamily: FONT, fontSize: 10, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+        <p style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           Radius · Width · click row to copy token name
         </p>
       </div>
 
-      {/* Radius */}
-      <div style={{ marginBottom: 64 }}>
+      <div style={{ marginBottom: theme.spacing.xxxl }}>
         <SectionHeader title="Border Radius" subtitle="8 steps — from sharp to circular" />
         <ColumnHeaders columns="160px 60px 1fr" />
         {Object.entries(RADIUS_TOKENS).map(([name, { value, px, comment }]) => (
           <CopyRow key={name} tokenName={`radius.${name}`} style={{ gridTemplateColumns: '160px 60px 1fr' }}>
-            <span style={{ fontFamily: FONT, fontSize: 11, color: '#aaa' }}>{value}</span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <div style={{ width: 48, height: 48, background: 'oklch(52% 0.18 262)', borderRadius: px, flexShrink: 0 }} />
+            <span style={{ fontFamily: theme.font, fontSize: 11, color: theme.text.subtlest }}>{value}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: theme.spacing.md }}>
+              <div style={{ width: 48, height: 48, background: theme.accent.default, borderRadius: px, flexShrink: 0 }} />
               {(name === 'pill' || name === 'circular') && (
-                <div style={{ width: name === 'pill' ? 96 : 48, height: 48, background: 'oklch(52% 0.18 262 / 0.3)', borderRadius: px, flexShrink: 0 }} />
+                <div style={{ width: name === 'pill' ? 96 : 48, height: 48, background: theme.accent.default, opacity: 0.3, borderRadius: px, flexShrink: 0 }} />
               )}
-              {comment && <span style={{ fontFamily: FONT, fontSize: 10, color: '#bbb', fontStyle: 'italic' }}>{comment}</span>}
+              {comment && <span style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest, fontStyle: 'italic' }}>{comment}</span>}
             </div>
           </CopyRow>
         ))}
       </div>
 
-      {/* Border Width */}
       <div>
         <SectionHeader title="Border Width" subtitle="4 steps — from hairline to thick" />
         <ColumnHeaders columns="160px 60px 1fr" />
         {Object.entries(WIDTH_TOKENS).map(([name, { value, px }]) => (
           <CopyRow key={name} tokenName={`border.width.${name}`} style={{ gridTemplateColumns: '160px 60px 1fr' }}>
-            <span style={{ fontFamily: FONT, fontSize: 11, color: '#aaa' }}>{value}</span>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-              <div style={{ width: 160, height: px, background: 'oklch(52% 0.18 262)', borderRadius: px }} />
-              <div style={{ width: 48, height: 32, border: `${px}px solid oklch(52% 0.18 262)`, borderRadius: 6, background: 'transparent' }} />
+            <span style={{ fontFamily: theme.font, fontSize: 11, color: theme.text.subtlest }}>{value}</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: theme.spacing.md }}>
+              <div style={{ width: 160, height: px, background: theme.accent.default, borderRadius: px }} />
+              <div style={{ width: 48, height: 32, border: `${px}px solid ${theme.accent.default}`, borderRadius: 6, background: 'transparent' }} />
             </div>
           </CopyRow>
         ))}

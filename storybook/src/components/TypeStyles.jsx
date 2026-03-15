@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
+import { theme } from '../tokens/theme.js';
 import typographyTokens from '../tokens/semantic/typography.json';
-import typographyBase from '../tokens/shades.json';
-
-const FONT = "'DM Sans', system-ui, sans-serif";
 
 const STYLES = [
   'display',
@@ -15,12 +13,11 @@ const WEIGHTS = ['light', 'regular', 'bold'];
 
 const PREVIEW_TEXT = 'The quick brown fox';
 
-// Resolve typography size references from base tokens
+const SIZE_MAP = { xs: '11px', sm: '13px', md: '16px', lg: '19px', xl: '23px', xxl: '28px', xxxl: '33px' };
+
 function resolveSize(ref) {
   const match = ref?.match?.(/^\{typography\.size\.(\w+)\}$/);
   if (!match) return ref;
-  // Read from typography.json base if available, fallback to hardcoded
-  const SIZE_MAP = { xs: '11px', sm: '13px', md: '16px', lg: '19px', xl: '23px', xxl: '28px', xxxl: '33px' };
   return SIZE_MAP[match[1]] ?? ref;
 }
 
@@ -28,13 +25,13 @@ function StyleRow({ styleName }) {
   const [copied, setCopied] = useState(null);
 
   return (
-    <div style={{ borderBottom: '1px solid #ebebeb' }}>
+    <div style={{ borderBottom: `1px solid ${theme.border.subtle}` }}>
       {WEIGHTS.map(weight => {
         const token = typographyTokens.text[styleName]?.[weight];
-        const fontSize = resolveSize(token?.$value?.fontSize);
+        const fontSize   = resolveSize(token?.$value?.fontSize);
         const fontWeight = token?.$value?.fontWeight;
         const lineHeight = token?.$value?.lineHeight;
-        const tokenName = `text.${styleName}.${weight}`;
+        const tokenName  = `text.${styleName}.${weight}`;
 
         const handleCopy = () => {
           navigator.clipboard?.writeText(tokenName).then(() => {
@@ -52,28 +49,28 @@ function StyleRow({ styleName }) {
               display: 'grid',
               gridTemplateColumns: '120px 80px 60px 60px 60px 1fr',
               alignItems: 'center',
-              gap: 16,
-              padding: '10px 16px',
+              gap: theme.spacing.md,
+              padding: `${theme.spacing.xs}px ${theme.spacing.md}px`,
               cursor: 'pointer',
               transition: 'background 0.12s',
               background: copied === weight ? '#f0fdf4' : 'transparent',
             }}
-            onMouseEnter={e => { if (copied !== weight) e.currentTarget.style.background = '#f5f5f5'; }}
+            onMouseEnter={e => { if (copied !== weight) e.currentTarget.style.background = theme.bg.hover; }}
             onMouseLeave={e => { if (copied !== weight) e.currentTarget.style.background = 'transparent'; }}
           >
-            <span style={{ fontFamily: FONT, fontSize: 10, color: copied === weight ? '#16a34a' : '#bbb', transition: 'color 0.2s' }}>
+            <span style={{ fontFamily: theme.font, fontSize: 10, color: copied === weight ? '#16a34a' : theme.text.subtlest, transition: 'color 0.2s' }}>
               {copied === weight ? '✓ copied' : tokenName}
             </span>
-            <span style={{ fontFamily: FONT, fontSize: 10, color: '#ccc', textTransform: 'capitalize' }}>{weight}</span>
-            <span style={{ fontFamily: FONT, fontSize: 10, color: '#bbb' }}>{fontSize}</span>
-            <span style={{ fontFamily: FONT, fontSize: 10, color: '#bbb' }}>{fontWeight}</span>
-            <span style={{ fontFamily: FONT, fontSize: 10, color: '#bbb' }}>{lineHeight}</span>
+            <span style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest, textTransform: 'capitalize' }}>{weight}</span>
+            <span style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest }}>{fontSize}</span>
+            <span style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest }}>{fontWeight}</span>
+            <span style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest }}>{lineHeight}</span>
             <span style={{
-              fontFamily: FONT,
+              fontFamily: theme.font,
               fontSize,
               fontWeight,
               lineHeight,
-              color: '#111',
+              color: theme.text.default,
               whiteSpace: 'nowrap',
               overflow: 'hidden',
               textOverflow: 'ellipsis',
@@ -89,28 +86,35 @@ function StyleRow({ styleName }) {
 
 export function TypeStyles() {
   return (
-    <div style={{ background: '#f5f5f5', minHeight: '100vh', padding: '40px 40px', fontFamily: FONT }}>
+    <div style={{ background: theme.bg.page, minHeight: '100vh', padding: `${theme.spacing.xxl}px ${theme.spacing.xxl}px`, fontFamily: theme.font }}>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" />
 
-      <div style={{ marginBottom: 48 }}>
-        <h1 style={{ fontFamily: FONT, fontSize: 26, fontWeight: 300, color: '#111', letterSpacing: '-0.02em', marginBottom: 4 }}>
+      <div style={{ marginBottom: theme.spacing.xxl }}>
+        <h1 style={{ fontFamily: theme.font, fontSize: 26, fontWeight: 300, color: theme.text.default, letterSpacing: '-0.02em', marginBottom: theme.spacing.xxs }}>
           Type Styles
         </h1>
-        <p style={{ fontFamily: FONT, fontSize: 10, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+        <p style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
           9 styles · 3 weights each · click row to copy token name
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '120px 80px 60px 60px 60px 1fr', gap: 16, padding: '0 16px 8px', borderBottom: '1px solid #e5e5e5', marginBottom: 0 }}>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '120px 80px 60px 60px 60px 1fr',
+        gap: theme.spacing.md,
+        padding: `0 ${theme.spacing.md}px ${theme.spacing.xs}px`,
+        borderBottom: `1px solid ${theme.border.subtle}`,
+        marginBottom: 0,
+      }}>
         {['Token', 'Weight', 'Size', 'Weight', 'Line-h', 'Preview'].map((h, i) => (
-          <span key={i} style={{ fontFamily: FONT, fontSize: 9, color: '#bbb', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{h}</span>
+          <span key={i} style={{ fontFamily: theme.font, fontSize: 9, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{h}</span>
         ))}
       </div>
 
       {STYLES.map(styleName => (
         <div key={styleName}>
-          <div style={{ padding: '8px 16px 4px', background: '#ebebeb', marginTop: 8 }}>
-            <span style={{ fontFamily: FONT, fontSize: 9, color: '#999', textTransform: 'uppercase', letterSpacing: '0.1em' }}>{styleName}</span>
+          <div style={{ padding: `${theme.spacing.xs}px ${theme.spacing.md}px ${theme.spacing.xxs}px`, background: theme.bg.surface, marginTop: theme.spacing.xs }}>
+            <span style={{ fontFamily: theme.font, fontSize: 9, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{styleName}</span>
           </div>
           <StyleRow styleName={styleName} />
         </div>
