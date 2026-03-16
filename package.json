@@ -1,13 +1,16 @@
 {
   "name": "design-system",
   "version": "1.0.0",
+  "type": "module",
   "description": "Design System with OKLCH color shades via StyleDictionary",
   "scripts": {
     "generate-shades": "node scripts/generate-shades.js",
-    "build-tokens": "cd style-dictionary && style-dictionary build --config config.js",
+    "build-tokens": "cd style-dictionary && style-dictionary build --config config.cjs",
     "build": "npm run generate-shades && npm run build-tokens",
     "storybook": "cd storybook && npm run storybook",
-    "storybook:build": "cd storybook && npm run build-storybook"
+    "storybook:build": "cd storybook && npm run build-storybook",
+    "push-to-figma": "node --env-file=.env scripts/push-to-figma.js",
+    "pull-from-figma": "node --env-file=.env scripts/pull-from-figma.js"
   },
   "devDependencies": {
     "style-dictionary": "^3.9.2"

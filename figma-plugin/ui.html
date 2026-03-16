@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; font-size: 12px; background: #fff; }
+
+    .header {
+      padding: 16px;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    h1 { font-size: 14px; font-weight: 600; color: #111; margin-bottom: 4px; }
+    p { font-size: 11px; color: #888; }
+
+    .section { padding: 16px; border-bottom: 1px solid #e5e5e5; }
+    label { display: block; font-size: 11px; color: #555; margin-bottom: 6px; font-weight: 500; }
+    textarea {
+      width: 100%; height: 120px;
+      border: 1px solid #e5e5e5; border-radius: 6px;
+      padding: 8px; font-size: 10px; font-family: monospace;
+      resize: vertical; outline: none; color: #333;
+    }
+    textarea:focus { border-color: #2563EB; }
+
+    .actions { padding: 16px; display: flex; flex-direction: column; gap: 8px; }
+    button {
+      width: 100%; padding: 8px 16px; border-radius: 6px;
+      font-size: 12px; font-weight: 500; cursor: pointer; border: none;
+    }
+    .btn-primary { background: #2563EB; color: #fff; }
+    .btn-primary:hover { background: #1d4ed8; }
+    .btn-secondary { background: #f5f5f5; color: #555; border: 1px solid #e5e5e5; }
+    .btn-secondary:hover { background: #ebebeb; }
+    .btn-danger { background: #fee2e2; color: #dc2626; border: 1px solid #fca5a5; }
+    .btn-danger:hover { background: #fecaca; }
+
+    .log {
+      padding: 12px 16px;
+      font-size: 10px; font-family: monospace;
+      color: #555; background: #f9f9f9;
+      min-height: 60px; max-height: 120px;
+      overflow-y: auto; border-top: 1px solid #e5e5e5;
+    }
+    .log .success { color: #16a34a; }
+    .log .error { color: #dc2626; }
+    .log .info { color: #2563EB; }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Tao Token Pusher</h1>
+  <p>Push design tokens as Figma variables</p>
+</div>
+
+<div class="section">
+  <label>Paste your tokens JSON</label>
+  <textarea id="tokenInput" placeholder='Paste the contents of your tokens/base/shades.json or any token file here...'></textarea>
+</div>
+
+<div class="section">
+  <label>Collection name</label>
+  <input id="collectionName" type="text" value="Tao Tokens" style="width:100%;padding:6px 8px;border:1px solid #e5e5e5;border-radius:6px;font-size:12px;outline:none;" />
+</div>
+
+<div class="actions">
+  <button class="btn-primary" onclick="pushTokens()">Push tokens to Figma</button>
+  <button class="btn-secondary" onclick="pullTokens()">Pull variables from Figma</button>
+  <button class="btn-danger" onclick="clearVariables()">Clear all variables</button>
+</div>
+
+<div class="log" id="log">Ready.</div>
+
+<script>
+  function log(msg, type = '') {
+    const el = document.getElementById('log');
+    el.innerHTML += `<div class="${type}">${msg}</div>`;
+    el.scrollTop = el.scrollHeight;
+  }
+
+  function pushTokens() {
+    const raw = document.getElementById('tokenInput').value.trim();
+    const collectionName = document.getElementById('collectionName').value.trim();
+    if (!raw) { log('Paste your token JSON first.', 'error'); return; }
+
+    let tokens;
+    try { tokens = JSON.parse(raw); }
+    catch (e) { log('Invalid JSON: ' + e.message, 'error'); return; }
+
+    log('Pushing tokens...', 'info');
+    parent.postMessage({ pluginMessage: { type: 'push', tokens, collectionName } }, '*');
+  }
+
+  function pullTokens() {
+    log('Pulling variables from Figma...', 'info');
+    parent.postMessage({ pluginMessage: { type: 'pull' } }, '*');
+  }
+
+  function clearVariables() {
+    if (!confirm('This will delete ALL variables in this file. Are you sure?')) return;
+    log('Clearing all variables...', 'info');
+    parent.postMessage({ pluginMessage: { type: 'clear' } }, '*');
+  }
+
+  window.onmessage = (event) => {
+    const msg = event.data.pluginMessage;
+    if (!msg) return;
+
+    if (msg.type === 'log') log(msg.message, msg.level ?? '');
+    if (msg.type === 'pull-result') {
+      document.getElementById('tokenInput').value = JSON.stringify(msg.tokens, null, 2);
+      log('Variables pulled — JSON shown above.', 'success');
+    }
+  };
+</script>
+</body>
+</html>

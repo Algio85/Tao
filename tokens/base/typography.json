@@ -1,0 +1,17 @@
+{
+  "typography": {
+    "config": {
+      "base":  { "$value": 16,  "$type": "number" },
+      "ratio": { "$value": 1.2, "$type": "number" }
+    },
+    "size": {
+      "xs":   { "$value": "11px", "$type": "dimension" },
+      "sm":   { "$value": "13px", "$type": "dimension" },
+      "md":   { "$value": "16px", "$type": "dimension" },
+      "lg":   { "$value": "19px", "$type": "dimension" },
+      "xl":   { "$value": "23px", "$type": "dimension" },
+      "xxl":  { "$value": "28px", "$type": "dimension" },
+      "xxxl": { "$value": "33px", "$type": "dimension" }
+    }
+  }
+}
