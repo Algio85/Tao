@@ -1,0 +1,29 @@
+{
+  "state": {
+    "hover": {
+      "$value": "{color.shade.palette-11.3}",
+      "$type": "color",
+      "$description": "Hover background — neutral tint"
+    },
+    "active": {
+      "$value": "{color.shade.palette-11.4}",
+      "$type": "color",
+      "$description": "Active/pressed background"
+    },
+    "selected": {
+      "$value": "{color.shade.palette-1.2}",
+      "$type": "color",
+      "$description": "Selected background — brand tint"
+    },
+    "focus": {
+      "$value": "{color.shade.palette-1.8}",
+      "$type": "color",
+      "$description": "Focus ring color"
+    },
+    "disabled": {
+      "bg":     { "$value": "{color.shade.palette-11.2}", "$type": "color", "$description": "Disabled background" },
+      "text":   { "$value": "{color.shade.palette-11.6}", "$type": "color", "$description": "Disabled text" },
+      "border": { "$value": "{color.shade.palette-11.4}", "$type": "color", "$description": "Disabled border" }
+    }
+  }
+}

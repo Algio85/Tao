@@ -1,0 +1,16 @@
+{
+  "duration": {
+    "instant": { "$value": "0ms",   "$type": "duration", "$description": "No animation" },
+    "fast":    { "$value": "100ms", "$type": "duration", "$description": "Small UI elements, tooltips" },
+    "normal":  { "$value": "200ms", "$type": "duration", "$description": "Default transitions" },
+    "slow":    { "$value": "300ms", "$type": "duration", "$description": "Modals, panels" },
+    "slower":  { "$value": "500ms", "$type": "duration", "$description": "Page transitions" }
+  },
+  "easing": {
+    "linear":      { "$value": "linear",                          "$type": "cubicBezier", "$description": "Progress bars" },
+    "ease-in":     { "$value": "cubic-bezier(0.4, 0, 1, 1)",     "$type": "cubicBezier", "$description": "Elements leaving screen" },
+    "ease-out":    { "$value": "cubic-bezier(0, 0, 0.2, 1)",     "$type": "cubicBezier", "$description": "Elements entering screen" },
+    "ease-in-out": { "$value": "cubic-bezier(0.4, 0, 0.2, 1)",   "$type": "cubicBezier", "$description": "Elements moving on screen" },
+    "spring":      { "$value": "cubic-bezier(0.34, 1.56, 0.64, 1)", "$type": "cubicBezier", "$description": "Playful, bouncy interactions" }
+  }
+}
