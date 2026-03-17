@@ -11,8 +11,12 @@ function flattenTokens(obj, prefix) {
     var key = keys[i];
     var val = obj[key];
     var fullKey = prefix ? prefix + '/' + key : key;
-    if (val && typeof val === 'object' && '$value' in val) {
-      result.push({ name: fullKey, value: val['$value'], type: val['$type'] });
+    if (val && typeof val === 'object' && ('$value' in val || 'value' in val)) {
+      result.push({
+        name: fullKey,
+        value: val['$value'] !== undefined ? val['$value'] : val['value'],
+        type: val['$type'] !== undefined ? val['$type'] : val['type']
+      });
     } else if (val && typeof val === 'object') {
       var nested = flattenTokens(val, fullKey);
       for (var j = 0; j < nested.length; j++) result.push(nested[j]);
@@ -31,10 +35,49 @@ function hexToRgb(hex) {
   };
 }
 
+function oklchToRgb(str) {
+  var match = str.match(/oklch\(\s*([\d.]+)%?\s+([\d.]+)\s+([\d.]+)/);
+  if (!match) return { r: 0.5, g: 0.5, b: 0.5, a: 1 };
+
+  var L = parseFloat(match[1]);
+  var C = parseFloat(match[2]);
+  var H = parseFloat(match[3]);
+
+  if (L > 1) L = L / 100;
+
+  var hRad = H * Math.PI / 180;
+  var a = C * Math.cos(hRad);
+  var b = C * Math.sin(hRad);
+
+  var l_ = L + 0.3963377774 * a + 0.2158037573 * b;
+  var m_ = L - 0.1055613458 * a - 0.0638541728 * b;
+  var s_ = L - 0.0894841775 * a - 1.291485548  * b;
+
+  var lc = l_ * l_ * l_;
+  var mc = m_ * m_ * m_;
+  var sc = s_ * s_ * s_;
+
+  function toSrgb(v) {
+    v = Math.max(0, Math.min(1, v));
+    return v <= 0.0031308 ? 12.92 * v : 1.055 * Math.pow(v, 1 / 2.4) - 0.055;
+  }
+
+  var r  = Math.round(toSrgb( 4.0767416621 * lc - 3.3077115913 * mc + 0.2309699292 * sc) * 255);
+  var g  = Math.round(toSrgb(-1.2684380046 * lc + 2.6097574011 * mc - 0.3413193965 * sc) * 255);
+  var bv = Math.round(toSrgb(-0.0041960863 * lc - 0.7034186147 * mc + 1.707614701  * sc) * 255);
+
+  r  = Math.max(0, Math.min(255, r));
+  g  = Math.max(0, Math.min(255, g));
+  bv = Math.max(0, Math.min(255, bv));
+
+  return { r: r / 255, g: g / 255, b: bv / 255, a: 1 };
+}
+
 function parseColor(value) {
   if (typeof value !== 'string') return null;
   if (value.indexOf('#') === 0) return hexToRgb(value);
-  return { r: 0.5, g: 0.5, b: 0.5, a: 1 };
+  if (value.indexOf('oklch') === 0) return oklchToRgb(value);
+  return null;
 }
 
 function inferFigmaType(type) {
@@ -59,6 +102,11 @@ function toHex(v) {
 async function pushTokens(tokens, collectionName) {
   var flat = flattenTokens(tokens, '');
   log('Found ' + flat.length + ' tokens', 'info');
+
+  if (flat.length === 0) {
+    log('No tokens found — check your JSON format', 'error');
+    return;
+  }
 
   var existing = await figma.variables.getLocalVariableCollectionsAsync();
   var collection = null;
@@ -108,6 +156,11 @@ async function pushTokens(tokens, collectionName) {
       }
 
       variable.setValueForMode(modeId, value);
+
+      // Set CSS code syntax for Dev Mode
+      var cssVarName = 'var(--tao-' + token.name.replace(/\//g, '-') + ')';
+      variable.setVariableCodeSyntax('WEB', cssVarName);
+
     } catch (e) {
       log('Error on ' + token.name + ': ' + e.message, 'error');
       errors++;

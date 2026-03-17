@@ -1,15 +1,9 @@
 #!/usr/bin/env node
+import { fileURLToPath } from "url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import fs from "fs";
+import path from "path";
 
-/**
- * Generates 16 OKLCH shades for each base color.
- * Shade 1 = nearest to white, Shade 16 = nearest to black.
- * Also outputs a `brand` token equal to the original base color (outside shades).
- */
-
-const fs = require("fs");
-const path = require("path");
-
-// Minimal hex → OKLCH converter (via linear RGB → XYZ D65 → OKLab → OKLCH)
 function hexToLinear(c) {
   c = c / 255;
   return c <= 0.04045 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
@@ -37,52 +31,66 @@ function hexToOklch(hex) {
   return { L, C, H };
 }
 
-function oklchToCSS(L, C, H) {
-  return `oklch(${(L * 100).toFixed(2)}% ${C.toFixed(4)} ${H.toFixed(2)})`;
+function oklchToHex(L, C, H) {
+  const hRad = H * Math.PI / 180;
+  const a = C * Math.cos(hRad);
+  const b = C * Math.sin(hRad);
+
+  const l_ = L + 0.3963377774 * a + 0.2158037573 * b;
+  const m_ = L - 0.1055613458 * a - 0.0638541728 * b;
+  const s_ = L - 0.0894841775 * a - 1.291485548  * b;
+
+  const lc = l_ ** 3, mc = m_ ** 3, sc = s_ ** 3;
+
+  function toSrgb(v) {
+    v = Math.max(0, Math.min(1, v));
+    return v <= 0.0031308 ? 12.92 * v : 1.055 * v ** (1 / 2.4) - 0.055;
+  }
+
+  const r  = Math.round(toSrgb( 4.0767416621 * lc - 3.3077115913 * mc + 0.2309699292 * sc) * 255);
+  const g  = Math.round(toSrgb(-1.2684380046 * lc + 2.6097574011 * mc - 0.3413193965 * sc) * 255);
+  const bv = Math.round(toSrgb(-0.0041960863 * lc - 0.7034186147 * mc + 1.707614701  * sc) * 255);
+
+  const clamp = v => Math.max(0, Math.min(255, v));
+  const toHex = v => clamp(v).toString(16).padStart(2, '0');
+
+  return '#' + toHex(r) + toHex(g) + toHex(bv);
 }
 
-// Load base tokens
 const baseTokens = JSON.parse(
-  fs.readFileSync(
-    path.join(__dirname, "../tokens/base/colors.json"),
-    "utf-8"
-  )
+  fs.readFileSync(path.join(__dirname, "../tokens/base/colors.json"), "utf-8")
 );
-
 const baseColors = baseTokens.color.brand;
-const NUM_SHADES = 16;
 
-// Lightness range: shade 1 (lightest) → 0.97, shade 16 (darkest) → 0.10
 const L_MAX = 0.97;
 const L_MIN = 0.10;
+const NUM_SHADES = 16;
 
 const shadeTokens = { color: { shade: {}, brand: {} } };
 
 for (const [name, meta] of Object.entries(baseColors)) {
   const hex = meta.value;
-  const { L: baseL, C: baseC, H } = hexToOklch(hex);
+  const { C: baseC, H } = hexToOklch(hex);
 
   shadeTokens.color.shade[name] = {};
 
   for (let i = 1; i <= NUM_SHADES; i++) {
-    // Linear interpolation from lightest to darkest
-    const t = (i - 1) / (NUM_SHADES - 1); // 0 → 1
+    const t = (i - 1) / (NUM_SHADES - 1);
     const L = L_MAX + t * (L_MIN - L_MAX);
-
-    // Chroma: peak around mid-range, compressed at extremes
     const chromaScale = 1 - Math.pow(2 * t - 1, 4) * 0.5;
     const C = baseC * chromaScale;
 
     shadeTokens.color.shade[name][i.toString()] = {
-      value: oklchToCSS(L, C, H),
+      value: oklchToHex(L, C, H),
+      type: "color",
       comment: `${name} shade ${i} — lightness ${(L * 100).toFixed(0)}%`,
     };
   }
 
-  // Brand token: exact base color preserved as-is (not part of shades)
   shadeTokens.color.brand[name] = {
     value: hex,
-    comment: `${meta.comment} — exact brand color, use only for specific brand moments`,
+    type: "color",
+    comment: `${name} — exact brand color`,
   };
 }
 

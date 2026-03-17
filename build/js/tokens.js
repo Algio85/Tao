@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Mon, 16 Mar 2026 19:54:16 GMT
+ * Generated on Tue, 17 Mar 2026 14:53:50 GMT
  */
 
 export const tao-color-shade-palette-1-1 = "#cff6ff"; // palette-1 shade 1 — lightness 97%
@@ -104,7 +104,7 @@ export const tao-color-shade-palette-7-2 = "#ffcf95"; // palette-7 shade 2 — l
 export const tao-color-shade-palette-7-3 = "#ffb871"; // palette-7 shade 3 — lightness 85%
 export const tao-color-shade-palette-7-4 = "#ffa352"; // palette-7 shade 4 — lightness 80%
 export const tao-color-shade-palette-7-5 = "#f08f36"; // palette-7 shade 5 — lightness 74%
-export const tao-color-shade-palette-7-6 = "#dd7c15"; // palette-7 shade 6 — lightness 68%
+export const tao-color-shade-palette-7-6 = "#dd7c16"; // palette-7 shade 6 — lightness 68%
 export const tao-color-shade-palette-7-7 = "#ca6900"; // palette-7 shade 7 — lightness 62%
 export const tao-color-shade-palette-7-8 = "#b75800"; // palette-7 shade 8 — lightness 56%
 export const tao-color-shade-palette-7-9 = "#a34600"; // palette-7 shade 9 — lightness 51%
@@ -147,13 +147,13 @@ export const tao-color-shade-palette-9-13 = "#00352d"; // palette-9 shade 13 —
 export const tao-color-shade-palette-9-14 = "#00251f"; // palette-9 shade 14 — lightness 22%
 export const tao-color-shade-palette-9-15 = "#001511"; // palette-9 shade 15 — lightness 16%
 export const tao-color-shade-palette-9-16 = "#000705"; // palette-9 shade 16 — lightness 10%
-export const tao-color-shade-palette-10-1 = "#cdffff"; // palette-10 shade 1 — lightness 97%
+export const tao-color-shade-palette-10-1 = "#cdfeff"; // palette-10 shade 1 — lightness 97%
 export const tao-color-shade-palette-10-2 = "#a6efff"; // palette-10 shade 2 — lightness 91%
 export const tao-color-shade-palette-10-3 = "#85defb"; // palette-10 shade 3 — lightness 85%
 export const tao-color-shade-palette-10-4 = "#68ccec"; // palette-10 shade 4 — lightness 80%
 export const tao-color-shade-palette-10-5 = "#4eb9db"; // palette-10 shade 5 — lightness 74%
 export const tao-color-shade-palette-10-6 = "#34a7c9"; // palette-10 shade 6 — lightness 68%
-export const tao-color-shade-palette-10-7 = "#1495b6"; // palette-10 shade 7 — lightness 62%
+export const tao-color-shade-palette-10-7 = "#1595b6"; // palette-10 shade 7 — lightness 62%
 export const tao-color-shade-palette-10-8 = "#0083a4"; // palette-10 shade 8 — lightness 56%
 export const tao-color-shade-palette-10-9 = "#007292"; // palette-10 shade 9 — lightness 51%
 export const tao-color-shade-palette-10-10 = "#006180"; // palette-10 shade 10 — lightness 45%
@@ -179,14 +179,14 @@ export const tao-color-shade-palette-11-13 = "#272727"; // palette-11 shade 13 �
 export const tao-color-shade-palette-11-14 = "#1a1a1a"; // palette-11 shade 14 — lightness 22%
 export const tao-color-shade-palette-11-15 = "#0d0d0d"; // palette-11 shade 15 — lightness 16%
 export const tao-color-shade-palette-11-16 = "#030303"; // palette-11 shade 16 — lightness 10%
-export const tao-color-brand-palette-1 = "#2563eb"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-2 = "#4f46e5"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-3 = "#7c3aed"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-4 = "#db2777"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-5 = "#dc2626"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-6 = "#ea580c"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-7 = "#d97706"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-8 = "#16a34a"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-9 = "#0d9488"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-10 = "#0891b2"; // undefined — exact brand color, use only for specific brand moments
-export const tao-color-brand-palette-11 = "#525252"; // undefined — exact brand color, use only for specific brand moments
+export const tao-color-brand-palette-1 = "#2563eb"; // palette-1 — exact brand color
+export const tao-color-brand-palette-2 = "#4f46e5"; // palette-2 — exact brand color
+export const tao-color-brand-palette-3 = "#7c3aed"; // palette-3 — exact brand color
+export const tao-color-brand-palette-4 = "#db2777"; // palette-4 — exact brand color
+export const tao-color-brand-palette-5 = "#dc2626"; // palette-5 — exact brand color
+export const tao-color-brand-palette-6 = "#ea580c"; // palette-6 — exact brand color
+export const tao-color-brand-palette-7 = "#d97706"; // palette-7 — exact brand color
+export const tao-color-brand-palette-8 = "#16a34a"; // palette-8 — exact brand color
+export const tao-color-brand-palette-9 = "#0d9488"; // palette-9 — exact brand color
+export const tao-color-brand-palette-10 = "#0891b2"; // palette-10 — exact brand color
+export const tao-color-brand-palette-11 = "#525252"; // palette-11 — exact brand color
