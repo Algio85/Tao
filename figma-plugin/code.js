@@ -4,6 +4,10 @@ function log(message, level) {
   figma.ui.postMessage({ type: 'log', message: message, level: level || '' });
 }
 
+function progress(pct) {
+  figma.ui.postMessage({ type: 'progress', pct: pct });
+}
+
 function flattenTokens(obj, prefix) {
   var result = [];
   var keys = Object.keys(obj);
@@ -15,7 +19,8 @@ function flattenTokens(obj, prefix) {
       result.push({
         name: fullKey,
         value: val['$value'] !== undefined ? val['$value'] : val['value'],
-        type: val['$type'] !== undefined ? val['$type'] : val['type']
+        type: val['$type'] !== undefined ? val['$type'] : val['type'],
+        description: val['$description'] || val['comment'] || ''
       });
     } else if (val && typeof val === 'object') {
       var nested = flattenTokens(val, fullKey);
@@ -42,7 +47,6 @@ function oklchToRgb(str) {
   var L = parseFloat(match[1]);
   var C = parseFloat(match[2]);
   var H = parseFloat(match[3]);
-
   if (L > 1) L = L / 100;
 
   var hRad = H * Math.PI / 180;
@@ -66,11 +70,12 @@ function oklchToRgb(str) {
   var g  = Math.round(toSrgb(-1.2684380046 * lc + 2.6097574011 * mc - 0.3413193965 * sc) * 255);
   var bv = Math.round(toSrgb(-0.0041960863 * lc - 0.7034186147 * mc + 1.707614701  * sc) * 255);
 
-  r  = Math.max(0, Math.min(255, r));
-  g  = Math.max(0, Math.min(255, g));
-  bv = Math.max(0, Math.min(255, bv));
-
-  return { r: r / 255, g: g / 255, b: bv / 255, a: 1 };
+  return {
+    r: Math.max(0, Math.min(255, r)) / 255,
+    g: Math.max(0, Math.min(255, g)) / 255,
+    b: Math.max(0, Math.min(255, bv)) / 255,
+    a: 1
+  };
 }
 
 function parseColor(value) {
@@ -80,10 +85,12 @@ function parseColor(value) {
   return null;
 }
 
-function inferFigmaType(type) {
+function inferFigmaType(type, value) {
   if (type === 'color') return 'COLOR';
   if (type === 'spacing' || type === 'dimension' || type === 'borderRadius' || type === 'borderWidth' || type === 'number') return 'FLOAT';
   if (type === 'boolean') return 'BOOLEAN';
+  // Auto-detect color from value
+  if (typeof value === 'string' && (value.indexOf('#') === 0 || value.indexOf('oklch') === 0)) return 'COLOR';
   return 'STRING';
 }
 
@@ -93,37 +100,23 @@ function parseNum(value) {
   return 0;
 }
 
-function toHex(v) {
-  return Math.round(v * 255).toString(16).padStart(2, '0');
-}
+// ─── Push single collection ───────────────────────────────────────────────────
 
-// ─── Push ─────────────────────────────────────────────────────────────────────
-
-async function pushTokens(tokens, collectionName) {
-  var flat = flattenTokens(tokens, '');
-  log('Found ' + flat.length + ' tokens', 'info');
-
-  if (flat.length === 0) {
-    log('No tokens found — check your JSON format', 'error');
-    return;
-  }
+async function pushCollection(item) {
+  var flat = flattenTokens(item.tokens, '');
+  log('  → ' + item.collection + ': ' + flat.length + ' tokens', 'info');
 
   var existing = await figma.variables.getLocalVariableCollectionsAsync();
   var collection = null;
   for (var i = 0; i < existing.length; i++) {
-    if (existing[i].name === collectionName) { collection = existing[i]; break; }
+    if (existing[i].name === item.collection) { collection = existing[i]; break; }
   }
 
   if (!collection) {
-    collection = figma.variables.createVariableCollection(collectionName);
-    log('Created collection: ' + collectionName, 'success');
-  } else {
-    log('Using existing collection: ' + collectionName, 'info');
+    collection = figma.variables.createVariableCollection(item.collection);
   }
 
   var modeId = collection.modes[0].modeId;
-  var created = 0, updated = 0, errors = 0;
-
   var existingVars = await figma.variables.getLocalVariablesAsync();
   var existingMap = {};
   for (var i = 0; i < existingVars.length; i++) {
@@ -131,10 +124,12 @@ async function pushTokens(tokens, collectionName) {
     if (v.variableCollectionId === collection.id) existingMap[v.name] = v;
   }
 
+  var created = 0, updated = 0, errors = 0;
+
   for (var i = 0; i < flat.length; i++) {
     var token = flat[i];
     try {
-      var figmaType = inferFigmaType(token.type);
+      var figmaType = inferFigmaType(token.type, token.value);
       var variable = existingMap[token.name];
 
       if (!variable) {
@@ -142,6 +137,11 @@ async function pushTokens(tokens, collectionName) {
         created++;
       } else {
         updated++;
+      }
+
+      // Set description if present
+      if (token.description) {
+        variable.description = token.description;
       }
 
       var value;
@@ -162,69 +162,26 @@ async function pushTokens(tokens, collectionName) {
       variable.setVariableCodeSyntax('WEB', cssVarName);
 
     } catch (e) {
-      log('Error on ' + token.name + ': ' + e.message, 'error');
+      log('    Error on ' + token.name + ': ' + e.message, 'error');
       errors++;
     }
   }
 
-  log('Done — ' + created + ' created, ' + updated + ' updated, ' + errors + ' errors', 'success');
+  log('  ✓ ' + item.collection + ' — ' + created + ' created, ' + updated + ' updated, ' + errors + ' errors', 'success');
 }
 
-// ─── Pull ─────────────────────────────────────────────────────────────────────
+// ─── Push all selected ────────────────────────────────────────────────────────
 
-async function pullTokens() {
-  var collections = await figma.variables.getLocalVariableCollectionsAsync();
-  var variables = await figma.variables.getLocalVariablesAsync();
-  var result = {};
+async function pushAll(collections) {
+  log('Pushing ' + collections.length + ' collection(s)...', 'info');
 
-  for (var i = 0; i < variables.length; i++) {
-    var variable = variables[i];
-    var collection = null;
-    for (var j = 0; j < collections.length; j++) {
-      if (collections[j].id === variable.variableCollectionId) { collection = collections[j]; break; }
-    }
-
-    var colName = collection ? collection.name : 'unknown';
-    var modeId = collection && collection.modes[0] ? collection.modes[0].modeId : null;
-    var raw = modeId ? variable.valuesByMode[modeId] : null;
-
-    var value, type;
-    if (variable.resolvedType === 'COLOR' && raw && typeof raw === 'object' && 'r' in raw) {
-      value = '#' + toHex(raw.r) + toHex(raw.g) + toHex(raw.b);
-      type = 'color';
-    } else if (variable.resolvedType === 'FLOAT') {
-      value = raw;
-      type = 'number';
-    } else if (variable.resolvedType === 'BOOLEAN') {
-      value = raw;
-      type = 'boolean';
-    } else {
-      value = raw;
-      type = 'string';
-    }
-
-    if (!result[colName]) result[colName] = {};
-
-    var keys = variable.name.split('/');
-    var node = result[colName];
-    for (var k = 0; k < keys.length - 1; k++) {
-      if (!node[keys[k]]) node[keys[k]] = {};
-      node = node[keys[k]];
-    }
-    node[keys[keys.length - 1]] = { '$value': value, '$type': type };
+  for (var i = 0; i < collections.length; i++) {
+    await pushCollection(collections[i]);
+    progress(Math.round(((i + 1) / collections.length) * 100));
   }
 
-  figma.ui.postMessage({ type: 'pull-result', tokens: result });
-}
-
-// ─── Clear ────────────────────────────────────────────────────────────────────
-
-async function clearVariables() {
-  var variables = await figma.variables.getLocalVariablesAsync();
-  var collections = await figma.variables.getLocalVariableCollectionsAsync();
-  for (var i = 0; i < variables.length; i++) variables[i].remove();
-  for (var i = 0; i < collections.length; i++) collections[i].remove();
-  log('Cleared ' + variables.length + ' variables and ' + collections.length + ' collections', 'success');
+  log('All done!', 'success');
+  figma.ui.postMessage({ type: 'done' });
 }
 
 // ─── Main ─────────────────────────────────────────────────────────────────────
@@ -232,7 +189,5 @@ async function clearVariables() {
 figma.showUI(__html__, { width: 400, height: 560 });
 
 figma.ui.onmessage = async function(msg) {
-  if (msg.type === 'push') await pushTokens(msg.tokens, msg.collectionName);
-  if (msg.type === 'pull') await pullTokens();
-  if (msg.type === 'clear') await clearVariables();
+  if (msg.type === 'push-all') await pushAll(msg.collections);
 };
