@@ -13,6 +13,7 @@
     "pull-from-figma": "node --env-file=.env scripts/pull-from-figma.js"
   },
   "devDependencies": {
+    "@figma/code-connect": "^1.4.2",
     "style-dictionary": "^3.9.2"
   }
 }

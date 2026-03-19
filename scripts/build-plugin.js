@@ -6,20 +6,48 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 
 const TOKEN_FILES = [
-  { file: 'tokens/base/shades.json',       collection: 'Colors/Shades',     description: 'All 16 shades per palette + brand tokens' },
-  { file: 'tokens/base/spacing.json',      collection: 'Spacing',           description: 'Spacing scale — 8 steps' },
-  { file: 'tokens/base/borders.json',      collection: 'Borders',           description: 'Border radius and border width' },
-  { file: 'tokens/base/typography.json',   collection: 'Typography',        description: 'Type scale — size and config' },
-  { file: 'tokens/base/opacity.json',      collection: 'Opacity',           description: 'Opacity scale — 10 steps' },
-  { file: 'tokens/base/motion.json',       collection: 'Motion',            description: 'Duration and easing tokens' },
-  { file: 'tokens/base/elevation.json',    collection: 'Elevation',         description: 'Z-index scale' },
-  { file: 'tokens/semantic/surfaces.json', collection: 'Semantic/Surfaces', description: 'Surface color tokens' },
-  { file: 'tokens/semantic/text.json',     collection: 'Semantic/Text',     description: 'Text color tokens' },
-  { file: 'tokens/semantic/borders.json',  collection: 'Semantic/Borders',  description: 'Border color tokens' },
-  { file: 'tokens/semantic/states.json',   collection: 'Semantic/States',   description: 'Interactive state tokens' },
+  { file: 'tokens/base/shades.json',          collection: 'Colors/Shades',     description: 'All 16 shades per palette + brand tokens' },
+  { file: 'tokens/base/spacing.json',         collection: 'Spacing',           description: 'Spacing scale — 8 steps' },
+  { file: 'tokens/base/borders.json',         collection: 'Borders',           description: 'Border radius and border width' },
+  { file: 'tokens/base/typography.json',      collection: 'Typography',        description: 'Type scale — size and config' },
+  { file: 'tokens/base/opacity.json',         collection: 'Opacity',           description: 'Opacity scale — 10 steps' },
+  { file: 'tokens/base/motion.json',          collection: 'Motion',            description: 'Duration and easing tokens' },
+  { file: 'tokens/base/elevation.json',       collection: 'Elevation',         description: 'Z-index scale' },
+  { file: 'tokens/semantic/surfaces.json',    collection: 'Semantic/Surfaces', description: 'Surface color tokens' },
+  { file: 'tokens/semantic/text.json',        collection: 'Semantic/Text',     description: 'Text color tokens' },
+  { file: 'tokens/semantic/borders.json',     collection: 'Semantic/Borders',  description: 'Border color tokens' },
+  { file: 'tokens/semantic/states.json',      collection: 'Semantic/States',   description: 'Interactive state tokens' },
+  { file: 'tokens/components/button.json',    collection: 'Components/Button', description: 'Button component tokens' },
 ];
 
 const shades = JSON.parse(fs.readFileSync(path.join(root, 'tokens/base/shades.json'), 'utf8'));
+
+// Load all token files for reference resolution
+const allTokenSources = [
+  JSON.parse(fs.readFileSync(path.join(root, 'tokens/base/spacing.json'), 'utf8')),
+  JSON.parse(fs.readFileSync(path.join(root, 'tokens/base/borders.json'), 'utf8')),
+  JSON.parse(fs.readFileSync(path.join(root, 'tokens/base/typography.json'), 'utf8')),
+  JSON.parse(fs.readFileSync(path.join(root, 'tokens/semantic/surfaces.json'), 'utf8')),
+  JSON.parse(fs.readFileSync(path.join(root, 'tokens/semantic/text.json'), 'utf8')),
+  JSON.parse(fs.readFileSync(path.join(root, 'tokens/semantic/states.json'), 'utf8')),
+];
+
+// Merge all token sources into one lookup object for reference resolution
+function mergeDeep(...objects) {
+  const result = {};
+  for (const obj of objects) {
+    for (const [key, val] of Object.entries(obj)) {
+      if (val && typeof val === 'object' && !('$value' in val) && !('value' in val)) {
+        result[key] = mergeDeep(result[key] || {}, val);
+      } else {
+        result[key] = val;
+      }
+    }
+  }
+  return result;
+}
+
+const allPrimitives = mergeDeep(shades, ...allTokenSources);
 
 function resolveRef(value, primitives) {
   if (typeof value !== 'string') return value;
@@ -39,6 +67,7 @@ function resolveRef(value, primitives) {
 function resolveTokens(obj, primitives) {
   const result = {};
   for (const [key, val] of Object.entries(obj)) {
+    if (key.startsWith('_comment')) continue; // skip comment keys
     if (val && typeof val === 'object' && ('$value' in val || 'value' in val)) {
       const raw = val.$value !== undefined ? val.$value : val.value;
       const resolved = resolveRef(raw, primitives);
@@ -54,7 +83,9 @@ function resolveTokens(obj, primitives) {
 
 const bundle = TOKEN_FILES.map(({ file, collection, description }) => {
   let tokens = JSON.parse(fs.readFileSync(path.join(root, file), 'utf8'));
-  tokens = resolveTokens(tokens, shades);
+  // Component tokens need the full primitive set to resolve semantic refs
+  const primitives = collection.startsWith('Components/') ? allPrimitives : shades;
+  tokens = resolveTokens(tokens, primitives);
   return { file, collection, description, tokens };
 });
 
@@ -362,7 +393,6 @@ const html = `<!DOCTYPE html>
       setStyleBtnsDisabled(false);
       setProgress('variables', 100);
       setProgress('styles', 100);
-      // Re-run diff after push to clear badges if everything is in sync
       parent.postMessage({ pluginMessage: { type: 'ready', collections: TOKEN_BUNDLE, typographyTokens: TYPOGRAPHY_BUNDLE } }, '*');
     }
   };
@@ -373,7 +403,6 @@ const html = `<!DOCTYPE html>
   var TYPOGRAPHY_BUNDLE = ${JSON.stringify(typographyTokens)};
   var SHADOW_BUNDLE = ${JSON.stringify(shadowTokens)};
   renderCollections();
-  // Fire diff check on open
   parent.postMessage({ pluginMessage: { type: 'ready', collections: TOKEN_BUNDLE, typographyTokens: TYPOGRAPHY_BUNDLE } }, '*');
 </script>
 

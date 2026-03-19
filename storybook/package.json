@@ -4,11 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-  "storybook": "storybook dev -p 6006",
-  "build-storybook": "storybook build",
-  "chromatic": "npx chromatic --project-token=chpt_c6139f777b34dc8"
-},
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "chromatic": "npx chromatic --project-token=chpt_c6139f777b34dc8"
+  },
   "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

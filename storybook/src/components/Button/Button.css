@@ -1,0 +1,283 @@
+/* ─── Button component tokens ─────────────────────────────────────────────────
+   Naming convention: --tao-[component]-[variant]-[state]-[element]-[attribute]-[property]
+   All values reference semantic tokens — never hardcoded values.
+   Source of truth: tokens/components/button.json
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Sizing (no variant, no state) ──────────────────────────────────────── */
+
+.btn {
+  /* sm */
+  --tao-button-sm-spacing-horizontal:  var(--tao-spacing-sm);
+  --tao-button-sm-spacing-vertical:    var(--tao-spacing-xs);
+  --tao-button-sm-spacing-gap:         var(--tao-spacing-xs);
+  --tao-button-sm-font-size:           var(--tao-typography-size-sm);
+  --tao-button-sm-border-radius:       var(--tao-radius-sm);
+
+  /* md */
+  --tao-button-md-spacing-horizontal:  var(--tao-spacing-md);
+  --tao-button-md-spacing-vertical:    var(--tao-spacing-xs);
+  --tao-button-md-spacing-gap:         var(--tao-spacing-xs);
+  --tao-button-md-font-size:           var(--tao-typography-size-md);
+  --tao-button-md-border-radius:       var(--tao-radius-md);
+
+  /* lg */
+  --tao-button-lg-spacing-horizontal:  var(--tao-spacing-lg);
+  --tao-button-lg-spacing-vertical:    var(--tao-spacing-md);
+  --tao-button-lg-spacing-gap:         var(--tao-spacing-sm);
+  --tao-button-lg-font-size:           var(--tao-typography-size-lg);
+  --tao-button-lg-border-radius:       var(--tao-radius-md);
+}
+
+/* ─── Primary variant ─────────────────────────────────────────────────────── */
+
+.btn--primary {
+  /* default */
+  --tao-button-primary-background-color:  var(--tao-surface-brand-1-strong);
+  --tao-button-primary-text-color:        var(--tao-text-inverse);
+  --tao-button-primary-icon-color:        var(--tao-text-inverse);
+
+  /* hover */
+  --tao-button-primary-hover-background-color:  var(--tao-surface-brand-1-strong);
+
+  /* press */
+  --tao-button-primary-press-background-color:  var(--tao-surface-brand-1-strongest);
+
+  /* active */
+  --tao-button-primary-active-background-color:        var(--tao-surface-brand-1-strongest);
+  --tao-button-primary-active-hover-background-color:  var(--tao-surface-brand-1-strongest);
+  --tao-button-primary-active-press-background-color:  var(--tao-surface-brand-1-strongest);
+
+  /* disabled */
+  --tao-button-primary-disabled-background-color:  var(--tao-state-disabled-bg);
+  --tao-button-primary-disabled-text-color:        var(--tao-state-disabled-text);
+  --tao-button-primary-disabled-icon-color:        var(--tao-state-disabled-text);
+
+  /* loading */
+  --tao-button-primary-loading-background-color:  var(--tao-surface-brand-1-strong);
+}
+
+/* ─── Ghost variant ───────────────────────────────────────────────────────── */
+
+.btn--ghost {
+  /* default */
+  --tao-button-ghost-background-color:  var(--tao-surface-neutral-subtlest);
+  --tao-button-ghost-text-color:        var(--tao-text-default);
+  --tao-button-ghost-icon-color:        var(--tao-text-default);
+
+  /* hover */
+  --tao-button-ghost-hover-background-color:  var(--tao-surface-neutral-subtle);
+
+  /* press */
+  --tao-button-ghost-press-background-color:  var(--tao-surface-neutral-default);
+
+  /* active */
+  --tao-button-ghost-active-background-color:        var(--tao-surface-neutral-default);
+  --tao-button-ghost-active-hover-background-color:  var(--tao-surface-neutral-default);
+  --tao-button-ghost-active-press-background-color:  var(--tao-surface-neutral-strong);
+  --tao-button-ghost-active-press-text-color:        var(--tao-text-inverse);
+  --tao-button-ghost-active-press-icon-color:        var(--tao-text-inverse);
+
+  /* disabled */
+  --tao-button-ghost-disabled-background-color:  var(--tao-state-disabled-bg);
+  --tao-button-ghost-disabled-text-color:        var(--tao-state-disabled-text);
+  --tao-button-ghost-disabled-icon-color:        var(--tao-state-disabled-text);
+
+  /* loading */
+  --tao-button-ghost-loading-background-color:  var(--tao-surface-neutral-subtlest);
+}
+
+/* ─── Danger variant ──────────────────────────────────────────────────────── */
+
+.btn--danger {
+  /* default */
+  --tao-button-danger-background-color:  var(--tao-surface-danger-strong);
+  --tao-button-danger-text-color:        var(--tao-text-inverse);
+  --tao-button-danger-icon-color:        var(--tao-text-inverse);
+
+  /* hover */
+  --tao-button-danger-hover-background-color:  var(--tao-surface-danger-strong);
+
+  /* press */
+  --tao-button-danger-press-background-color:  var(--tao-surface-danger-strongest);
+
+  /* active */
+  --tao-button-danger-active-background-color:        var(--tao-surface-danger-strongest);
+  --tao-button-danger-active-hover-background-color:  var(--tao-surface-danger-strongest);
+  --tao-button-danger-active-press-background-color:  var(--tao-surface-danger-strongest);
+
+  /* disabled */
+  --tao-button-danger-disabled-background-color:  var(--tao-state-disabled-bg);
+  --tao-button-danger-disabled-text-color:        var(--tao-state-disabled-text);
+  --tao-button-danger-disabled-icon-color:        var(--tao-state-disabled-text);
+
+  /* loading */
+  --tao-button-danger-loading-background-color:  var(--tao-surface-danger-strong);
+}
+
+/* ─── Base component styles ───────────────────────────────────────────────── */
+
+.btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  gap:             var(--btn-gap);
+  padding:         var(--btn-padding-v) var(--btn-padding-h);
+  border:          none;
+  border-radius:   var(--btn-border-radius);
+  font-family:     var(--tao-font-family, 'DM Sans', sans-serif);
+  font-size:       var(--btn-font-size);
+  font-weight:     700;
+  line-height:     1;
+  cursor:          pointer;
+  transition:      background-color var(--tao-duration-fast, 100ms) var(--tao-easing-ease-out, ease),
+                   opacity var(--tao-duration-fast, 100ms) var(--tao-easing-ease-out, ease);
+  white-space:     nowrap;
+  text-decoration: none;
+  background-color: var(--btn-bg);
+  color:            var(--btn-text-color);
+}
+
+.btn .btn__icon {
+  color: var(--btn-icon-color);
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ─── Size modifiers ──────────────────────────────────────────────────────── */
+
+.btn--sm {
+  --btn-padding-h:    var(--tao-button-sm-spacing-horizontal);
+  --btn-padding-v:    var(--tao-button-sm-spacing-vertical);
+  --btn-gap:          var(--tao-button-sm-spacing-gap);
+  --btn-font-size:    var(--tao-button-sm-font-size);
+  --btn-border-radius: var(--tao-button-sm-border-radius);
+}
+
+.btn--md {
+  --btn-padding-h:    var(--tao-button-md-spacing-horizontal);
+  --btn-padding-v:    var(--tao-button-md-spacing-vertical);
+  --btn-gap:          var(--tao-button-md-spacing-gap);
+  --btn-font-size:    var(--tao-button-md-font-size);
+  --btn-border-radius: var(--tao-button-md-border-radius);
+}
+
+.btn--lg {
+  --btn-padding-h:    var(--tao-button-lg-spacing-horizontal);
+  --btn-padding-v:    var(--tao-button-lg-spacing-vertical);
+  --btn-gap:          var(--tao-button-lg-spacing-gap);
+  --btn-font-size:    var(--tao-button-lg-font-size);
+  --btn-border-radius: var(--tao-button-lg-border-radius);
+}
+
+/* ─── Variant modifiers ───────────────────────────────────────────────────── */
+
+.btn--primary {
+  --btn-bg:         var(--tao-button-primary-background-color);
+  --btn-text-color: var(--tao-button-primary-text-color);
+  --btn-icon-color: var(--tao-button-primary-icon-color);
+}
+
+.btn--ghost {
+  --btn-bg:         var(--tao-button-ghost-background-color);
+  --btn-text-color: var(--tao-button-ghost-text-color);
+  --btn-icon-color: var(--tao-button-ghost-icon-color);
+}
+
+.btn--danger {
+  --btn-bg:         var(--tao-button-danger-background-color);
+  --btn-text-color: var(--tao-button-danger-text-color);
+  --btn-icon-color: var(--tao-button-danger-icon-color);
+}
+
+/* ─── State modifiers ─────────────────────────────────────────────────────── */
+
+/* primary states */
+.btn--primary:hover:not(:disabled):not(.btn--loading) {
+  --btn-bg: var(--tao-button-primary-hover-background-color);
+}
+.btn--primary:active:not(:disabled):not(.btn--loading) {
+  --btn-bg: var(--tao-button-primary-press-background-color);
+}
+.btn--primary.btn--active {
+  --btn-bg: var(--tao-button-primary-active-background-color);
+}
+.btn--primary.btn--active:hover:not(:disabled) {
+  --btn-bg: var(--tao-button-primary-active-hover-background-color);
+  opacity: 0.88;
+}
+.btn--primary.btn--active:active:not(:disabled) {
+  --btn-bg: var(--tao-button-primary-active-press-background-color);
+  opacity: 0.75;
+}
+
+/* ghost states */
+.btn--ghost:hover:not(:disabled):not(.btn--loading) {
+  --btn-bg: var(--tao-button-ghost-hover-background-color);
+}
+.btn--ghost:active:not(:disabled):not(.btn--loading) {
+  --btn-bg: var(--tao-button-ghost-press-background-color);
+}
+.btn--ghost.btn--active {
+  --btn-bg: var(--tao-button-ghost-active-background-color);
+}
+.btn--ghost.btn--active:hover:not(:disabled) {
+  --btn-bg: var(--tao-button-ghost-active-hover-background-color);
+}
+.btn--ghost.btn--active:active:not(:disabled) {
+  --btn-bg:         var(--tao-button-ghost-active-press-background-color);
+  --btn-text-color: var(--tao-button-ghost-active-press-text-color);
+  --btn-icon-color: var(--tao-button-ghost-active-press-icon-color);
+}
+
+/* danger states */
+.btn--danger:hover:not(:disabled):not(.btn--loading) {
+  --btn-bg: var(--tao-button-danger-hover-background-color);
+}
+.btn--danger:active:not(:disabled):not(.btn--loading) {
+  --btn-bg: var(--tao-button-danger-press-background-color);
+}
+.btn--danger.btn--active {
+  --btn-bg: var(--tao-button-danger-active-background-color);
+}
+.btn--danger.btn--active:hover:not(:disabled) {
+  --btn-bg: var(--tao-button-danger-active-hover-background-color);
+  opacity: 0.88;
+}
+.btn--danger.btn--active:active:not(:disabled) {
+  --btn-bg: var(--tao-button-danger-active-press-background-color);
+  opacity: 0.75;
+}
+
+/* disabled */
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  cursor:  not-allowed;
+  opacity: 0.5;
+}
+.btn--primary:disabled,
+.btn--primary[aria-disabled="true"] {
+  --btn-bg:         var(--tao-button-primary-disabled-background-color);
+  --btn-text-color: var(--tao-button-primary-disabled-text-color);
+  --btn-icon-color: var(--tao-button-primary-disabled-icon-color);
+}
+.btn--ghost:disabled,
+.btn--ghost[aria-disabled="true"] {
+  --btn-bg:         var(--tao-button-ghost-disabled-background-color);
+  --btn-text-color: var(--tao-button-ghost-disabled-text-color);
+  --btn-icon-color: var(--tao-button-ghost-disabled-icon-color);
+}
+.btn--danger:disabled,
+.btn--danger[aria-disabled="true"] {
+  --btn-bg:         var(--tao-button-danger-disabled-background-color);
+  --btn-text-color: var(--tao-button-danger-disabled-text-color);
+  --btn-icon-color: var(--tao-button-danger-disabled-icon-color);
+}
+
+/* loading */
+.btn--loading {
+  cursor: wait;
+  opacity: 0.8;
+  pointer-events: none;
+}
