@@ -2,7 +2,7 @@ import React from 'react';
 import { IconColors } from '../components/IconColors';
 
 const meta = {
-  title: 'Foundations / Icons / Icon Colors',
+  title: 'Foundations / Colors / Icon Colors',
   component: IconColors,
   tags: ['autodocs'],
   parameters: {
