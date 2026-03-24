@@ -17,7 +17,6 @@ const TOKEN_FILES = [
   { file: 'tokens/semantic/text.json',        collection: 'Semantic/Text',     description: 'Text color tokens' },
   { file: 'tokens/semantic/borders.json',     collection: 'Semantic/Borders',  description: 'Border color tokens' },
   { file: 'tokens/semantic/states.json',      collection: 'Semantic/States',   description: 'Interactive state tokens' },
-  { file: 'tokens/components/button.json',    collection: 'Components/Button', description: 'Button component tokens' },
   { file: 'tokens/semantic/icons.json',       collection: 'Semantic/Icons',    description: 'Icon color tokens' },
 ];
 
@@ -104,7 +103,7 @@ const html = `<!DOCTYPE html>
   <meta charset="utf-8">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: 'Inter', sans-serif; font-size: 12px; background: #fff; }
+    body { font-family: 'DM Sans', sans-serif; font-size: 12px; background: #fff; }
     .header { padding: 16px; border-bottom: 1px solid #e5e5e5; }
     h1 { font-size: 14px; font-weight: 600; color: #111; margin-bottom: 4px; }
     .header p { font-size: 11px; color: #888; }

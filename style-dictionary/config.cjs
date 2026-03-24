@@ -97,7 +97,8 @@ module.exports = {
     "../tokens/semantic/borders.json",
     "../tokens/semantic/states.json",
     "../tokens/semantic/icons.json",
-    "../tokens/components/button.json",
+    "../tokens/base/shadows.json",
+    "../tokens/semantic/typography.json",
   ],
   platforms: {
     css: {

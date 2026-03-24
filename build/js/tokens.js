@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Tue, 17 Mar 2026 14:53:50 GMT
+ * Generated on Tue, 24 Mar 2026 14:21:55 GMT
  */
 
 export const tao-color-shade-palette-1-1 = "#cff6ff"; // palette-1 shade 1 — lightness 97%

@@ -195,7 +195,7 @@ var TYPOGRAPHY_SIZES = {
 };
 
 // ⚠️  Update to match the typeface used in your Figma file
-var FONT_FAMILY = 'Inter';
+var FONT_FAMILY = 'DM Sans';
 
 var FONT_WEIGHT_MAP = {
   '300': 'Light',
