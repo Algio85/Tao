@@ -1,0 +1,14 @@
+{
+  "storyId": "square-with-one-of-the-surface-tokens",
+  "title": "Square With One Of The Surface Tokens",
+  "versions": [
+    {
+      "id": "193276dd8d2f1d59",
+      "timestamp": 1774442705895,
+      "prompt": "make a square with one of the surface tokens",
+      "code": "import React from 'react';\nimport type { Meta, StoryObj } from '@storybook/react';\nimport { SurfaceTokens } from './src/components';\n\nconst meta: Meta = {\n  title: 'Generated/Square With One Of The Surface Tokens',\n  id: 'square-with-one-of-the-surface-tokens-76fc0444',\n  parameters: { layout: 'centered' },\n  tags: ['autodocs'],\n};\n\nexport default meta;\ntype Story = StoryObj<typeof meta>;\n\nexport const DefaultSquare: Story = {\n  render: () => (\n    <div style={{ padding: '24px' }}>\n      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>\n        <h2 style={{ marginTop: '32px', marginBottom: '12px', textAlign: 'center' }}>Square with Default Surface Token</h2>\n        <div\n          style={{\n            width: '150px',\n            height: '150px',\n            backgroundColor: 'var(--surface-primary-default)', // Using a surface token variable\n            borderRadius: '8px',\n            display: 'flex',\n            alignItems: 'center',\n            justifyContent: 'center',\n            padding: '24px', // Internal padding for the card-like square\n            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',\n          }}\n        >\n          <span style={{ color: 'var(--text-primary)', fontSize: '14px', textAlign: 'center' }}>\n            Surface Primary Default\n          </span>\n        </div>\n      </div>\n    </div>\n  ),\n};\n\nexport const AccentSquare: Story = {\n  render: () => (\n    <div style={{ padding: '24px' }}>\n      <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', alignItems: 'center' }}>\n        <h2 style={{ marginTop: '32px', marginBottom: '12px', textAlign: 'center' }}>Square with Accent Surface Token</h2>\n        <div\n          style={{\n            width: '150px',\n            height: '150px',\n            backgroundColor: 'var(--surface-accent-default)', // Using a different surface token variable\n            borderRadius: '8px',\n            display: 'flex',\n            alignItems: 'center',\n            justifyContent: 'center',\n            padding: '24px', // Internal padding for the card-like square\n            boxShadow: '0 4px 6px rgba(0,0,0,0.1)',\n          }}\n        >\n          <span style={{ color: 'var(--text-primary)', fontSize: '14px', textAlign: 'center' }}>\n            Surface Accent Default\n          </span>\n        </div>\n      </div>\n    </div>\n  ),\n};",
+      "fileName": "square-with-one-of-the-surface-tokens-76fc0444.stories.tsx"
+    }
+  ],
+  "currentVersionId": "193276dd8d2f1d59"
+}

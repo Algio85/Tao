@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "lastReconciled": "2026-03-25T12:40:59.927Z",
+  "stories": {
+    "voice-canvas.stories.tsx": {
+      "id": "voice-canvas",
+      "fileName": "voice-canvas.stories.tsx",
+      "title": "Voice Canvas",
+      "source": "voice-canvas",
+      "permanent": true,
+      "createdAt": "2026-03-25T09:58:14.915Z",
+      "updatedAt": "2026-03-25T09:58:14.916Z",
+      "conversation": [],
+      "metadata": {}
+    }
+  }
+}

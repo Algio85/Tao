@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "lastReconciled": "2026-03-24T14:30:44.481Z",
+  "stories": {
+    "BorderColors.stories.jsx": {
+      "id": "BorderColors",
+      "fileName": "BorderColors.stories.jsx",
+      "title": "Foundations / Colors / Border Colors",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.417Z",
+      "updatedAt": "2026-03-16T08:39:39.056Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Borders.stories.jsx": {
+      "id": "Borders",
+      "fileName": "Borders.stories.jsx",
+      "title": "Foundations / Borders",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.414Z",
+      "updatedAt": "2026-03-15T13:07:15.414Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "ColorPalette.stories.jsx": {
+      "id": "ColorPalette",
+      "fileName": "ColorPalette.stories.jsx",
+      "title": "Foundations / Colors / Color Palette",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T12:42:39.939Z",
+      "updatedAt": "2026-03-15T12:42:39.940Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Elevation.stories.jsx": {
+      "id": "Elevation",
+      "fileName": "Elevation.stories.jsx",
+      "title": "Foundations / Elevation",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.414Z",
+      "updatedAt": "2026-03-16T17:12:19.313Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "FigmaConsole.stories.jsx": {
+      "id": "FigmaConsole",
+      "fileName": "FigmaConsole.stories.jsx",
+      "title": "Figma / Console",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.419Z",
+      "updatedAt": "2026-03-18T22:03:32.084Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "FigmaPlugin.stories.jsx": {
+      "id": "FigmaPlugin",
+      "fileName": "FigmaPlugin.stories.jsx",
+      "title": "Figma / Token Pusher",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T12:42:39.939Z",
+      "updatedAt": "2026-03-17T15:29:05.331Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "IconColors.stories.jsx": {
+      "id": "IconColors",
+      "fileName": "IconColors.stories.jsx",
+      "title": "Foundations / Colors / Icon Colors",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.417Z",
+      "updatedAt": "2026-03-20T07:32:42.527Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Icons.stories.jsx": {
+      "id": "Icons",
+      "fileName": "Icons.stories.jsx",
+      "title": "Foundations / Icons",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.419Z",
+      "updatedAt": "2026-03-19T13:26:05.029Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Motion.stories.jsx": {
+      "id": "Motion",
+      "fileName": "Motion.stories.jsx",
+      "title": "Foundations / Motion",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.411Z",
+      "updatedAt": "2026-03-16T16:58:47.350Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Opacity.stories.jsx": {
+      "id": "Opacity",
+      "fileName": "Opacity.stories.jsx",
+      "title": "Foundations / Opacity",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.411Z",
+      "updatedAt": "2026-03-16T13:44:12.837Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Shadows.stories.jsx": {
+      "id": "Shadows",
+      "fileName": "Shadows.stories.jsx",
+      "title": "Foundations / Shadows",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.417Z",
+      "updatedAt": "2026-03-15T13:07:15.417Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Spacing.stories.jsx": {
+      "id": "Spacing",
+      "fileName": "Spacing.stories.jsx",
+      "title": "Foundations / Spacing",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.411Z",
+      "updatedAt": "2026-03-15T13:07:15.411Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "States.stories.jsx": {
+      "id": "States",
+      "fileName": "States.stories.jsx",
+      "title": "Foundations / States",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T12:42:39.939Z",
+      "updatedAt": "2026-03-16T16:52:23.193Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Surfaces.stories.jsx": {
+      "id": "Surfaces",
+      "fileName": "Surfaces.stories.jsx",
+      "title": "Foundations / Colors / Surfaces",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T12:42:50.920Z",
+      "updatedAt": "2026-03-15T12:42:50.920Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "TextColors.stories.jsx": {
+      "id": "TextColors",
+      "fileName": "TextColors.stories.jsx",
+      "title": "Foundations / Colors / Text Colors",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T12:42:39.939Z",
+      "updatedAt": "2026-03-15T12:47:28.048Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "TypeStyles.stories.jsx": {
+      "id": "TypeStyles",
+      "fileName": "TypeStyles.stories.jsx",
+      "title": "Foundations / Typography / Type Styles",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T12:43:03.947Z",
+      "updatedAt": "2026-03-18T22:05:45.422Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "Typography.stories.jsx": {
+      "id": "Typography",
+      "fileName": "Typography.stories.jsx",
+      "title": "Foundations / Typography / Type Scale",
+      "source": "mcp-external",
+      "permanent": false,
+      "createdAt": "2026-03-15T13:07:15.419Z",
+      "updatedAt": "2026-03-15T13:07:15.419Z",
+      "conversation": [],
+      "metadata": {}
+    },
+    "voice-canvas.stories.tsx": {
+      "id": "voice-canvas",
+      "fileName": "voice-canvas.stories.tsx",
+      "title": "Voice Canvas",
+      "source": "voice-canvas",
+      "permanent": true,
+      "createdAt": "2026-03-24T14:30:43.971Z",
+      "updatedAt": "2026-03-24T14:30:43.972Z",
+      "conversation": [],
+      "metadata": {}
+    }
+  }
+}
