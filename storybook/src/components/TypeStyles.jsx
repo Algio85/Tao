@@ -60,9 +60,9 @@ function StyleRow({ styleName }) {
     <div style={{ borderBottom: '1px solid ' + theme.border.subtle }}>
       {WEIGHTS.map(weight => {
         const token = typographyTokens.text[styleName]?.[weight];
-        const fontSize   = resolveSize(token?.$value?.fontSize);
-        const fontWeight = token?.$value?.fontWeight;
-        const lineHeight = token?.$value?.lineHeight;
+        const fontSize   = resolveSize(token?.value?.fontSize);
+        const fontWeight = token?.value?.fontWeight;
+        const lineHeight = token?.value?.lineHeight;
         const tokenName  = 'text.' + styleName + '.' + weight;
 
         const handleCopy = () => {
