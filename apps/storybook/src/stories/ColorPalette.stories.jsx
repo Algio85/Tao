@@ -5,16 +5,6 @@ import shadesTokens from '../tokens/shades.json';
 
 const ALL_COLORS = Object.keys(shadesTokens.color.shade);
 
-function ColorPaletteWithGlobals(args) {
-  const [, updateGlobals] = useGlobals();
-  return (
-    <ColorPalette
-      {...args}
-      onColorChange={(name, hex) => updateGlobals({ [name]: hex })}
-    />
-  );
-}
-
 const meta = {
   title: 'Foundations / Colors / Color Palette',
   component: ColorPalette,
@@ -96,7 +86,15 @@ export default meta;
 
 export const FullPalette = {
   name: 'Full Palette',
-  render: (args) => <ColorPaletteWithGlobals {...args} />,
+  render: (args) => {
+    const [, updateGlobals] = useGlobals();
+    return (
+      <ColorPalette
+        {...args}
+        onColorChange={(name, hex) => updateGlobals({ [name]: hex })}
+      />
+    );
+  },
   args: {
     colors: ALL_COLORS,
     showBrandToken: true,
