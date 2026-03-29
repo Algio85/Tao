@@ -1,8 +1,19 @@
 import React from 'react';
+import { useGlobals } from '@storybook/preview-api';
 import { ColorPalette } from '../components/ColorPalette';
 import shadesTokens from '../tokens/shades.json';
 
 const ALL_COLORS = Object.keys(shadesTokens.color.shade);
+
+function ColorPaletteWithGlobals(args) {
+  const [, updateGlobals] = useGlobals();
+  return (
+    <ColorPalette
+      {...args}
+      onColorChange={(name, hex) => updateGlobals({ [name]: hex })}
+    />
+  );
+}
 
 const meta = {
   title: 'Foundations / Colors / Color Palette',
@@ -85,6 +96,7 @@ export default meta;
 
 export const FullPalette = {
   name: 'Full Palette',
+  render: (args) => <ColorPaletteWithGlobals {...args} />,
   args: {
     colors: ALL_COLORS,
     showBrandToken: true,

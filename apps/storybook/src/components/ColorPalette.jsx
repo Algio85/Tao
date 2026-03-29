@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useGlobals } from '@storybook/preview-api';
 import { ShadeCell, BrandTokenRow } from './ColorSwatch';
 import defaultTokens from '../tokens/shades.json';
 
@@ -152,13 +151,13 @@ export function ColorPalette({
   colors = Object.keys(DEFAULT_BASE),
   showBrandToken = true,
   baseColors = DEFAULT_BASE,
+  onColorChange,
 }) {
   const [liveColors, setLiveColors] = useState(baseColors);
-  const [, updateGlobals] = useGlobals();
 
   const handleChange = (name, hex) => {
     setLiveColors(prev => ({ ...prev, [name]: hex }));
-    updateGlobals({ [name]: hex });
+    onColorChange?.(name, hex);
   };
 
   return (
