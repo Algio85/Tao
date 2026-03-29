@@ -66,7 +66,21 @@ StyleDictionary.registerFormat({
   name: "css/custom-properties",
   formatter: function({ dictionary }) {
     var lines = dictionary.allTokens.map(function(token) {
-      return '  --' + token.name + ': ' + token.value + ';';
+      var value;
+      // If original value is a simple reference like {color.shade.palette-1.1}
+      // output as CSS var() reference instead of resolved value
+      if (
+        typeof token.original.value === 'string' &&
+        token.original.value.startsWith('{') &&
+        token.original.value.endsWith('}')
+      ) {
+        var refPath = token.original.value.slice(1, -1).split('.');
+        var refName = 'tao-' + refPath.join('-');
+        value = 'var(--' + refName + ')';
+      } else {
+        value = token.value;
+      }
+      return '  --' + token.name + ': ' + value + ';';
     });
     return ':root {\n' + lines.join('\n') + '\n}\n';
   },
