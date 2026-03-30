@@ -33,53 +33,118 @@
   -webkit-appearance:  none;
 }
 
-/* ─── Focus visible — keyboard navigation ─────────────────────────────────── */
+/* ─── Focus visible ───────────────────────────────────────────────────────── */
 
 .radio-button__input:focus-visible ~ .radio-button__radio {
-  box-shadow:    0 0 0 2px var(--tao-border-focus);
-  border-radius: 50%;
+  box-shadow:    0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 35%, transparent);
   outline:       none;
 }
 
 /* ─── Custom radio circle ─────────────────────────────────────────────────── */
 
 .radio-button__radio {
-  flex-shrink: 0;
-  width:       16px;
-  height:      16px;
-  position:    relative;
-  display:     inline-flex;
-  align-items: center;
-  justify-content: center;
+  flex-shrink:      0;
+  width:            16px;
+  height:           16px;
+  position:         relative;
+  border-radius:    50%;
+  box-sizing:       border-box;
+  background-color: var(--tao-surface-neutral-subtlest);
+  border:           1.5px solid var(--tao-border-default);
+  display:          inline-flex;
+  align-items:      center;
+  justify-content:  center;
+  transition:
+    background-color var(--tao-duration-fast) var(--tao-easing-ease-out),
+    border-color     var(--tao-duration-fast) var(--tao-easing-ease-out),
+    box-shadow       var(--tao-duration-fast) var(--tao-easing-ease-out);
 }
 
-/* ─── Image assets ────────────────────────────────────────────────────────── */
+/* ─── CSS inner dot ───────────────────────────────────────────────────────── */
 
-.radio-button__img {
-  position:   absolute;
-  display:    block;
-  width:      100%;
-  height:     100%;
-  max-width:  none;
-  top:        0;
-  left:       0;
-  transition: opacity var(--tao-duration-fast) var(--tao-easing-ease-out);
+.radio-button__radio::after {
+  content:       '';
+  width:         6px;
+  height:        6px;
+  border-radius: 50%;
+  background:    #fff;
+  opacity:       0;
+  transform:     scale(0.5);
+  transition:
+    opacity   var(--tao-duration-fast) var(--tao-easing-ease-out),
+    transform var(--tao-duration-fast) var(--tao-easing-ease-out);
 }
 
-/* Hover/press — image bleeds by 12.5% to show focus ring */
-.radio-button__img-bleed {
-  position: absolute;
-  inset:    -12.5%;
-  display:  block;
+/* ─── Selected state ──────────────────────────────────────────────────────── */
+
+.radio-button__input:checked ~ .radio-button__radio {
+  background-color: var(--tao-surface-brand-1-strong);
+  border-color:     transparent;
 }
 
-.radio-button__img-bleed .radio-button__img {
-  position: static;
-  width:    100%;
-  height:   100%;
+.radio-button__input:checked ~ .radio-button__radio::after {
+  opacity:   1;
+  transform: scale(1);
 }
 
-/* ─── Label group ─────────────────────────────────────────────────────────── */
+/* ─── Unselected hover ────────────────────────────────────────────────────── */
+
+.radio-button:not(.radio-button--disabled):hover .radio-button__input:not(:checked) ~ .radio-button__radio {
+  background-color: var(--tao-surface-neutral-subtle);
+  border-color:     var(--tao-border-strong);
+  box-shadow:       0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 25%, transparent);
+}
+
+/* ─── Selected hover ──────────────────────────────────────────────────────── */
+
+.radio-button:not(.radio-button--disabled):hover .radio-button__input:checked ~ .radio-button__radio {
+  background-color: var(--tao-surface-brand-1-bold);
+  box-shadow:       0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 25%, transparent);
+}
+
+/* ─── Unselected press ────────────────────────────────────────────────────── */
+
+.radio-button:not(.radio-button--disabled):active .radio-button__input:not(:checked) ~ .radio-button__radio {
+  background-color: var(--tao-surface-neutral-default);
+  border-color:     var(--tao-border-strong);
+}
+
+/* ─── Selected press ──────────────────────────────────────────────────────── */
+
+.radio-button:not(.radio-button--disabled):active .radio-button__input:checked ~ .radio-button__radio {
+  background-color: var(--tao-surface-brand-1-strongest);
+}
+
+/* ─── Disabled ────────────────────────────────────────────────────────────── */
+
+.radio-button--disabled .radio-button__radio {
+  background-color: var(--tao-state-disabled-bg);
+  border:           none;
+}
+
+/* ─── Static overrides for Storybook docs ─────────────────────────────────── */
+
+.radio-button--static-hover .radio-button__input:not(:checked) ~ .radio-button__radio {
+  background-color: var(--tao-surface-neutral-subtle) !important;
+  border-color:     var(--tao-border-strong) !important;
+  box-shadow:       0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 25%, transparent) !important;
+}
+
+.radio-button--static-hover .radio-button__input:checked ~ .radio-button__radio {
+  background-color: var(--tao-surface-brand-1-bold) !important;
+  box-shadow:       0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 25%, transparent) !important;
+}
+
+.radio-button--static-press .radio-button__input:not(:checked) ~ .radio-button__radio {
+  background-color: var(--tao-surface-neutral-default) !important;
+  border-color:     var(--tao-border-strong) !important;
+}
+
+.radio-button--static-press .radio-button__input:checked ~ .radio-button__radio {
+  background-color: var(--tao-surface-brand-1-strongest) !important;
+}
+
+/* ─── Label ───────────────────────────────────────────────────────────────── */
 
 .radio-button__label-group {
   display:     inline-flex;
@@ -106,6 +171,5 @@
   font-family: 'DM Sans', sans-serif;
   font-size:   12px;
   font-weight: 400;
-  line-height: normal;
   color:       var(--tao-text-subtle);
 }

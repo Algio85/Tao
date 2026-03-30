@@ -11,8 +11,8 @@
 }
 
 .checkbox--disabled {
-  opacity:  0.5;
-  cursor:   not-allowed;
+  opacity:        0.5;
+  cursor:         not-allowed;
   pointer-events: none;
 }
 
@@ -33,98 +33,115 @@
   -webkit-appearance:  none;
 }
 
-/* ─── Focus visible — keyboard navigation ─────────────────────────────────── */
+/* ─── Focus visible ───────────────────────────────────────────────────────── */
 
 .checkbox__input:focus-visible ~ .checkbox__box {
-  box-shadow: 0 0 0 2px var(--tao-border-focus);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 35%, transparent);
   outline:    none;
 }
 
 /* ─── Custom box ──────────────────────────────────────────────────────────── */
 
 .checkbox__box {
-  flex-shrink:    0;
-  width:          16px;
-  height:         16px;
-  position:       relative;
-  border-radius:  var(--tao-radius-sm);
-  box-sizing:     border-box;
-  /* Base idle state */
+  flex-shrink:      0;
+  width:            16px;
+  height:           16px;
+  position:         relative;
+  border-radius:    var(--tao-radius-sm, 4px);
+  box-sizing:       border-box;
   background-color: var(--tao-surface-neutral-subtlest);
   border:           1px solid var(--tao-border-default);
-  /* Motion tokens */
   transition:
     background-color var(--tao-duration-fast) var(--tao-easing-ease-out),
     border-color     var(--tao-duration-fast) var(--tao-easing-ease-out),
     box-shadow       var(--tao-duration-fast) var(--tao-easing-ease-out);
 }
 
-/* ── Unchecked hover — CSS driven, no JS ───────────────────────────────────── */
-.checkbox:not(.checkbox--disabled):hover .checkbox__box {
+/* ─── CSS checkmark ───────────────────────────────────────────────────────── */
+
+.checkbox__box::after {
+  content:      '';
+  position:     absolute;
+  display:      none;
+  width:        5px;
+  height:       9px;
+  top:          1px;
+  left:         4px;
+  border:       2px solid #fff;
+  border-top:   none;
+  border-left:  none;
+  transform:    rotate(45deg);
+}
+
+/* ─── Checked state ───────────────────────────────────────────────────────── */
+
+.checkbox__input:checked ~ .checkbox__box {
+  background-color: var(--tao-surface-brand-1-strong);
+  border-color:     transparent;
+}
+
+.checkbox__input:checked ~ .checkbox__box::after {
+  display: block;
+}
+
+/* ─── Unchecked hover ─────────────────────────────────────────────────────── */
+
+.checkbox:not(.checkbox--disabled):hover .checkbox__input:not(:checked) ~ .checkbox__box {
   background-color: var(--tao-surface-neutral-subtle);
-  border:           1px solid var(--tao-border-strong);
-  box-shadow:       0px 0px 0px 2px rgba(41, 105, 240, 0.3);
+  border-color:     var(--tao-border-strong);
+  box-shadow:       0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 25%, transparent);
 }
 
-/* ── Unchecked press — CSS driven, no JS ───────────────────────────────────── */
-.checkbox:not(.checkbox--disabled):active .checkbox__box {
+/* ─── Checked hover ───────────────────────────────────────────────────────── */
+
+.checkbox:not(.checkbox--disabled):hover .checkbox__input:checked ~ .checkbox__box {
+  background-color: var(--tao-surface-brand-1-bold);
+  box-shadow:       0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 25%, transparent);
+}
+
+/* ─── Unchecked press ─────────────────────────────────────────────────────── */
+
+.checkbox:not(.checkbox--disabled):active .checkbox__input:not(:checked) ~ .checkbox__box {
   background-color: var(--tao-surface-neutral-default);
-  border:           1px solid var(--tao-border-strong);
-  box-shadow:       0px 0px 0px 2px rgba(41, 105, 240, 0.3);
+  border-color:     var(--tao-border-strong);
 }
 
-/* ── Unchecked disabled ─────────────────────────────────────────────────────── */
+/* ─── Checked press ───────────────────────────────────────────────────────── */
+
+.checkbox:not(.checkbox--disabled):active .checkbox__input:checked ~ .checkbox__box {
+  background-color: var(--tao-surface-brand-1-strongest);
+}
+
+/* ─── Disabled ────────────────────────────────────────────────────────────── */
+
 .checkbox--disabled .checkbox__box {
   background-color: var(--tao-state-disabled-bg);
   border:           none;
 }
 
-/* ── Checked — image fills the box ─────────────────────────────────────────── */
-.checkbox__input:checked ~ .checkbox__box {
-  background-color: transparent;
-  border:           none;
-}
+/* ─── Static overrides for Storybook docs ─────────────────────────────────── */
 
-/* ─── Static state overrides for Storybook docs ──────────────────────────── */
-
-.checkbox--static-hover .checkbox__box {
+.checkbox--static-hover .checkbox__input:not(:checked) ~ .checkbox__box {
   background-color: var(--tao-surface-neutral-subtle) !important;
-  border:           1px solid var(--tao-border-strong) !important;
-  box-shadow:       0px 0px 0px 2px rgba(41, 105, 240, 0.3) !important;
+  border-color:     var(--tao-border-strong) !important;
+  box-shadow:       0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 25%, transparent) !important;
 }
 
-.checkbox--static-press .checkbox__box {
+.checkbox--static-hover .checkbox__input:checked ~ .checkbox__box {
+  background-color: var(--tao-surface-brand-1-bold) !important;
+  box-shadow:       0 0 0 3px color-mix(in srgb, var(--tao-border-focus) 25%, transparent) !important;
+}
+
+.checkbox--static-press .checkbox__input:not(:checked) ~ .checkbox__box {
   background-color: var(--tao-surface-neutral-default) !important;
-  border:           1px solid var(--tao-border-strong) !important;
-  box-shadow:       0px 0px 0px 2px rgba(41, 105, 240, 0.3) !important;
+  border-color:     var(--tao-border-strong) !important;
 }
 
-/* ─── Image assets ────────────────────────────────────────────────────────── */
-
-.checkbox__img {
-  position:   absolute;
-  display:    block;
-  width:      100%;
-  height:     100%;
-  max-width:  none;
-  top:        0;
-  left:       0;
+.checkbox--static-press .checkbox__input:checked ~ .checkbox__box {
+  background-color: var(--tao-surface-brand-1-strongest) !important;
 }
 
-/* Hover/press checked — image bleeds by 12.5% to show focus ring */
-.checkbox__img-bleed {
-  position: absolute;
-  inset:    -12.5%;
-  display:  block;
-}
-
-.checkbox__img-bleed .checkbox__img {
-  position: static;
-  width:    100%;
-  height:   100%;
-}
-
-/* ─── Label group ─────────────────────────────────────────────────────────── */
+/* ─── Label ───────────────────────────────────────────────────────────────── */
 
 .checkbox__label-group {
   display:     inline-flex;
@@ -151,6 +168,5 @@
   font-family: 'DM Sans', sans-serif;
   font-size:   12px;
   font-weight: 400;
-  line-height: normal;
   color:       var(--tao-text-subtle);
 }
