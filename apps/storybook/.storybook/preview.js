@@ -15,51 +15,10 @@ export const globalTypes = {
   'palette-10': { defaultValue: '#0891B2' },
   'palette-11': { defaultValue: '#525252' },
 
-  // Toolbar globals
-  typescale: {
-    name: 'Type scale',
-    defaultValue: '1.2',
-    toolbar: {
-      icon: 'typography',
-      items: [
-        { value: '1.125', title: 'Compact  (1.125)' },
-        { value: '1.2',   title: 'Default  (1.2)'   },
-        { value: '1.25',  title: 'Medium   (1.25)'  },
-        { value: '1.333', title: 'Large    (1.333)' },
-        { value: '1.5',   title: 'Expressive (1.5)' },
-      ],
-      dynamicTitle: true,
-    },
-  },
-  density: {
-    name: 'Density',
-    defaultValue: '1',
-    toolbar: {
-      icon: 'component',
-      items: [
-        { value: '0.75', title: 'Compact'     },
-        { value: '1',    title: 'Comfortable' },
-        { value: '1.25', title: 'Spacious'    },
-      ],
-      dynamicTitle: true,
-    },
-  },
-  iconWeight: {
-    name: 'Icon weight',
-    defaultValue: 'regular',
-    toolbar: {
-      icon: 'star',
-      items: [
-        { value: 'thin',    title: 'Thin'    },
-        { value: 'light',   title: 'Light'   },
-        { value: 'regular', title: 'Regular' },
-        { value: 'bold',    title: 'Bold'    },
-        { value: 'fill',    title: 'Fill'    },
-        { value: 'duotone', title: 'Duotone' },
-      ],
-      dynamicTitle: true,
-    },
-  },
+  // Controlled from dedicated story pages — no toolbar
+  typescale:  { defaultValue: '1.2'     },
+  density:    { defaultValue: '1'       },
+  iconWeight: { defaultValue: 'regular' },
 };
 
 /** @type { import('@storybook/react').Preview } */
