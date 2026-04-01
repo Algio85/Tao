@@ -1,10 +1,13 @@
 import React from 'react';
+import { useGlobals } from '@storybook/preview-api';
 import { TypographyScale } from '../components/TypographyScale';
+
+const SCROLL_KEY = 'tao-typescale-scroll';
 
 const meta = {
   title: 'Foundations / Typography / Type Scale',
   component: TypographyScale,
-  tags: ['autodocs'],
+  tags: [],
   parameters: {
     layout: 'fullscreen',
     backgrounds: {
@@ -51,17 +54,8 @@ Click any row to copy the token name to clipboard.
     },
   },
   argTypes: {
-    base: {
-      control: { type: 'range', min: 12, max: 24, step: 1 },
-      description: 'Base font size in px',
-      table: { defaultValue: { summary: 16 } },
-    },
-    ratio: {
-      control: 'select',
-      options: [1.067, 1.125, 1.2, 1.25, 1.333, 1.618],
-      description: 'Scale ratio',
-      table: { defaultValue: { summary: 1.2 } },
-    },
+    base:  { control: false },
+    ratio: { control: false },
   },
 };
 
@@ -69,21 +63,51 @@ export default meta;
 
 export const Default = {
   name: 'Minor Third (1.2)',
+  render: function Render(args) {
+    const [globals, updateGlobals] = useGlobals();
+    const ratio = parseFloat(globals.typescale)   || args.ratio;
+    const base  = parseInt(globals.typescaleBase) || args.base;
+    return (
+      <TypographyScale
+        {...args} ratio={ratio} base={base}
+        onRatioChange={(r) => { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); updateGlobals({ typescale: String(r) }); }}
+        onBaseChange={(b)  => { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); updateGlobals({ typescaleBase: String(b) }); }}
+      />
+    );
+  },
   args: { base: 16, ratio: 1.2 },
 };
 
 export const Compact = {
   name: 'Major Second (1.125)',
-  args: { base: 16, ratio: 1.125 },
-  parameters: {
-    docs: { description: { story: 'Compact scale — good for dashboards and data-dense UIs.' } },
+  render: function Render(args) {
+    const [globals, updateGlobals] = useGlobals();
+    const ratio = parseFloat(globals.typescale)   || args.ratio;
+    const base  = parseInt(globals.typescaleBase) || args.base;
+    return (
+      <TypographyScale
+        {...args} ratio={ratio} base={base}
+        onRatioChange={(r) => { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); updateGlobals({ typescale: String(r) }); }}
+        onBaseChange={(b)  => { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); updateGlobals({ typescaleBase: String(b) }); }}
+      />
+    );
   },
+  args: { base: 16, ratio: 1.125 },
 };
 
 export const Expressive = {
   name: 'Perfect Fourth (1.333)',
-  args: { base: 16, ratio: 1.333 },
-  parameters: {
-    docs: { description: { story: 'Strong hierarchy — good for marketing sites and editorial layouts.' } },
+  render: function Render(args) {
+    const [globals, updateGlobals] = useGlobals();
+    const ratio = parseFloat(globals.typescale)   || args.ratio;
+    const base  = parseInt(globals.typescaleBase) || args.base;
+    return (
+      <TypographyScale
+        {...args} ratio={ratio} base={base}
+        onRatioChange={(r) => { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); updateGlobals({ typescale: String(r) }); }}
+        onBaseChange={(b)  => { sessionStorage.setItem(SCROLL_KEY, String(window.scrollY)); updateGlobals({ typescaleBase: String(b) }); }}
+      />
+    );
   },
+  args: { base: 16, ratio: 1.333 },
 };

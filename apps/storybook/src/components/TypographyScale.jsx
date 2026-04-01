@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { theme } from '../tokens/theme.js';
 
 const RATIOS = [
@@ -67,9 +67,28 @@ function TypeRow({ name, px, rem, copied, onCopy }) {
   );
 }
 
-export function TypographyScale({ base = 16, ratio = 1.2 }) {
+const SCROLL_KEY = 'tao-typescale-scroll';
+
+export function TypographyScale({ base = 16, ratio = 1.2, onBaseChange, onRatioChange }) {
   const [liveBase, setLiveBase] = useState(base);
   const [liveRatio, setLiveRatio] = useState(ratio);
+
+  // Restore scroll position after globals update causes re-mount
+  useEffect(() => {
+    const saved = sessionStorage.getItem(SCROLL_KEY);
+    if (saved !== null) {
+      const y = parseInt(saved, 10);
+      sessionStorage.removeItem(SCROLL_KEY);
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: y, behavior: 'instant' });
+        requestAnimationFrame(() => window.scrollTo({ top: y, behavior: 'instant' }));
+      });
+    }
+  }, []);
+
+  // Sync local state when globals-driven props change (e.g. navigating back to this story)
+  useEffect(() => { setLiveBase(base); }, [base]);
+  useEffect(() => { setLiveRatio(ratio); }, [ratio]);
   const [copied, setCopied] = useState(null);
   const [exported, setExported] = useState(false);
 
@@ -130,7 +149,8 @@ export function TypographyScale({ base = 16, ratio = 1.2 }) {
           <input
             type="range" min={12} max={24} step={1}
             value={liveBase}
-            onChange={e => setLiveBase(Number(e.target.value))}
+            onInput={e => setLiveBase(Number(e.target.value))}
+            onChange={e => { const v = Number(e.target.value); setLiveBase(v); onBaseChange?.(v); }}
             style={{ width: 200, accentColor: theme.accent.default }}
           />
           <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: theme.font, fontSize: 9, color: theme.text.subtlest }}>
@@ -146,7 +166,7 @@ export function TypographyScale({ base = 16, ratio = 1.2 }) {
             {RATIOS.map(r => (
               <button
                 key={r.value}
-                onClick={() => setLiveRatio(r.value)}
+                onClick={() => { setLiveRatio(r.value); onRatioChange?.(r.value); }}
                 style={{
                   all: 'unset', cursor: 'pointer',
                   padding: `${theme.spacing.xxs}px ${theme.spacing.xs}px`,

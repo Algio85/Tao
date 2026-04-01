@@ -10,7 +10,7 @@
   padding:         var(--tao-spacing-xxs, 4px) var(--tao-spacing-xs, 8px);
   border-radius:   var(--tao-radius-md, 8px);
   font-family:     'DM Sans', sans-serif;
-  font-size:       11px;
+  font-size:       var(--tao-typography-size-xs);
   font-weight:     700;
   line-height:     1.4;
   white-space:     nowrap;

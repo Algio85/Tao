@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { theme } from '../tokens/theme.js';
 import typographyTokens from '../tokens/semantic/typography.json';
 
@@ -15,12 +15,19 @@ const WEIGHTS = ['light', 'regular', 'bold'];
 
 const PREVIEW_TEXT = 'The quick brown fox';
 
-const SIZE_MAP = { xs: '11px', sm: '13px', md: '16px', lg: '19px', xl: '23px', xxl: '28px', xxxl: '33px' };
+const SIZE_KEYS = ['xs', 'sm', 'md', 'lg', 'xl', 'xxl', 'xxxl'];
 
-function resolveSize(ref) {
+function getLiveSizeMap() {
+  const cs = getComputedStyle(document.documentElement);
+  return Object.fromEntries(
+    SIZE_KEYS.map(k => [k, cs.getPropertyValue(`--tao-typography-size-${k}`).trim() || ''])
+  );
+}
+
+function resolveSize(ref, sizeMap) {
   const match = ref?.match?.(/^\{typography\.size\.(\w+)\}$/);
   if (!match) return ref;
-  return SIZE_MAP[match[1]] ?? ref;
+  return sizeMap[match[1]] ?? ref;
 }
 
 function SectionTitle({ children }) {
@@ -53,14 +60,14 @@ function InfoBox({ children }) {
   );
 }
 
-function StyleRow({ styleName }) {
+function StyleRow({ styleName, sizeMap }) {
   const [copied, setCopied] = useState(null);
 
   return (
     <div style={{ borderBottom: '1px solid ' + theme.border.subtle }}>
       {WEIGHTS.map(weight => {
         const token = typographyTokens.text[styleName]?.[weight];
-        const fontSize   = resolveSize(token?.value?.fontSize);
+        const fontSize   = resolveSize(token?.value?.fontSize, sizeMap);
         const fontWeight = token?.value?.fontWeight;
         const lineHeight = token?.value?.lineHeight;
         const tokenName  = 'text.' + styleName + '.' + weight;
@@ -117,6 +124,19 @@ function StyleRow({ styleName }) {
 }
 
 export function TypeStyles() {
+  const [sizeMap, setSizeMap] = useState(getLiveSizeMap);
+
+  useEffect(() => {
+    // Watch document.head so we catch both creation of #tao-theme-overrides
+    // and subsequent textContent rewrites (applyTheme sets style.textContent)
+    const observer = new MutationObserver(() => {
+      setSizeMap(getLiveSizeMap());
+    });
+
+    observer.observe(document.head, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div style={{ background: theme.bg.page, minHeight: '100vh', padding: theme.spacing.xxl + 'px', fontFamily: FONT }}>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" />
@@ -167,7 +187,7 @@ export function TypeStyles() {
               <div style={{ padding: theme.spacing.xs + 'px ' + theme.spacing.md + 'px ' + theme.spacing.xxs + 'px', background: theme.bg.surface, marginTop: theme.spacing.xs }}>
                 <span style={{ fontFamily: FONT, fontSize: 9, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>{styleName}</span>
               </div>
-              <StyleRow styleName={styleName} />
+              <StyleRow styleName={styleName} sizeMap={sizeMap} />
             </div>
           );
         })}

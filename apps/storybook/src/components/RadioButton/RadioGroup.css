@@ -25,7 +25,7 @@
 
 .radio-group__label {
   font-family: 'DM Sans', sans-serif;
-  font-size:   13px;
+  font-size:   var(--tao-typography-size-sm);
   font-weight: 700;
   line-height: 1.4;
   color:       var(--tao-text-default);
@@ -34,7 +34,7 @@
 
 .radio-group__required {
   font-family: 'DM Sans', sans-serif;
-  font-size:   11px;
+  font-size:   var(--tao-typography-size-xs);
   font-weight: 400;
   line-height: normal;
   color:       var(--tao-text-subtle);
@@ -43,7 +43,7 @@
 
 .radio-group__hint {
   font-family: 'DM Sans', sans-serif;
-  font-size:   11px;
+  font-size:   var(--tao-typography-size-xs);
   font-weight: 400;
   line-height: 1.4;
   color:       var(--tao-text-subtlest);
