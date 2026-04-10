@@ -88,7 +88,9 @@ function SpacingRow({ name, index, shift }) {
   );
 }
 
-export function SpacingScale() {
+const DENSITY_FACTOR = { comfortable: '1', compact: '0.75', dense: '0.5' };
+
+export function SpacingScale({ onDensityChange }) {
   const [density, setDensity] = useState('comfortable');
 
   useEffect(() => {
@@ -123,7 +125,7 @@ export function SpacingScale() {
         {Object.keys(DENSITY_SHIFT).map(d => (
           <button
             key={d}
-            onClick={() => setDensity(d)}
+            onClick={() => { setDensity(d); onDensityChange?.(DENSITY_FACTOR[d]); }}
             style={{
               all: 'unset', cursor: 'pointer',
               padding: '4px 12px', borderRadius: 4,

@@ -1,0 +1,206 @@
+---
+---
+
+<section class="manifesto" id="manifesto" aria-labelledby="manifesto-heading">
+  <div class="manifesto__container">
+
+    <div class="manifesto__header">
+      <h2 class="manifesto__title">What I'm Looking For</h2>
+      <p class="manifesto__subtitle">My next chapter</p>
+    </div>
+
+    <div class="manifesto__layout">
+
+      <!-- Left: bold statement -->
+      <div class="manifesto__left">
+        <div class="manifesto__avatar">
+          <img src="/Me.jpg" alt="Alessandro Giordano" class="manifesto__avatar-img" />
+        </div>
+        <p class="manifesto__statement" id="manifesto-heading">
+          I am looking for a <strong>leadership environment</strong> where design is treated as a <strong>strategic partner</strong> to business and engineering. My goal is to lead the vision for <strong>digital products</strong> that bridge the gap between human needs and technology, ultimately elevating the organization's overall <strong>design maturity.</strong>
+        </p>
+      </div>
+
+      <!-- Right: three pillars -->
+      <div class="manifesto__right">
+
+        <div class="manifesto__pillar">
+          <span class="manifesto__num" aria-hidden="true">01</span>
+          <div class="manifesto__pillar-content">
+            <h3 class="manifesto__pillar-title">Create</h3>
+            <p class="manifesto__pillar-body">I want to move beyond visuals to build the architectural backbone of digital products. I am searching for a space where I can turn deep insights into human-centered experiences that are functional, emotional, and inclusive, ensuring every design output drives a tangible user outcome.</p>
+          </div>
+        </div>
+
+        <div class="manifesto__pillar">
+          <span class="manifesto__num" aria-hidden="true">02</span>
+          <div class="manifesto__pillar-content">
+            <h3 class="manifesto__pillar-title">Collaborate</h3>
+            <p class="manifesto__pillar-body">I thrive when leading cross-functional teams and aligning designers, engineers, and product managers around shared, high-impact goals. I value a leadership style rooted in transparency and empathy, where I can mentor individuals to leverage their strengths and overcome challenges to grow as professionals.</p>
+          </div>
+        </div>
+
+        <div class="manifesto__pillar">
+          <span class="manifesto__num" aria-hidden="true">03</span>
+          <div class="manifesto__pillar-content">
+            <h3 class="manifesto__pillar-title">Grow</h3>
+            <p class="manifesto__pillar-body">I am seeking a role where I can shape design culture and operations at scale. I want to evolve experimental ideas into validated organizational practices, fostering a continuous cycle of knowledge that allows a product team to move faster without sacrificing quality.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .manifesto {
+    background: color-mix(in srgb, var(--tao-surface-brand-2-subtlest) 64%, var(--tao-surface-neutral-white));
+    padding: var(--tao-spacing-xxxl) 0;
+  }
+
+  .manifesto__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--tao-spacing-xl);
+  }
+
+  .manifesto__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-xxxl);
+    align-items: start;
+  }
+
+  /* ── Header ─────────────────────────────────────────────── */
+  .manifesto__header {
+    margin-bottom: var(--tao-spacing-xl);
+  }
+
+  .manifesto__title {
+    font-size: var(--tao-typography-size-xl);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0 0 var(--tao-spacing-xs);
+    line-height: 1.15;
+  }
+
+  .manifesto__subtitle {
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    margin: 0;
+  }
+
+  /* ── Avatar ─────────────────────────────────────────────── */
+  .manifesto__avatar {
+    width: 250px;
+    height: 250px;
+    border-radius: var(--tao-radius-circular);
+    overflow: hidden;
+    border: var(--tao-border-width-md) solid var(--tao-border-brand-1);
+    box-shadow: 0 0 0 4px color-mix(in srgb, var(--tao-surface-brand-1-subtle) 40%, transparent);
+    margin-bottom: var(--tao-spacing-lg);
+    flex-shrink: 0;
+  }
+
+  .manifesto__avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* ── Left ───────────────────────────────────────────────── */
+  .manifesto__left {
+    position: sticky;
+    top: calc(var(--nav-height) + var(--tao-spacing-xl));
+  }
+
+  .manifesto__statement {
+    font-size: var(--tao-typography-size-lg);
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: var(--tao-text-default);
+    margin: 0;
+  }
+
+  .manifesto__statement strong {
+    font-weight: 800;
+    color: var(--tao-text-default);
+  }
+
+  /* ── Right ──────────────────────────────────────────────── */
+  .manifesto__right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xxl);
+    padding-top: var(--tao-spacing-xs);
+  }
+
+  .manifesto__pillar {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: var(--tao-spacing-md);
+    align-items: start;
+  }
+
+  .manifesto__num {
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 700;
+    color: var(--tao-text-brand-1);
+    opacity: 0.5;
+    letter-spacing: 0.04em;
+    margin-top: var(--tao-spacing-xxs);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .manifesto__pillar-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-sm);
+  }
+
+  .manifesto__pillar-title {
+    font-size: var(--tao-typography-size-lg);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .manifesto__pillar-body {
+    font-size: var(--tao-typography-size-md);
+    line-height: 1.65;
+    color: var(--tao-text-subtle);
+    margin: 0;
+  }
+
+  /* ── Dividers between pillars ───────────────────────────── */
+  .manifesto__pillar + .manifesto__pillar {
+    border-top: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    padding-top: var(--tao-spacing-xxl);
+  }
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 960px) {
+    .manifesto__layout {
+      grid-template-columns: 1fr;
+      gap: var(--tao-spacing-xxl);
+    }
+    .manifesto__left {
+      position: static;
+    }
+    .manifesto__statement {
+      font-size: var(--tao-typography-size-xl);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .manifesto__container {
+      padding: 0 var(--tao-spacing-lg);
+    }
+  }
+</style>

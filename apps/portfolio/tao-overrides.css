@@ -1,0 +1,220 @@
+/* Tao token overrides — portfolio */
+/* Import after @tao/tokens/tokens.css */
+/* Generated: 2026-04-10T10:19:06.297Z */
+
+:root {
+  --tao-color-shade-palette-1-1: #dff0ff;
+  --tao-color-shade-palette-1-2: #c4d9ff;
+  --tao-color-shade-palette-1-3: #acc3ff;
+  --tao-color-shade-palette-1-4: #98aeff;
+  --tao-color-shade-palette-1-5: #8699ff;
+  --tao-color-shade-palette-1-6: #7586ff;
+  --tao-color-shade-palette-1-7: #6572ff;
+  --tao-color-shade-palette-1-8: #565fef;
+  --tao-color-shade-palette-1-9: #484cdb;
+  --tao-color-shade-palette-1-10: #3b38c6;
+  --tao-color-shade-palette-1-11: #2f22b2;
+  --tao-color-shade-palette-1-12: #25039d;
+  --tao-color-shade-palette-1-13: #1d0085;
+  --tao-color-shade-palette-1-14: #15006b;
+  --tao-color-shade-palette-1-15: #0d004c;
+  --tao-color-shade-palette-1-16: #040028;
+  --tao-color-shade-palette-2-1: #e1efff;
+  --tao-color-shade-palette-2-2: #c7d6ff;
+  --tao-color-shade-palette-2-3: #b0bfff;
+  --tao-color-shade-palette-2-4: #9da9ff;
+  --tao-color-shade-palette-2-5: #8b94ff;
+  --tao-color-shade-palette-2-6: #7a80ff;
+  --tao-color-shade-palette-2-7: #6b6cff;
+  --tao-color-shade-palette-2-8: #5c59f8;
+  --tao-color-shade-palette-2-9: #4e44e3;
+  --tao-color-shade-palette-2-10: #412ecf;
+  --tao-color-shade-palette-2-11: #3612ba;
+  --tao-color-shade-palette-2-12: #2c00a4;
+  --tao-color-shade-palette-2-13: #23008c;
+  --tao-color-shade-palette-2-14: #1a0071;
+  --tao-color-shade-palette-2-15: #100051;
+  --tao-color-shade-palette-2-16: #06002b;
+  --tao-color-shade-palette-3-1: #f8e6ff;
+  --tao-color-shade-palette-3-2: #e7c9ff;
+  --tao-color-shade-palette-3-3: #d6afff;
+  --tao-color-shade-palette-3-4: #c698ff;
+  --tao-color-shade-palette-3-5: #b481ff;
+  --tao-color-shade-palette-3-6: #a36cff;
+  --tao-color-shade-palette-3-7: #9358ff;
+  --tao-color-shade-palette-3-8: #8243f5;
+  --tao-color-shade-palette-3-9: #722be1;
+  --tao-color-shade-palette-3-10: #6305cc;
+  --tao-color-shade-palette-3-11: #5500b8;
+  --tao-color-shade-palette-3-12: #4600a2;
+  --tao-color-shade-palette-3-13: #39008a;
+  --tao-color-shade-palette-3-14: #2a006f;
+  --tao-color-shade-palette-3-15: #1b004f;
+  --tao-color-shade-palette-3-16: #0b002a;
+  --tao-color-shade-palette-4-1: #ffd7f1;
+  --tao-color-shade-palette-4-2: #ffb4dc;
+  --tao-color-shade-palette-4-3: #ff95c9;
+  --tao-color-shade-palette-4-4: #ff7bb6;
+  --tao-color-shade-palette-4-5: #ff63a3;
+  --tao-color-shade-palette-4-6: #fb4c91;
+  --tao-color-shade-palette-4-7: #e63580;
+  --tao-color-shade-palette-4-8: #d1186f;
+  --tao-color-shade-palette-4-9: #bc005e;
+  --tao-color-shade-palette-4-10: #a7004e;
+  --tao-color-shade-palette-4-11: #92003f;
+  --tao-color-shade-palette-4-12: #7d0030;
+  --tao-color-shade-palette-4-13: #660022;
+  --tao-color-shade-palette-4-14: #4e0015;
+  --tao-color-shade-palette-4-15: #340009;
+  --tao-color-shade-palette-4-16: #190002;
+  --tao-color-shade-palette-5-1: #ffdace;
+  --tao-color-shade-palette-5-2: #ffb8a9;
+  --tao-color-shade-palette-5-3: #ff9a8b;
+  --tao-color-shade-palette-5-4: #ff8072;
+  --tao-color-shade-palette-5-5: #ff685c;
+  --tao-color-shade-palette-5-6: #ff5148;
+  --tao-color-shade-palette-5-7: #ec3a35;
+  --tao-color-shade-palette-5-8: #d71f21;
+  --tao-color-shade-palette-5-9: #c20007;
+  --tao-color-shade-palette-5-10: #ad0000;
+  --tao-color-shade-palette-5-11: #980000;
+  --tao-color-shade-palette-5-12: #820000;
+  --tao-color-shade-palette-5-13: #6b0000;
+  --tao-color-shade-palette-5-14: #520000;
+  --tao-color-shade-palette-5-15: #380000;
+  --tao-color-shade-palette-5-16: #1b0000;
+  --tao-color-shade-palette-6-1: #ffe0c3;
+  --tao-color-shade-palette-6-2: #ffc298;
+  --tao-color-shade-palette-6-3: #ffa675;
+  --tao-color-shade-palette-6-4: #ff8e58;
+  --tao-color-shade-palette-6-5: #ff783d;
+  --tao-color-shade-palette-6-6: #f66422;
+  --tao-color-shade-palette-6-7: #e15000;
+  --tao-color-shade-palette-6-8: #cd3c00;
+  --tao-color-shade-palette-6-9: #b82500;
+  --tao-color-shade-palette-6-10: #a40000;
+  --tao-color-shade-palette-6-11: #8f0000;
+  --tao-color-shade-palette-6-12: #7a0000;
+  --tao-color-shade-palette-6-13: #640000;
+  --tao-color-shade-palette-6-14: #4d0000;
+  --tao-color-shade-palette-6-15: #340000;
+  --tao-color-shade-palette-6-16: #190000;
+  --tao-color-shade-palette-7-1: #ffe9c1;
+  --tao-color-shade-palette-7-2: #ffcf95;
+  --tao-color-shade-palette-7-3: #ffb871;
+  --tao-color-shade-palette-7-4: #ffa352;
+  --tao-color-shade-palette-7-5: #f08f36;
+  --tao-color-shade-palette-7-6: #dd7c16;
+  --tao-color-shade-palette-7-7: #ca6900;
+  --tao-color-shade-palette-7-8: #b75800;
+  --tao-color-shade-palette-7-9: #a34600;
+  --tao-color-shade-palette-7-10: #903400;
+  --tao-color-shade-palette-7-11: #7d2100;
+  --tao-color-shade-palette-7-12: #6a0c00;
+  --tao-color-shade-palette-7-13: #560000;
+  --tao-color-shade-palette-7-14: #410000;
+  --tao-color-shade-palette-7-15: #2a0000;
+  --tao-color-shade-palette-7-16: #130000;
+  --tao-color-shade-palette-8-1: #ceffd6;
+  --tao-color-shade-palette-8-2: #a7f9b6;
+  --tao-color-shade-palette-8-3: #85e99a;
+  --tao-color-shade-palette-8-4: #68d882;
+  --tao-color-shade-palette-8-5: #4ec66e;
+  --tao-color-shade-palette-8-6: #34b45b;
+  --tao-color-shade-palette-8-7: #12a149;
+  --tao-color-shade-palette-8-8: #008f37;
+  --tao-color-shade-palette-8-9: #007d24;
+  --tao-color-shade-palette-8-10: #006c0f;
+  --tao-color-shade-palette-8-11: #005a00;
+  --tao-color-shade-palette-8-12: #004900;
+  --tao-color-shade-palette-8-13: #003900;
+  --tao-color-shade-palette-8-14: #002800;
+  --tao-color-shade-palette-8-15: #001700;
+  --tao-color-shade-palette-8-16: #000800;
+  --tao-color-shade-palette-9-1: #cffff9;
+  --tao-color-shade-palette-9-2: #a9f3e8;
+  --tao-color-shade-palette-9-3: #88e2d6;
+  --tao-color-shade-palette-9-4: #6cd1c4;
+  --tao-color-shade-palette-9-5: #52bfb2;
+  --tao-color-shade-palette-9-6: #3aada0;
+  --tao-color-shade-palette-9-7: #1d9b8f;
+  --tao-color-shade-palette-9-8: #00897d;
+  --tao-color-shade-palette-9-9: #00776c;
+  --tao-color-shade-palette-9-10: #00665c;
+  --tao-color-shade-palette-9-11: #00564c;
+  --tao-color-shade-palette-9-12: #00453c;
+  --tao-color-shade-palette-9-13: #00352d;
+  --tao-color-shade-palette-9-14: #00251f;
+  --tao-color-shade-palette-9-15: #001511;
+  --tao-color-shade-palette-9-16: #000705;
+  --tao-color-shade-palette-10-1: #cdfeff;
+  --tao-color-shade-palette-10-2: #a6efff;
+  --tao-color-shade-palette-10-3: #85defb;
+  --tao-color-shade-palette-10-4: #68ccec;
+  --tao-color-shade-palette-10-5: #4eb9db;
+  --tao-color-shade-palette-10-6: #34a7c9;
+  --tao-color-shade-palette-10-7: #1595b6;
+  --tao-color-shade-palette-10-8: #0083a4;
+  --tao-color-shade-palette-10-9: #007292;
+  --tao-color-shade-palette-10-10: #006180;
+  --tao-color-shade-palette-10-11: #00506e;
+  --tao-color-shade-palette-10-12: #00405d;
+  --tao-color-shade-palette-10-13: #00304b;
+  --tao-color-shade-palette-10-14: #002038;
+  --tao-color-shade-palette-10-15: #001124;
+  --tao-color-shade-palette-10-16: #000510;
+  --tao-color-shade-palette-11-1: #f5f5f5;
+  --tao-color-shade-palette-11-2: #e2e2e2;
+  --tao-color-shade-palette-11-3: #cfcfcf;
+  --tao-color-shade-palette-11-4: #bcbcbc;
+  --tao-color-shade-palette-11-5: #aaaaaa;
+  --tao-color-shade-palette-11-6: #989898;
+  --tao-color-shade-palette-11-7: #878787;
+  --tao-color-shade-palette-11-8: #757575;
+  --tao-color-shade-palette-11-9: #656565;
+  --tao-color-shade-palette-11-10: #555555;
+  --tao-color-shade-palette-11-11: #454545;
+  --tao-color-shade-palette-11-12: #363636;
+  --tao-color-shade-palette-11-13: #272727;
+  --tao-color-shade-palette-11-14: #1a1a1a;
+  --tao-color-shade-palette-11-15: #0d0d0d;
+  --tao-color-shade-palette-11-16: #030303;
+  --tao-typography-size-xs: 9px;
+  --tao-typography-size-sm: 12px;
+  --tao-typography-size-md: 16px;
+  --tao-typography-size-lg: 21px;
+  --tao-typography-size-xl: 28px;
+  --tao-typography-size-xxl: 38px;
+  --tao-typography-size-xxxl: 51px;
+  --tao-spacing-xxs: 4px;
+  --tao-spacing-xs: 8px;
+  --tao-spacing-sm: 12px;
+  --tao-spacing-md: 16px;
+  --tao-spacing-lg: 24px;
+  --tao-spacing-xl: 32px;
+  --tao-spacing-xxl: 48px;
+  --tao-spacing-xxxl: 64px;
+  --tao-icon-weight: regular;
+}
+
+/* ─── Component tokens (16) ────────────────────────────────────────────── */
+
+/* Button — override per-element via inline style or scoped class */
+/* --tao-button-bg: <value>;  — background-color — fallback: variant default */
+/* --tao-button-text: <value>;  — color — fallback: variant default */
+/* --tao-button-radius: <value>;  — border-radius — fallback: size default */
+/* --tao-button-font-size: <value>;  — font-size — fallback: size default */
+/* --tao-button-padding-h: <value>;  — horizontal padding — fallback: size default */
+/* --tao-button-padding-v: <value>;  — vertical padding — fallback: size default */
+/* --tao-button-gap: <value>;  — icon ↔ label gap — fallback: size default */
+
+/* BadgeStatus — override per-element via inline style or scoped class */
+/* --tao-badge-status-bg: <value>;  — background-color (set by variant class) — fallback: --tao-surface-* */
+/* --tao-badge-status-text: <value>;  — color (set by variant class) — fallback: --tao-text-* */
+/* --tao-badge-status-border-color: <value>;  — border-color (transparent by default) — fallback: transparent */
+/* --tao-badge-status-border-width: <value>;  — border-width — fallback: --tao-border-width-sm */
+/* --tao-badge-status-radius: <value>;  — border-radius — fallback: --tao-radius-md */
+/* --tao-badge-status-font-size: <value>;  — font-size — fallback: --tao-typography-size-xs */
+/* --tao-badge-status-spacing-gap: <value>;  — gap between icon and label — fallback: --tao-spacing-xxs */
+/* --tao-badge-status-spacing-h: <value>;  — horizontal padding — fallback: --tao-spacing-xs */
+/* --tao-badge-status-spacing-v: <value>;  — vertical padding — fallback: --tao-spacing-xxs */

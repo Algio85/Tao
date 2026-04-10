@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGlobals } from '@storybook/preview-api';
 import { SpacingScale } from '../components/SpacingScale';
 
 const meta = {
@@ -59,4 +60,12 @@ export default meta;
 
 export const Default = {
   name: 'Spacing Scale',
+  render: () => {
+    const [, updateGlobals] = useGlobals();
+    return (
+      <SpacingScale
+        onDensityChange={(factor) => updateGlobals({ density: factor })}
+      />
+    );
+  },
 };

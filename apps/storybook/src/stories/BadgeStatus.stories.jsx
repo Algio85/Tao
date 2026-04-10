@@ -1,11 +1,66 @@
 import React from 'react';
+import { useGlobals } from '@storybook/preview-api';
 import { BadgeStatus } from '../components/BadgeStatus/BadgeStatus';
-import { WarningIcon, CheckCircleIcon, InfoIcon, StarIcon } from '@phosphor-icons/react';
+import { CheckCircleIcon, WarningIcon, InfoIcon, StarIcon } from '@phosphor-icons/react';
+import {
+  surfaceTokenControl,
+  textTokenControl,
+  borderTokenControl,
+  borderWidthTokenControl,
+  radiusTokenControl,
+  fontSizeTokenControl,
+  spacingTokenControl,
+  resolveToken,
+  SURFACE_TOKEN_MAP,
+  TEXT_TOKEN_MAP,
+  BORDER_TOKEN_MAP,
+  BORDER_WIDTH_TOKEN_MAP,
+  RADIUS_TOKEN_MAP,
+  FONT_SIZE_TOKEN_MAP,
+  SPACING_TOKEN_MAP,
+} from '../tokens/tokenOptions';
+
+/* ─── Sync decorator ─────────────────────────────────────────────────────────
+   Whenever a badge token arg is changed, push the resolved CSS value to the
+   matching Storybook global so the Overrides panel tracks it.
+   ─────────────────────────────────────────────────────────────────────────── */
+
+function BadgeSyncDecorator(Story, context) {
+  const { args, viewMode } = context;
+  const [, updateGlobals] = useGlobals();
+
+  React.useEffect(() => {
+    // In docs mode Storybook unmounts/remounts stories on every globals change,
+    // so calling updateGlobals here would create an infinite render loop.
+    if (viewMode === 'docs') return;
+
+    updateGlobals({
+      'tao-badge-status-bg':           resolveToken(args.tokenBg,          SURFACE_TOKEN_MAP) || '',
+      'tao-badge-status-text':         resolveToken(args.tokenText,         TEXT_TOKEN_MAP)    || '',
+      'tao-badge-status-border-color': resolveToken(args.tokenBorderColor,  BORDER_TOKEN_MAP)  || '',
+      'tao-badge-status-border-width': resolveToken(args.tokenBorderWidth,  BORDER_WIDTH_TOKEN_MAP) || '',
+      'tao-badge-status-radius':       resolveToken(args.tokenRadius,       RADIUS_TOKEN_MAP)  || '',
+      'tao-badge-status-font-size':    resolveToken(args.tokenFontSize,     FONT_SIZE_TOKEN_MAP) || '',
+      'tao-badge-status-spacing-gap':  resolveToken(args.tokenGap,          SPACING_TOKEN_MAP) || '',
+      'tao-badge-status-spacing-h':    resolveToken(args.tokenPaddingX,     SPACING_TOKEN_MAP) || '',
+      'tao-badge-status-spacing-v':    resolveToken(args.tokenPaddingY,     SPACING_TOKEN_MAP) || '',
+    });
+  }, [
+    viewMode,
+    args.tokenBg, args.tokenText, args.tokenBorderColor, args.tokenBorderWidth,
+    args.tokenRadius, args.tokenFontSize, args.tokenGap, args.tokenPaddingX, args.tokenPaddingY,
+  ]);
+
+  return React.createElement(Story);
+}
+
+/* ─── Meta ───────────────────────────────────────────────────────────────── */
 
 const meta = {
   title: 'Components / Badge Status',
   component: BadgeStatus,
   tags: ['autodocs'],
+  decorators: [BadgeSyncDecorator],
   parameters: {
     layout: 'padded',
     backgrounds: {
@@ -20,7 +75,7 @@ const meta = {
         component: `
 Badge Status is a compact label component used to communicate status, category, or metadata at a glance.
 
-9 semantic color variants, optional icon left/right, editable label.
+9 semantic color variants · optional icon left/right · editable label.
 
 ---
 
@@ -38,8 +93,38 @@ Badge Status is a compact label component used to communicate status, category, 
 | \`info\` | \`surface/info/subtlest\` | \`text/info\` | Informational |
 | \`ai\` | \`surface/ai/subtlest\` | \`text/ai\` | AI-generated content |
 
+---
+
+### Component tokens
+
+Override any slot via the **Token overrides** controls or inline style. Changes appear in the **Overrides** toolbar.
+
+| Token | Property | Fallback |
+|---|---|---|
+| \`--tao-badge-status-bg\` | background-color | \`--tao-surface-*\` (per variant) |
+| \`--tao-badge-status-text\` | color | \`--tao-text-*\` (per variant) |
+| \`--tao-badge-status-border-color\` | border-color | \`transparent\` |
+| \`--tao-badge-status-border-width\` | border-width | \`--tao-border-width-sm\` |
+| \`--tao-badge-status-radius\` | border-radius | \`--tao-radius-md\` |
+| \`--tao-badge-status-font-size\` | font-size | \`--tao-typography-size-xs\` |
+| \`--tao-badge-status-spacing-gap\` | icon ↔ label gap | \`--tao-spacing-xxs\` |
+| \`--tao-badge-status-spacing-h\` | horizontal padding | \`--tao-spacing-xs\` |
+| \`--tao-badge-status-spacing-v\` | vertical padding | \`--tao-spacing-xxs\` |
+
+---
+
+### Icons
+
+Pass any React node to \`iconLeft\` or \`iconRight\`. Phosphor icons at size 11 work well.
+
+\`\`\`jsx
+<BadgeStatus color="success" label="Done" iconLeft={<CheckCircleIcon size={11} weight="fill" />} />
+\`\`\`
+
+---
+
 ### Figma
-Component: [Components → Badge Status](https://www.figma.com/design/WrV3bhb7Rbkbp5D8sxbMD0/Components?node-id=118-448)
+[Components → Badge Status](https://www.figma.com/design/WrV3bhb7Rbkbp5D8sxbMD0/Components?node-id=118-448)
         `.trim(),
       },
     },
@@ -66,93 +151,44 @@ Component: [Components → Badge Status](https://www.figma.com/design/WrV3bhb7Rb
       description: 'Show icon on the right',
       table: { defaultValue: { summary: false } },
     },
+    // ── Token overrides
+    tokenBg:          surfaceTokenControl('Override --tao-badge-status-bg'),
+    tokenText:        textTokenControl('Override --tao-badge-status-text'),
+    tokenBorderColor: borderTokenControl('Override --tao-badge-status-border-color'),
+    tokenBorderWidth: borderWidthTokenControl('Override --tao-badge-status-border-width'),
+    tokenRadius:      radiusTokenControl('Override --tao-badge-status-radius'),
+    tokenFontSize:    fontSizeTokenControl('Override --tao-badge-status-font-size'),
+    tokenGap:         spacingTokenControl('Override --tao-badge-status-spacing-gap'),
+    tokenPaddingX:    spacingTokenControl('Override --tao-badge-status-spacing-h'),
+    tokenPaddingY:    spacingTokenControl('Override --tao-badge-status-spacing-v'),
   },
   args: {
     color: 'neutral',
     label: 'Label',
     iconLeft: false,
     iconRight: false,
+    tokenBg: '', tokenText: '', tokenBorderColor: '', tokenBorderWidth: '',
+    tokenRadius: '', tokenFontSize: '', tokenGap: '', tokenPaddingX: '', tokenPaddingY: '',
   },
 };
 
 export default meta;
 
-// ─── Default ──────────────────────────────────────────────────────────────────
+/* ─── Component ──────────────────────────────────────────────────────────── */
 
-const IconPlaceholder = ({ size = 11 }) => (
-  <svg width={size} height={size} viewBox="0 0 12 12" fill="currentColor">
-    <path d="M6 0l1.5 4.5H12L8.25 7.5 9.75 12 6 9 2.25 12l1.5-4.5L0 4.5h4.5z" />
-  </svg>
-);
-
-export const Default = {
-  name: 'Default',
-  render: (args) => (
-    <BadgeStatus
-      {...args}
-      iconLeft={args.iconLeft ? <IconPlaceholder /> : null}
-      iconRight={args.iconRight ? <IconPlaceholder /> : null}
-    />
-  ),
-};
-
-// ─── All variants ─────────────────────────────────────────────────────────────
-
-export const AllVariants = {
-  name: 'All variants',
-  render: () => (
-    <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
-      {['neutral', 'brand-1', 'brand-2', 'brand-3', 'success', 'danger', 'alert', 'info', 'ai'].map(color => (
-        <BadgeStatus key={color} color={color} label={color} />
-      ))}
-    </div>
-  ),
-};
-
-// ─── With icons ───────────────────────────────────────────────────────────────
-
-export const WithIcons = {
-  args: {
-    iconRight: true,
-    iconLeft: true
-  },
-  name:'With icons',
-  render:() => (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-      <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', alignItems: 'center' }}>
-        <BadgeStatus color="success"  label="Completed"  iconLeft={<CheckCircleIcon size={11} weight="fill" />} />
-        <BadgeStatus color="danger"   label="Failed"     iconLeft={<WarningIcon size={11} weight="fill" />} />
-        <BadgeStatus color="info"     label="Info"       iconLeft={<InfoIcon size={11} weight="fill" />} />
-        <BadgeStatus color="ai"       label="AI"         iconLeft={<StarIcon size={11} weight="fill" />} />
-        <BadgeStatus color="neutral"  label="Draft"      iconRight={<InfoIcon size={11} weight="regular" />} />
-        <BadgeStatus color="brand-1"  label="Active"     iconLeft={<CheckCircleIcon size={11} weight="regular" />} iconRight={<StarIcon size={11} weight="regular" />} />
-      </div>
-    </div>
-  )
-};
-
-// ─── Full matrix ──────────────────────────────────────────────────────────────
-
-export const FullMatrix = {
-  name: 'Full matrix',
-  parameters: { layout: 'fullscreen' },
-  render: () => {
-    const variants = ['neutral', 'brand-1', 'brand-2', 'brand-3', 'success', 'danger', 'alert', 'info', 'ai'];
-    const labelStyle = { fontSize: 10, color: '#888', textTransform: 'uppercase', letterSpacing: '0.08em', fontFamily: 'DM Sans, sans-serif', minWidth: 80 };
+export const Component = {
+  name: 'Component',
+  render: (args) => {
+    const icon = args.iconLeft || args.iconRight
+      ? <CheckCircleIcon size={11} weight="fill" />
+      : null;
     return (
-      <div style={{ padding: 32, background: '#f5f5f5', minHeight: '100vh', fontFamily: 'DM Sans, sans-serif' }}>
-        <h2 style={{ fontSize: 13, fontWeight: 500, color: '#111', marginBottom: 24, letterSpacing: '-0.01em' }}>Badge Status — full matrix</h2>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
-          {variants.map(color => (
-            <div key={color} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <span style={labelStyle}>{color}</span>
-              <BadgeStatus color={color} label="Label" />
-              <BadgeStatus color={color} label="With icon L" iconLeft={<StarIcon size={11} weight="fill" />} />
-              <BadgeStatus color={color} label="With icon R" iconRight={<StarIcon size={11} weight="fill" />} />
-            </div>
-          ))}
-        </div>
-      </div>
+      <BadgeStatus
+        color={args.color}
+        label={args.label}
+        iconLeft={args.iconLeft ? icon : null}
+        iconRight={args.iconRight ? icon : null}
+      />
     );
   },
 };

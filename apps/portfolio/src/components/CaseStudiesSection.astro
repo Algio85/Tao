@@ -1,0 +1,3010 @@
+---
+import { CarouselPrev, CarouselNext, ModalClose } from './CarouselNav.jsx';
+import { FadersHorizontalIcon, PaletteIcon, StackSimpleIcon, ArrowsClockwiseIcon } from '@phosphor-icons/react';
+---
+
+<section class="works" id="work" aria-labelledby="works-heading">
+  <div class="works__container">
+
+    <!-- ── Header ──────────────────────────────────────────────── -->
+    <div class="works__header">
+      <div>
+        <h2 class="works__title" id="works-heading">Impactful Case Studies</h2>
+        <p class="works__subtitle">Selected work</p>
+      </div>
+      <nav class="works__nav" aria-label="Browse case studies">
+        <CarouselPrev client:load />
+        <CarouselNext client:load />
+      </nav>
+    </div>
+
+    <!-- ── Grid ───────────────────────────────────────────────── -->
+    <div class="works__grid">
+
+      <!-- ── Carousel row ──────────────────────────────────────── -->
+      <div class="works__carousel" aria-label="Project carousel">
+        <div class="works__carousel-wrap">
+        <div class="works__carousel-track" id="carousel-track">
+
+          <!-- Card 1 · Arya -->
+          <div class="work-card work-card--light work-card--1"
+            aria-label="Arya: The Future of Modular UX — case study"
+            data-project="arya" role="button" tabindex="0">
+            <div class="work-card__icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                <!-- wand body -->
+                <line x1="48" y1="208" x2="152" y2="104" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+                <!-- 4-point sparkle star at tip -->
+                <path d="M176 80 L188 48 L200 80 L232 92 L200 104 L188 136 L176 104 L144 92 Z" stroke="currentColor" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- small sparkle accents -->
+                <circle cx="228" cy="44" r="7" fill="currentColor"/>
+                <circle cx="136" cy="44" r="5" fill="currentColor"/>
+                <circle cx="232" cy="140" r="5" fill="currentColor"/>
+              </svg>
+            </div>
+            <img class="work-card__logo" src="/Docebo.svg" alt="" aria-hidden="true" />
+            <div class="work-card__body">
+              <h3 class="work-card__title">Arya: The Future of<br />Modular UX</h3>
+              <p class="work-card__desc">
+                An award-winning project from an internal hackathon that uses generative design and AI templates to let users build custom, no-code interfaces with total flexibility.
+              </p>
+            </div>
+            <span class="work-card__link" aria-hidden="true">Learn more ↗</span>
+          </div>
+
+          <!-- Card 2 · Design Systems -->
+          <div class="work-card work-card--light work-card--2"
+            aria-label="Docebo Design System: Governance at Scale — case study"
+            data-project="design-systems" role="button" tabindex="0">
+            <div class="work-card__icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                <circle cx="128" cy="128" r="40" stroke="currentColor" stroke-width="18"/>
+                <line x1="128" y1="32" x2="128" y2="88" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+                <line x1="128" y1="168" x2="128" y2="224" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+                <line x1="32" y1="128" x2="88" y2="128" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+                <line x1="168" y1="128" x2="224" y2="128" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <img class="work-card__logo" src="/Docebo.svg" alt="" aria-hidden="true" />
+            <div class="work-card__body">
+              <h3 class="work-card__title">Docebo Design System:<br />Governance at Scale</h3>
+              <p class="work-card__desc">
+                Leading a cross-functional initiative to harmonize 50+ modules into a single source of truth, improving consistency for 1,500+ B2B clients.
+              </p>
+            </div>
+            <span class="work-card__link" aria-hidden="true">Learn more ↗</span>
+          </div>
+
+          <!-- Card 3 · Cards Information Density -->
+          <div class="work-card work-card--light work-card--extra"
+            aria-label="Cards Information Density — case study"
+            data-project="business-value" role="button" tabindex="0">
+            <div class="work-card__icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                <rect x="24" y="24" width="96" height="96" rx="10" stroke="currentColor" stroke-width="18"/>
+                <rect x="136" y="24" width="96" height="96" rx="10" stroke="currentColor" stroke-width="18"/>
+                <rect x="24" y="136" width="96" height="96" rx="10" stroke="currentColor" stroke-width="18"/>
+                <rect x="136" y="136" width="96" height="96" rx="10" stroke="currentColor" stroke-width="18"/>
+                <line x1="44" y1="176" x2="100" y2="176" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
+                <line x1="44" y1="196" x2="80" y2="196" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <img class="work-card__logo" src="/Docebo.svg" alt="" aria-hidden="true" />
+            <div class="work-card__body">
+              <h3 class="work-card__title">Cards Information<br />Density</h3>
+              <p class="work-card__desc">
+                Optimizing complex data visualization for high-stakes enterprise
+                decision making through rigorous architectural testing.
+              </p>
+            </div>
+            <span class="work-card__link" aria-hidden="true">Learn more ↗</span>
+          </div>
+
+          <!-- Card 4 · Filters Complexity -->
+          <div class="work-card work-card--light work-card--extra"
+            aria-label="Filters Complexity — case study"
+            data-project="technical-precision" role="button" tabindex="0">
+            <div class="work-card__icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                <line x1="40" y1="72" x2="216" y2="72" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+                <line x1="72" y1="128" x2="184" y2="128" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+                <line x1="104" y1="184" x2="152" y2="184" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <img class="work-card__logo" src="/Docebo.svg" alt="" aria-hidden="true" />
+            <div class="work-card__body">
+              <h3 class="work-card__title">Filters<br />Complexity</h3>
+              <p class="work-card__desc">
+                Too many visible filters cluttered the interface, making it
+                harder for experienced users to quickly refine data.
+              </p>
+            </div>
+            <span class="work-card__link" aria-hidden="true">Learn more ↗</span>
+          </div>
+
+
+        </div>
+        </div><!-- /works__carousel-wrap -->
+
+        <!-- Dots — mobile only -->
+        <div class="works__dots" id="carousel-dots" aria-hidden="true">
+          <span class="works__dot works__dot--active"></span>
+          <span class="works__dot"></span>
+          <span class="works__dot"></span>
+          <span class="works__dot"></span>
+        </div>
+      </div>
+
+      <!-- ── Fixed bottom row ───────────────────────────────────── -->
+
+      <!-- Experience Matters (wide) -->
+      <div class="work-card work-card--dark work-card--wide work-card--bottom-1"
+        aria-label="The Agentic Design Engine — explore blueprint">
+        <div class="work-card__dark-content">
+          <div>
+            <h3 class="work-card__title">The Agentic Design Engine</h3>
+            <p class="work-card__desc">
+              A model-agnostic layer that replaces manual handoff with deterministic AI assembly. By unifying Figma, Design Tokens, and Production Code, it enables AI agents to build ship-ready layouts instantly.
+            </p>
+          </div>
+          <button class="tao-button tao-button--primary tao-button--md work-card__cta" aria-label="Explore Autonomous System Assembly"
+            data-project="agentic-engine" tabindex="0">
+            Explore
+            <svg width="14" height="14" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <line x1="40" y1="128" x2="216" y2="128" stroke="currentColor" stroke-width="22" stroke-linecap="round"/>
+              <polyline points="144 56 216 128 144 200" stroke="currentColor" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <div class="work-card__dark-visual" aria-hidden="true">
+          <div class="work-card__orb"></div>
+        </div>
+      </div>
+
+      <!-- Ready to Scale? -->
+      <div class="work-card work-card--brand work-card--bottom-2"
+        aria-label="Ready to Scale — get started">
+        <div class="work-card__brand-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+            <path d="M128 24 C128 24 48 72 48 152 L104 208 L128 232 L152 208 L208 152 C208 72 128 24 128 24 Z"
+              stroke="currentColor" stroke-width="16" stroke-linejoin="round"/>
+            <circle cx="128" cy="128" r="20"
+              stroke="currentColor" stroke-width="16"/>
+            <path d="M48 152 L24 192 L72 180"
+              stroke="currentColor" stroke-width="16"
+              stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M208 152 L232 192 L184 180"
+              stroke="currentColor" stroke-width="16"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="work-card__body">
+          <h3 class="work-card__title">Ready to Scale?</h3>
+          <p class="work-card__desc">Start your next architectural journey with us.</p>
+        </div>
+        <button class="work-card__circle-btn" aria-label="Get started">
+          <svg width="18" height="18" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+            <line x1="40" y1="128" x2="216" y2="128"
+              stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+            <polyline points="144 56 216 128 144 200"
+              stroke="currentColor" stroke-width="20"
+              stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Case Study Modal ────────────────────────────────────────── -->
+<dialog class="cs-modal" id="cs-modal" aria-modal="true" aria-labelledby="cs-modal-title">
+  <div class="cs-modal__inner">
+    <div class="cs-modal__close-wrap">
+      <ModalClose client:load />
+    </div>
+
+    <!-- ── Rich case study: Cards Information Density ──────── -->
+    <div class="cs-rich" id="cs-modal-rich">
+
+      <!-- Hero -->
+      <div class="cs-rich__hero">
+        <div class="cs-rich__hero-inner">
+          <div class="cs-rich__hero-text">
+            <div class="cs-rich__badge">Design Management · Case Study</div>
+            <h1 class="cs-rich__h1">Cards Information <em>Density.</em></h1>
+            <div class="cs-rich__problem">
+              <span class="cs-rich__problem-label">Problem</span>
+              <p class="cs-rich__problem-text">Legacy requirements and continuous client requests led to overloaded cards that hindered scannability. This information density caused a 15% drop in content discovery and increased task abandonment across the platform.</p>
+            </div>
+            <div class="cs-rich__stat-row">
+              <div class="cs-rich__stat-box">
+                <span class="cs-rich__stat-value">15%</span>
+                <span class="cs-rich__stat-label">Task Abandonment</span>
+              </div>
+              <div class="cs-rich__stat-sep"></div>
+              <div class="cs-rich__stat-info">
+                <span class="cs-rich__stat-info-title">Design Impact</span>
+                <span class="cs-rich__stat-info-desc">Validated through a 6-month cross-platform rollout.</span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-rich__hero-visual">
+            <img class="cs-rich__hero-img" src="/extended.card.png" alt="Cards Information Density — UI screenshot" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Evolution -->
+      <div class="cs-rich__section cs-rich__section--alt">
+        <div class="cs-rich__section-hd">
+          <h2 class="cs-rich__h2">Strategic Evolution</h2>
+          <p class="cs-rich__body-text">A structured methodology designed to align stakeholders and engineering teams on a unified information architecture that scales across diverse product needs.</p>
+        </div>
+        <div class="cs-rich__steps cs-rich__steps--4">
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Defining business outcome/goal</h3>
+            <p class="cs-rich__step-desc">Improved content ROI by increasing the average number of courses imported per user.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><rect x="32" y="56" width="192" height="160" rx="12" stroke="currentColor" stroke-width="20"/><line x1="80" y1="56" x2="80" y2="24" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><line x1="176" y1="56" x2="176" y2="24" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><line x1="72" y1="128" x2="184" y2="128" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><line x1="72" y1="160" x2="144" y2="160" stroke="currentColor" stroke-width="16" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">JBTD</h3>
+            <p class="cs-rich__step-desc">Understanding and comparing information in the library/results page.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><circle cx="128" cy="80" r="48" stroke="currentColor" stroke-width="18"/><path d="M128 144 L128 224" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M80 184 L176 184" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Need</h3>
+            <p class="cs-rich__step-desc">Minimize cognitive effort when consuming information.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><rect x="32" y="32" width="72" height="72" rx="8" stroke="currentColor" stroke-width="18"/><rect x="152" y="32" width="72" height="72" rx="8" stroke="currentColor" stroke-width="18"/><rect x="32" y="152" width="72" height="72" rx="8" stroke="currentColor" stroke-width="18"/><rect x="152" y="152" width="72" height="72" rx="8" stroke="currentColor" stroke-width="18"/><line x1="120" y1="68" x2="152" y2="68" stroke="currentColor" stroke-width="14" stroke-linecap="round"/><line x1="120" y1="188" x2="152" y2="188" stroke="currentColor" stroke-width="14" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Prioritization</h3>
+            <p class="cs-rich__step-desc">We performed a card sorting session with a group of users to prioritize the most important info.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><circle cx="68" cy="128" r="28" stroke="currentColor" stroke-width="18"/><circle cx="188" cy="128" r="28" stroke="currentColor" stroke-width="18"/><line x1="96" y1="128" x2="160" y2="128" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><line x1="68" y1="32" x2="68" y2="100" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><line x1="68" y1="156" x2="68" y2="224" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><line x1="188" y1="32" x2="188" y2="100" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><line x1="188" y1="156" x2="188" y2="224" stroke="currentColor" stroke-width="16" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Number of elements</h3>
+            <p class="cs-rich__step-desc">We made a survey to understand which was the perfect number of information on the card.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Hypotheses -->
+      <div class="cs-rich__section">
+        <div class="cs-rich__section-hd cs-rich__section-hd--center">
+          <h2 class="cs-rich__h2">Strategic Hypotheses</h2>
+          <p class="cs-rich__body-text">The core pillars of our architectural exploration.</p>
+        </div>
+
+        <!-- H1 -->
+        <div class="cs-rich__hyp cs-rich__hyp--split">
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Hypothesis 1</div>
+            <blockquote class="cs-rich__quote">"If the amount of information on a card does not exceed the threshold identified in the survey, then the card will remain non-enlargeable and display a maximum of 8 items, ensuring clarity and ease of scanning."</blockquote>
+            <div class="cs-rich__task">
+              <span class="cs-rich__task-label">Task</span>
+              <p class="cs-rich__body-text">Review a card that contains a limited amount of information (up to 8 items) and identify the key details you need to understand its content.</p>
+            </div>
+            <div class="cs-rich__results-row">
+              <div class="cs-rich__results-group">
+                <span class="cs-rich__results-title">Product &amp; Usability Metrics</span>
+                <div class="cs-rich__metrics cs-rich__metrics--3">
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">98%</span>
+                    <span class="cs-rich__metric-lbl">Task success</span>
+                  </div>
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">2s</span>
+                    <span class="cs-rich__metric-lbl">Time on task</span>
+                  </div>
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">93%</span>
+                    <span class="cs-rich__metric-lbl">CSAT</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-rich__results-group">
+                <span class="cs-rich__results-title">Growth &amp; Business Outcomes</span>
+                <div class="cs-rich__outcomes">
+                  <div class="cs-rich__outcome">
+                    <span class="cs-rich__outcome-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none">
+                <polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                <polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+              </svg>
+            </span>
+                    <span class="cs-rich__outcome-text">+7% improvement in feature retention (30-day)</span>
+                  </div>
+                  <div class="cs-rich__outcome">
+                    <span class="cs-rich__outcome-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none">
+                <polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                <polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+              </svg>
+            </span>
+                    <span class="cs-rich__outcome-text">+4% increase in marketplace course imports (Q1 2025)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-rich__hyp-visual">
+            <img class="cs-rich__hyp-img" src="/cards.info.png" alt="Cards information density — UI reference" />
+          </div>
+        </div>
+
+        <hr class="cs-rich__divider" />
+
+        <!-- H2 -->
+        <div class="cs-rich__hyp cs-rich__hyp--split cs-rich__hyp--flip">
+          <div class="cs-rich__hyp-visual">
+            <img class="cs-rich__hyp-img" src="/extended.card.png" alt="Enlarged card with high information density" />
+          </div>
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Hypothesis 2</div>
+            <blockquote class="cs-rich__quote">"If we enlarge cards when they contain a high amount of information, then users will be able to scan and access relevant content more easily, because larger cards allow prioritization based on user interest."</blockquote>
+            <div class="cs-rich__task">
+              <span class="cs-rich__task-label">Task</span>
+              <p class="cs-rich__body-text">Imagine you are browsing a page with multiple content cards. Some cards contain more information than others. Your goal is to find the information that is most relevant to you on a card with lots of content.</p>
+            </div>
+            <div class="cs-rich__results-row">
+              <div class="cs-rich__results-group">
+                <span class="cs-rich__results-title">Product &amp; Usability Metrics</span>
+                <div class="cs-rich__metrics cs-rich__metrics--3">
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">85%</span>
+                    <span class="cs-rich__metric-lbl">Task success</span>
+                  </div>
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">3s</span>
+                    <span class="cs-rich__metric-lbl">Time on task</span>
+                  </div>
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">90%</span>
+                    <span class="cs-rich__metric-lbl">CSAT</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-rich__results-group">
+                <span class="cs-rich__results-title">Growth &amp; Business Outcomes</span>
+                <div class="cs-rich__outcomes">
+                  <div class="cs-rich__outcome">
+                    <span class="cs-rich__outcome-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 256 256" fill="none">
+                <polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                <polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+              </svg>
+            </span>
+                    <span class="cs-rich__outcome-text">+10% increase in engagement with high-density content (Q1 2025)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cs-rich #business-value -->
+
+    <!-- ── Rich case study: Filters Complexity ──────────────── -->
+    <div class="cs-rich" id="cs-modal-rich-filters" hidden>
+
+      <!-- Hero -->
+      <div class="cs-rich__hero">
+        <div class="cs-rich__hero-inner">
+          <div class="cs-rich__hero-text">
+            <div class="cs-rich__badge">UX Research · Case Study</div>
+            <h1 class="cs-rich__h1">Filters <em>Complexity.</em></h1>
+            <div class="cs-rich__problem">
+              <span class="cs-rich__problem-label">Problem</span>
+              <p class="cs-rich__problem-text">Too many visible filters cluttered the interface, making it harder for experienced users to quickly refine data.</p>
+            </div>
+            <div class="cs-rich__stat-row">
+              <div class="cs-rich__stat-box">
+                <span class="cs-rich__stat-value">23%</span>
+                <span class="cs-rich__stat-label">Drop in Filter Usage</span>
+              </div>
+              <div class="cs-rich__stat-sep"></div>
+              <div class="cs-rich__stat-info">
+                <span class="cs-rich__stat-info-title">Design Impact</span>
+                <span class="cs-rich__stat-info-desc">Measured across power user cohort over 90-day period.</span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-rich__hero-visual">
+            <img class="cs-rich__hero-img" src="/Filters.jpg" alt="Filters complexity — UI screenshot" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Evolution -->
+      <div class="cs-rich__section cs-rich__section--alt">
+        <div class="cs-rich__section-hd">
+          <h2 class="cs-rich__h2">Strategic Evolution</h2>
+          <p class="cs-rich__body-text">A research-driven approach to understand which filters mattered to users and how to surface them progressively without overwhelming the interface.</p>
+        </div>
+        <div class="cs-rich__steps cs-rich__steps--4">
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none"><rect x="32" y="56" width="192" height="160" rx="12" stroke="currentColor" stroke-width="20"/><line x1="80" y1="56" x2="80" y2="24" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><line x1="176" y1="56" x2="176" y2="24" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><line x1="72" y1="128" x2="184" y2="128" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><line x1="72" y1="160" x2="144" y2="160" stroke="currentColor" stroke-width="16" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">JBTD</h3>
+            <p class="cs-rich__step-desc">Selecting relevant data fast in complex filter scenarios.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none"><circle cx="128" cy="80" r="48" stroke="currentColor" stroke-width="18"/><path d="M128 144 L128 224" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M80 184 L176 184" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Need</h3>
+            <p class="cs-rich__step-desc">Reduce the time and effort required to find the right data.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none"><path d="M32 200 L80 120 L128 160 L176 80 L224 56" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Analysis</h3>
+            <p class="cs-rich__step-desc">We analyzed the average number of active filters used per user.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none"><circle cx="128" cy="56" r="24" stroke="currentColor" stroke-width="18"/><path d="M56 112 C56 112 80 96 128 96 C176 96 200 112 200 112" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M80 104 L64 200 M176 104 L192 200 M128 104 L128 200" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Interviews</h3>
+            <p class="cs-rich__step-desc">We interviewed 20 users to understand how they use filtering in this context.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Hypotheses -->
+      <div class="cs-rich__section">
+        <div class="cs-rich__section-hd">
+          <h2 class="cs-rich__h2">Strategic Hypotheses</h2>
+          <p class="cs-rich__body-text">The core pillars of our architectural exploration.</p>
+        </div>
+
+        <!-- H1 -->
+        <div class="cs-rich__hyp cs-rich__hyp--split">
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Hypothesis 1</div>
+            <blockquote class="cs-rich__quote">"If we reduce the number of visible filter options and focus only on the user's goal—rather than showing all filters in a sidebar—the filtering experience will become smoother and faster."</blockquote>
+            <div class="cs-rich__task">
+              <span class="cs-rich__task-label">Task</span>
+              <p class="cs-rich__body-text">Find and select the relevant data using the filters shown, aiming to complete the task quickly and easily.</p>
+            </div>
+            <div class="cs-rich__results-row">
+              <div class="cs-rich__results-group">
+                <span class="cs-rich__results-title">Product &amp; Usability Metrics</span>
+                <div class="cs-rich__metrics cs-rich__metrics--3">
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">100%</span>
+                    <span class="cs-rich__metric-lbl">Task success</span>
+                  </div>
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">2s</span>
+                    <span class="cs-rich__metric-lbl">Time on task</span>
+                  </div>
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">93%</span>
+                    <span class="cs-rich__metric-lbl">CSAT</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-rich__results-group">
+                <span class="cs-rich__results-title">Growth &amp; Business Outcomes</span>
+                <div class="cs-rich__outcomes">
+                  <div class="cs-rich__outcome">
+                    <span class="cs-rich__outcome-icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 256 256" fill="none"><polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="cs-rich__outcome-text">-20% reduction in time to find relevant content and perform action (i.e. bulk) (Q3 2025)</span>
+                  </div>
+                  <div class="cs-rich__outcome">
+                    <span class="cs-rich__outcome-icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 256 256" fill="none"><polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="cs-rich__outcome-text">+10% increase in feature adoption (Q3 2025)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cs-rich__hyp-visual">
+            <video class="cs-rich__hyp-img" src="/Filter.mp4" autoplay loop muted playsinline></video>
+          </div>
+        </div>
+
+        <hr class="cs-rich__divider" />
+
+        <!-- H2 -->
+        <div class="cs-rich__hyp cs-rich__hyp--split cs-rich__hyp--flip">
+          <div class="cs-rich__hyp-visual">
+            <video class="cs-rich__hyp-img" src="/Selection.mp4" autoplay loop muted playsinline></video>
+          </div>
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Hypothesis 2</div>
+            <blockquote class="cs-rich__quote">"If users can manage active filters directly at the top of the page, instead of searching through a long list of filters, the filtering experience will become easier and more efficient."</blockquote>
+            <div class="cs-rich__task">
+              <span class="cs-rich__task-label">Task</span>
+              <p class="cs-rich__body-text">Interact with the filtering options by modifying an active filter or clearing it entirely, ensuring the action can be completed using a tap, click, or keyboard input.</p>
+            </div>
+            <div class="cs-rich__results-row">
+              <div class="cs-rich__results-group">
+                <span class="cs-rich__results-title">Product &amp; Usability Metrics</span>
+                <div class="cs-rich__metrics cs-rich__metrics--3">
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">100%</span>
+                    <span class="cs-rich__metric-lbl">Task success</span>
+                  </div>
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">3s</span>
+                    <span class="cs-rich__metric-lbl">Time on task</span>
+                  </div>
+                  <div class="cs-rich__metric cs-rich__metric--brand">
+                    <span class="cs-rich__metric-val">98%</span>
+                    <span class="cs-rich__metric-lbl">CSAT</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cs-rich__results-group">
+                <span class="cs-rich__results-title">Growth &amp; Business Outcomes</span>
+                <div class="cs-rich__outcomes">
+                  <div class="cs-rich__outcome">
+                    <span class="cs-rich__outcome-icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 256 256" fill="none"><polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="cs-rich__outcome-text">-20% reduction in time to find relevant content and perform action (i.e. bulk) (Q3 2025)</span>
+                  </div>
+                  <div class="cs-rich__outcome">
+                    <span class="cs-rich__outcome-icon" aria-hidden="true">
+                      <svg width="20" height="20" viewBox="0 0 256 256" fill="none"><polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/></svg>
+                    </span>
+                    <span class="cs-rich__outcome-text">+10% increase in feature adoption (Q3 2025)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /cs-rich #filters -->
+
+    <!-- ══════════════════════════════════════════════════════
+         PANEL 3 · Design Systems
+         ══════════════════════════════════════════════════════ -->
+    <div class="cs-rich" id="cs-modal-rich-design-systems" hidden>
+
+      <!-- Hero -->
+      <div class="cs-rich__hero">
+        <div class="cs-rich__hero-inner">
+          <div class="cs-rich__hero-text">
+            <div class="cs-rich__badge">Design Systems · Case Study</div>
+            <h1 class="cs-rich__h1">Docebo <em>Design System.</em></h1>
+            <div class="cs-rich__problem">
+              <span class="cs-rich__problem-label">Problem</span>
+              <p class="cs-rich__problem-text">Inconsistent components and fragmented design patterns led to high engineering debt and a disjointed user experience across the platform.</p>
+            </div>
+            <div class="cs-rich__stat-row">
+              <div class="cs-rich__stat-box">
+                <span class="cs-rich__stat-value">40%</span>
+                <span class="cs-rich__stat-label">Faster Design-to-Dev Handoff</span>
+              </div>
+              <div class="cs-rich__stat-sep"></div>
+              <div class="cs-rich__stat-info">
+                <span class="cs-rich__stat-info-title">Design Impact</span>
+                <span class="cs-rich__stat-info-desc">Measured via component reuse rates and reduced QA cycles over a 6-month implementation period.</span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-rich__hero-visual">
+            <img class="cs-rich__hero-img" src="/hero-ds.png" alt="Docebo Design System — UI screenshot" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Evolution -->
+      <div class="cs-rich__section cs-rich__section--alt">
+        <div class="cs-rich__section-hd">
+          <h2 class="cs-rich__h2">Strategic Evolution</h2>
+          <p class="cs-rich__body-text">A three-pillar toolchain backed by a culture of system thinking — built to scale design consistency across 1,500+ B2B clients.</p>
+        </div>
+
+        <!-- 4-col grid: label row + cards row -->
+        <div class="cs-rich__pillars-4">
+
+          <!-- Label: The Tools (spans 3) -->
+          <div class="cs-rich__pillar-col-label cs-rich__pillar-col-label--tools" style="grid-column: span 3">
+            <span class="cs-rich__pillar-label">The Tools</span>
+          </div>
+          <!-- Label: The Culture (spans 1) -->
+          <div class="cs-rich__pillar-col-label cs-rich__pillar-col-label--culture">
+            <span class="cs-rich__pillar-label cs-rich__pillar-label--culture">The Culture</span>
+          </div>
+
+          <!-- Figma Libraries -->
+          <div class="cs-rich__pillar">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none">
+                <rect x="32" y="32" width="84" height="84" rx="10" stroke="currentColor" stroke-width="18"/>
+                <rect x="140" y="32" width="84" height="84" rx="10" stroke="currentColor" stroke-width="18"/>
+                <rect x="32" y="140" width="84" height="84" rx="10" stroke="currentColor" stroke-width="18"/>
+                <rect x="140" y="140" width="84" height="84" rx="10" stroke="currentColor" stroke-width="18"/>
+              </svg>
+            </div>
+            <div class="cs-rich__pillar-text">
+              <h3 class="cs-rich__step-title">Design Foundations &amp; Tokens</h3>
+              <p class="cs-rich__pillar-url">Figma Libraries &amp; Variables</p>
+              <p class="cs-rich__step-desc">A centralized source of truth in Figma utilizing a robust multi-tier variable architecture for colors, spacing, and theming.</p>
+              <p class="cs-rich__pillar-goal"><strong>Goal:</strong> To provide designers with "drag-and-drop" consistency and a seamless transition from low-fi wireframes to high-fidelity, production-ready prototypes.</p>
+            </div>
+          </div>
+
+          <!-- docebo.design -->
+          <div class="cs-rich__pillar">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none">
+                <rect x="32" y="48" width="192" height="160" rx="10" stroke="currentColor" stroke-width="18"/>
+                <line x1="32" y1="96" x2="224" y2="96" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>
+                <line x1="72" y1="140" x2="184" y2="140" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
+                <line x1="72" y1="168" x2="152" y2="168" stroke="currentColor" stroke-width="14" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="cs-rich__pillar-text">
+              <h3 class="cs-rich__step-title">Unified Design &amp; UX Writing Guidelines</h3>
+              <a class="cs-rich__pillar-url cs-rich__pillar-url--link" href="https://www.docebo.design" target="_blank" rel="noopener noreferrer">
+                docebo.design
+                <svg width="13" height="13" viewBox="0 0 256 256" fill="none" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-left:3px;flex-shrink:0">
+                  <path d="M216 104V40H152" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+                  <line x1="216" y1="40" x2="120" y2="136" stroke="currentColor" stroke-width="24" stroke-linecap="round"/>
+                  <path d="M184 136v72H40V64h72" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+              <p class="cs-rich__step-desc">Our public-facing documentation hub that defines the "Why" behind the "What," housing comprehensive UX patterns and voice-and-tone standards.</p>
+              <p class="cs-rich__pillar-goal"><strong>Goal:</strong> To align cross-functional teams on best practices and ensure a cohesive brand voice across every user touchpoint.</p>
+            </div>
+          </div>
+
+          <!-- elemental.docebo.dev -->
+          <div class="cs-rich__pillar">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none">
+                <polyline points="72 88 32 128 72 168" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                <polyline points="184 88 224 128 184 168" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="160" y1="56" x2="96" y2="200" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="cs-rich__pillar-text">
+              <h3 class="cs-rich__step-title">Elemental: The Developer Framework</h3>
+              <p class="cs-rich__pillar-url">elemental.docebo.dev</p>
+              <p class="cs-rich__step-desc">A high-performance Angular component library and technical documentation site built to mirror our design tokens in code.</p>
+              <p class="cs-rich__pillar-goal"><strong>Goal:</strong> To accelerate development cycles and eliminate UI bugs by providing engineers with accessible, pre-tested, and reusable code components.</p>
+            </div>
+          </div>
+
+          <!-- Training & Community -->
+          <div class="cs-rich__pillar cs-rich__pillar--culture">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none">
+                <circle cx="96" cy="80" r="36" stroke="currentColor" stroke-width="18"/>
+                <path d="M16 216 C16 168 56 136 96 136 C136 136 176 168 176 216" stroke="currentColor" stroke-width="18" stroke-linecap="round"/>
+                <circle cx="184" cy="72" r="28" stroke="currentColor" stroke-width="16"/>
+                <path d="M168 196 C172 176 176 160 184 160 C196 160 216 172 228 196" stroke="currentColor" stroke-width="16" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <div class="cs-rich__pillar-text">
+              <h3 class="cs-rich__step-title">LMS Integration &amp; System Advocacy</h3>
+              <p class="cs-rich__pillar-url">Training &amp; Community</p>
+              <p class="cs-rich__step-desc">Internal certification programs hosted on our own LMS, supplemented by "Design System Clinics" and monthly sync-up events.</p>
+              <p class="cs-rich__pillar-goal"><strong>Goal:</strong> To foster a culture of system-thinking and ensure that every new hire is empowered to contribute to and use the system effectively.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Design Tokens Section -->
+      <div class="cs-rich__section cs-rich__section--tokens">
+        <div class="cs-rich__tokens-layout">
+          <div class="cs-rich__tokens-text">
+            <h2 class="cs-rich__h2">Design Tokens:<br/><em>Powering Dynamic UI.</em></h2>
+            <p class="cs-rich__body-text">Design tokens replace static values with semantic variables to create a flexible "single source of truth." They enable instant UI transformation by centralizing visual logic across platforms.</p>
+            <p class="cs-rich__body-text">For Light and Dark mode, tokens provide the essential framework for adaptation. By swapping token values instead of hard-coding colors, you update your entire interface instantly while maintaining perfect brand consistency and accessibility.</p>
+
+            <!-- Toggle -->
+            <div class="cs-tokens-toggle" role="group" aria-label="Switch between light and dark mode preview">
+              <button class="cs-tokens-toggle__btn cs-tokens-toggle__btn--active" data-mode="light" aria-pressed="true">
+                <svg width="14" height="14" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                  <circle cx="128" cy="128" r="60" stroke="currentColor" stroke-width="20"/>
+                  <line x1="128" y1="32"  x2="128" y2="16"  stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                  <line x1="128" y1="240" x2="128" y2="224" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                  <line x1="32"  y1="128" x2="16"  y2="128" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                  <line x1="240" y1="128" x2="224" y2="128" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                  <line x1="67"  y1="67"  x2="56"  y2="56"  stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                  <line x1="200" y1="56"  x2="189" y2="67"  stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                  <line x1="67"  y1="189" x2="56"  y2="200" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                  <line x1="200" y1="200" x2="189" y2="189" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                </svg>
+                Light
+              </button>
+              <button class="cs-tokens-toggle__btn" data-mode="dark" aria-pressed="false">
+                <svg width="14" height="14" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                  <path d="M216,112a92,92,0,1,1-91-91A84,84,0,0,0,216,112Z" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                Dark
+              </button>
+            </div>
+          </div>
+
+          <div class="cs-rich__tokens-visual">
+            <div class="cs-tokens-img-wrap">
+              <img class="cs-tokens-img cs-tokens-img--active" id="cs-tokens-light" src="/Light.jpg" alt="Light mode UI preview"/>
+              <img class="cs-tokens-img" id="cs-tokens-dark" src="/Dark.jpg" alt="Dark mode UI preview" aria-hidden="true"/>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="cs-rich__section">
+        <div class="cs-rich__section-hd">
+          <h2 class="cs-rich__h2">Results</h2>
+          <p class="cs-rich__body-text">By increasing system stability, simplifying its complexity, and streamlining the handoff process, overall efforts can be significantly reduced.</p>
+        </div>
+        <div class="cs-rich__results-row">
+          <div class="cs-rich__results-group">
+            <span class="cs-rich__results-title">Product &amp; Engineering Metrics</span>
+            <div class="cs-rich__metrics cs-rich__metrics--3">
+              <div class="cs-rich__metric cs-rich__metric--brand">
+                <span class="cs-rich__metric-val">-50%</span>
+                <span class="cs-rich__metric-lbl">Maintenance effort</span>
+              </div>
+              <div class="cs-rich__metric cs-rich__metric--brand">
+                <span class="cs-rich__metric-val">+25%</span>
+                <span class="cs-rich__metric-lbl">Development velocity</span>
+              </div>
+              <div class="cs-rich__metric cs-rich__metric--brand">
+                <span class="cs-rich__metric-val">-20%</span>
+                <span class="cs-rich__metric-lbl">Time to deliver new features</span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-rich__results-group">
+            <span class="cs-rich__results-title">Growth &amp; Business Outcomes</span>
+            <div class="cs-rich__outcomes">
+              <div class="cs-rich__outcome">
+                <span class="cs-rich__outcome-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 256 256" fill="none"><polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/></svg>
+                </span>
+                <span class="cs-rich__outcome-text">+95% Internal users satisfaction (CSAT)</span>
+              </div>
+              <div class="cs-rich__outcome">
+                <span class="cs-rich__outcome-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 256 256" fill="none"><polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round"/><polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round"/></svg>
+                </span>
+                <span class="cs-rich__outcome-text">+40% Faster design-to-dev handoff</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contribution System -->
+      <div class="cs-rich__section cs-rich__section--alt">
+        <div class="cs-rich__contribution">
+          <div class="cs-rich__contribution-text">
+            <h2 class="cs-rich__h2">From experimentation<br/>to system to production.</h2>
+            <p class="cs-rich__body-text">A continuous contribution cycle where new experiments evolve into validated patterns, become shared knowledge, and are ultimately integrated into the design system and production.</p>
+          </div>
+          <div class="cs-rich__contribution-diagram" aria-hidden="true">
+            <div class="cs-loop-diagram">
+
+              <!-- SVG layer: dashed circles + faint spokes (mirrors hero triangle SVG) -->
+              <svg class="cs-loop-svg" viewBox="0 0 560 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Faint radial spokes from each circle centre -->
+                <line x1="150" y1="170" x2="150" y2="60"  stroke="var(--tao-border-brand-2)" stroke-width="1" stroke-dasharray="3 6" opacity="0.15"/>
+                <line x1="150" y1="170" x2="150" y2="280" stroke="var(--tao-border-brand-2)" stroke-width="1" stroke-dasharray="3 6" opacity="0.15"/>
+                <line x1="410" y1="170" x2="410" y2="60"  stroke="var(--tao-border-brand-2)" stroke-width="1" stroke-dasharray="3 6" opacity="0.15"/>
+                <line x1="410" y1="170" x2="410" y2="280" stroke="var(--tao-border-brand-2)" stroke-width="1" stroke-dasharray="3 6" opacity="0.15"/>
+                <!-- Marching-ant circles -->
+                <circle class="cs-loop-circle cs-loop-circle--l" cx="150" cy="170" r="110"/>
+                <circle class="cs-loop-circle cs-loop-circle--r" cx="410" cy="170" r="110"/>
+              </svg>
+
+              <!-- Traveller dot — canvas with transparent bg -->
+              <canvas id="cs-contrib-canvas" width="560" height="340"></canvas>
+
+              <!-- ── Label chips (identical style to hero .node) ── -->
+              <div class="cs-loop-node cs-loop-node--tl">
+                <svg class="cs-loop-node__icon" width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                  <circle cx="128" cy="128" r="96" stroke="currentColor" stroke-width="20"/>
+                  <line x1="128" y1="80" x2="128" y2="176" stroke="currentColor" stroke-width="20" stroke-linecap="round"/>
+                  <polyline points="96 112 128 80 160 112" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                PRODUCTION
+              </div>
+
+              <div class="cs-loop-node cs-loop-node--bl">
+                <svg class="cs-loop-node__icon" width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                  <ellipse cx="128" cy="88" rx="88" ry="24" stroke="currentColor" stroke-width="20"/>
+                  <path d="M40 88v80c0 13.25 39.4 24 88 24s88-10.75 88-24V88" stroke="currentColor" stroke-width="20" fill="none"/>
+                  <path d="M40 128c0 13.25 39.4 24 88 24s88-10.75 88-24" stroke="currentColor" stroke-width="20" fill="none"/>
+                </svg>
+                KNOWLEDGE
+              </div>
+
+              <div class="cs-loop-node cs-loop-node--tr">
+                <svg class="cs-loop-node__icon" width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                  <circle cx="80"  cy="72"  r="24" stroke="currentColor" stroke-width="20"/>
+                  <circle cx="176" cy="72"  r="24" stroke="currentColor" stroke-width="20"/>
+                  <circle cx="128" cy="184" r="24" stroke="currentColor" stroke-width="20"/>
+                  <path d="M80 96 C80 160 128 160 128 160"   stroke="currentColor" stroke-width="20" stroke-linecap="round" fill="none"/>
+                  <path d="M176 96 C176 160 128 160 128 160" stroke="currentColor" stroke-width="20" stroke-linecap="round" fill="none"/>
+                </svg>
+                CONTRIBUTION
+              </div>
+
+              <div class="cs-loop-node cs-loop-node--br">Build · Learn · Measure</div>
+
+              <!-- ── Centre card (mirrors hero .center-card) ── -->
+              <div class="cs-loop-center">
+                <div class="cs-loop-center__ring"></div>
+                <div class="cs-loop-center__ring cs-loop-center__ring--2"></div>
+                <div class="cs-loop-center__body">
+                  <!-- Phosphor: TrendUp -->
+                  <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                    <polyline points="232 64 136 160 96 120 24 192"
+                      stroke="var(--tao-text-brand-2)" stroke-width="20"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="232 64 232 128"
+                      stroke="var(--tao-text-brand-2)" stroke-width="20"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+                    <polyline points="168 64 232 64"
+                      stroke="var(--tao-text-brand-2)" stroke-width="20"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /cs-rich #design-systems -->
+
+    <!-- ══════════════════════════════════════════════════════
+         PANEL 4 · Arya: The Future of Modular UX
+         ══════════════════════════════════════════════════════ -->
+    <div class="cs-rich" id="cs-modal-rich-arya" hidden>
+
+      <!-- Hero -->
+      <div class="cs-rich__hero">
+        <div class="cs-rich__hero-inner">
+          <div class="cs-rich__hero-text">
+            <div class="cs-rich__badge">Innovation · Hackathon</div>
+            <h1 class="cs-rich__h1">Arya: The Future of <em>Modular UX.</em></h1>
+            <div class="cs-rich__problem">
+              <span class="cs-rich__problem-label">Problem</span>
+              <p class="cs-rich__problem-text">Companies need for an LMS that could really fit their needs according to their single use cases and Docebo cannot offer that level of flexibility yet.</p>
+            </div>
+            <div class="cs-rich__stat-row">
+              <div class="cs-rich__stat-box">
+                <span class="cs-rich__stat-value">68%</span>
+                <span class="cs-rich__stat-label">Never Customised Their View</span>
+              </div>
+              <div class="cs-rich__stat-sep"></div>
+              <div class="cs-rich__stat-info">
+                <span class="cs-rich__stat-info-title">Design Impact</span>
+                <span class="cs-rich__stat-info-desc">Award-winning concept validated through hackathon pitch and live prototype testing with real users.</span>
+              </div>
+            </div>
+          </div>
+          <div class="cs-rich__hero-visual">
+            <img class="cs-rich__hero-img" src="/Arya01.png" alt="Arya modular interface builder — UI screenshot" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Strategic Evolution -->
+      <div class="cs-rich__section cs-rich__section--alt">
+        <div class="cs-rich__section-hd">
+          <h2 class="cs-rich__h2">Strategic Evolution</h2>
+          <p class="cs-rich__body-text">What started as a 48-hour hackathon sprint became a lean startup journey. After winning 1st place, the concept moved into structured MVP mode — short build-measure-learn cycles designed to prove business viability before committing to full engineering resources.</p>
+        </div>
+        <div class="cs-rich__steps cs-rich__steps--architecture">
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><circle cx="128" cy="80" r="48" stroke="currentColor" stroke-width="18"/><path d="M128 144 L128 224" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><path d="M80 184 L176 184" stroke="currentColor" stroke-width="18" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Problem Framing</h3>
+            <p class="cs-rich__step-desc">Mapped the "one-size-fits-all" pain points from existing user research and support ticket themes to define a clear north star.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><rect x="32" y="32" width="72" height="72" rx="8" stroke="currentColor" stroke-width="18"/><rect x="152" y="32" width="72" height="72" rx="8" stroke="currentColor" stroke-width="18"/><rect x="32" y="152" width="72" height="72" rx="8" stroke="currentColor" stroke-width="18"/><rect x="152" y="152" width="72" height="72" rx="8" stroke="currentColor" stroke-width="18" stroke-dasharray="10 6"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">AI Template Research</h3>
+            <p class="cs-rich__step-desc">Explored generative layout approaches and identified 6 role-based interface archetypes to seed the AI template library.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><rect x="32" y="56" width="192" height="160" rx="12" stroke="currentColor" stroke-width="20"/><line x1="80" y1="56" x2="80" y2="24" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><line x1="176" y1="56" x2="176" y2="24" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><line x1="72" y1="128" x2="184" y2="128" stroke="currentColor" stroke-width="16" stroke-linecap="round"/><line x1="72" y1="160" x2="144" y2="160" stroke="currentColor" stroke-width="16" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Modular Prototype</h3>
+            <p class="cs-rich__step-desc">Built a functional drag-and-drop module system in Figma and a live HTML/JS prototype to demonstrate the no-code editing flow in 48 hours.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><polyline points="232 56 136 152 96 112 24 184" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="232 56 232 120" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/><polyline points="168 56 232 56" stroke="currentColor" stroke-width="20" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">🏆 Hackathon Win</h3>
+            <p class="cs-rich__step-desc">Pitched Arya to a cross-functional jury of product, engineering and business leaders — winning 1st place out of 14 competing teams. This unlocked executive sponsorship to take the concept further.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <svg width="22" height="22" viewBox="0 0 256 256" fill="none" aria-hidden="true"><path d="M128 32 C80 32 40 72 40 128 C40 184 80 224 128 224 C176 224 216 184 216 128" stroke="currentColor" stroke-width="18" stroke-linecap="round"/><polyline points="216 48 216 128 136 128" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="cs-rich__step-title">Lean MVP Cycles</h3>
+            <p class="cs-rich__step-desc">Post-win, we shifted into lean startup mode — rapid build-measure-learn sprints with a small cross-functional pod to test assumptions, cut scope to the essential, and validate market fit before any full engineering commitment.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Focal Points -->
+      <div class="cs-rich__section">
+        <div class="cs-rich__section-hd cs-rich__section-hd--center">
+          <h2 class="cs-rich__h2">Focal Points</h2>
+          <p class="cs-rich__body-text">The key product areas we explored and validated through lean MVP cycles after the hackathon win.</p>
+        </div>
+
+        <!-- Focal Point 1 · Components Customization -->
+        <div class="cs-rich__hyp cs-rich__hyp--split">
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Components Customization</div>
+            <p class="cs-rich__body-text" style="font-size: var(--tao-typography-size-md); line-height: 1.7;">Since it's really important for our customers to be able to customize their platforms with ease, starting from design tokens, we decided to allow them to change pages, layouts, components composition and appearance, primitives, and more...</p>
+          </div>
+          <div class="cs-rich__hyp-visual">
+            <img class="cs-rich__hyp-img" src="/Arya02.png" alt="Arya components customization interface" />
+          </div>
+        </div>
+
+        <hr class="cs-rich__divider" />
+
+        <!-- Focal Point 2 · Admin Interface -->
+        <div class="cs-rich__hyp cs-rich__hyp--split cs-rich__hyp--flip">
+          <div class="cs-rich__hyp-visual">
+            <img class="cs-rich__hyp-img" src="/Arya03.png" alt="Arya admin interface redesign" />
+          </div>
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Admin Interface</div>
+            <p class="cs-rich__body-text" style="font-size: var(--tao-typography-size-md); line-height: 1.7;">The admin area is where platform complexity hits hardest — a dense, task-heavy environment that administrators navigate daily to configure, manage and support thousands of learners. As part of Arya, I took the opportunity to explore what a rethought admin experience could look like: cleaner information hierarchy, a more intentional use of space, and a sidebar navigation that prioritises the most critical workflows. This was my personal design vision — not a formal project brief, but a deliberate exercise in imagining a more humane, scalable back-office experience.</p>
+          </div>
+        </div>
+
+        <hr class="cs-rich__divider" />
+
+        <!-- Focal Point 3 · Generative Layouts -->
+        <div class="cs-rich__hyp cs-rich__hyp--split">
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Generative Layouts</div>
+            <p class="cs-rich__body-text" style="font-size: var(--tao-typography-size-md); line-height: 1.7;">I've always been drawn to generative design as a way to move beyond fixed templates and unlock genuinely adaptive experiences. For this thread of the project, I partnered with a data analyst to start mapping the layouts our clients had already built — analysing patterns, use cases and the intent behind each configuration.<br /><br />My goal was to investigate the possibility of using that data to power AI-generated layout suggestions: templates that wouldn't just look good, but would actually fit the specific scope of each client when they set out to create a new page. Rather than starting from a blank canvas, users would receive intelligent starting points shaped by what real organisations — with similar roles, industries or goals — had found most effective.</p>
+          </div>
+          <div class="cs-rich__hyp-visual">
+            <img class="cs-rich__hyp-img" src="/Arya04.png" alt="Arya generative layout suggestions" />
+          </div>
+        </div>
+
+
+      </div>
+
+    </div><!-- /cs-rich #arya -->
+
+    <!-- ══════════════════════════════════════════════════════
+         PANEL 5 · The Agentic Design Engine (Blueprint)
+         ══════════════════════════════════════════════════════ -->
+    <div class="cs-rich" id="cs-modal-rich-agentic" hidden>
+
+      <!-- Hero -->
+      <div class="cs-rich__hero">
+        <div class="cs-rich__hero-inner">
+          <div class="cs-rich__hero-text">
+            <div class="cs-rich__badge">Blueprint · Autonomous Systems</div>
+            <h1 class="cs-rich__h1">The Agentic <em>Design Engine.</em></h1>
+            <div class="cs-rich__problem">
+              <span class="cs-rich__problem-label">Vision</span>
+              <p class="cs-rich__problem-text">AI-assisted design today is largely generative and unpredictable — a blank canvas with a suggestion engine. This blueprint proposes a deterministic pipeline that instead gives Claude Code the full context of a design system, bridging Figma MCP, Code Connect, and Style Dictionary to act as a system architect rather than a content generator.</p>
+            </div>
+          </div>
+          <div class="cs-rich__hero-visual">
+            <img class="cs-rich__hero-img" src="/hero-ds.png" alt="Agentic Design Engine — system diagram" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Architecture -->
+      <div class="cs-rich__section cs-rich__section--alt">
+        <div class="cs-rich__section-hd">
+          <h2 class="cs-rich__h2">System Architecture</h2>
+          <p class="cs-rich__body-text">The engine is composed of three interconnected layers, each feeding the next with structured, machine-readable context — eliminating ambiguity at every handoff.</p>
+        </div>
+        <div class="cs-rich__steps cs-rich__steps--architecture">
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <FadersHorizontalIcon size={22} weight="regular" aria-hidden="true" />
+            </div>
+            <h3 class="cs-rich__step-title">Strategic Orchestration</h3>
+            <p class="cs-rich__step-desc">The Architect defines the project's unique needs, identifying where overrides to the core system are required. Using an AI-native editor, the Architect directs the system to plan structural changes based on high-level logic rather than manual pixel-pushing.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <PaletteIcon size={22} weight="regular" aria-hidden="true" />
+            </div>
+            <h3 class="cs-rich__step-title">Storybook Theming</h3>
+            <p class="cs-rich__step-desc">Project-specific overrides are applied and tested directly in Storybook. This live sandbox allows the architect to validate how custom token values interact with existing components in real-time, ensuring the design works in a browser-native environment before it’s finalized.</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <StackSimpleIcon size={22} weight="regular" aria-hidden="true" />
+            </div>
+            <h3 class="cs-rich__step-title">Style Dictionary Core</h3>
+            <p class="cs-rich__step-desc">Validated overrides are pushed to the Style Dictionary. This centralizes the project's logic into a platform-agnostic JSON layer, which then automatically compiles the correct variables for CSS, React, and mobile platforms—acting as the "Single Source of Truth."</p>
+          </div>
+          <div class="cs-rich__step">
+            <div class="cs-rich__step-icon">
+              <ArrowsClockwiseIcon size={22} weight="regular" aria-hidden="true" />
+            </div>
+            <h3 class="cs-rich__step-title">Bi-Directional Synchronization</h3>
+            <p class="cs-rich__step-desc">The system ensures zero drift between intent and reality. While Figma remains a flexible entry point for mockups, it is no longer a bottleneck; since system rules live in component metadata, any generative AI can assemble production code directly. The loop then uses Bridge protocols to push code-first changes back to Figma, keeping the design file a living, accurate mirror of the architect’s decisions.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Focal Points -->
+      <div class="cs-rich__section">
+        <div class="cs-rich__section-hd cs-rich__section-hd--center">
+          <h2 class="cs-rich__h2">What This Unlocks</h2>
+          <p class="cs-rich__body-text">The practical consequences of giving an AI agent a complete, structured understanding of a design system.</p>
+        </div>
+
+        <!-- FP 1 -->
+        <div class="cs-rich__hyp cs-rich__hyp--split">
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Intent → Component</div>
+            <p class="cs-rich__body-text" style="font-size: var(--tao-typography-size-md); line-height: 1.7;">Describe a UI pattern in plain language — "a filterable data table with inline bulk actions" — and the engine resolves the correct components, wires the right tokens, and outputs accessible, production-ready code. No prompt engineering, no manual token lookup, no post-generation cleanup.</p>
+          </div>
+          <div class="cs-rich__hyp-visual">
+            <img class="cs-rich__hyp-img" src="/hero-ds.png" alt="Intent to component — AI assembly" />
+          </div>
+        </div>
+
+        <hr class="cs-rich__divider" />
+
+        <!-- FP 2 -->
+        <div class="cs-rich__hyp cs-rich__hyp--split cs-rich__hyp--flip">
+          <div class="cs-rich__hyp-visual">
+            <img class="cs-rich__hyp-img" src="/Light.jpg" alt="Token-perfect layout output" />
+          </div>
+          <div class="cs-rich__hyp-content cs-rich__hyp--solo">
+            <div class="cs-rich__hyp-badge">Zero Token Drift</div>
+            <p class="cs-rich__body-text" style="font-size: var(--tao-typography-size-md); line-height: 1.7;">Because Claude reads token names from Style Dictionary rather than inventing them, every generated surface, text style, and border references a real, versioned token. Theming, dark mode, and brand overrides all work automatically — the AI never hard-codes a hex value or a pixel size.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div><!-- /cs-rich #agentic -->
+
+  </div>
+</dialog>
+
+<style>
+  .works {
+    background: color-mix(in srgb, var(--tao-surface-brand-2-subtlest) 64%, var(--tao-surface-neutral-white));
+    padding: var(--tao-spacing-xxxl) 0;
+    overflow-x: clip;
+  }
+
+  .works__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--tao-spacing-xl);
+  }
+
+  /* ─── Header ─────────────────────────────────────────── */
+
+  .works__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--tao-spacing-xl);
+    opacity: 0;
+    transform: translateY(var(--tao-spacing-sm));
+    transition:
+      opacity   500ms cubic-bezier(0, 0, 0.2, 1),
+      transform 500ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .works.in-view .works__header { opacity: 1; transform: translateY(0); }
+
+  .works__title {
+    font-size: var(--tao-typography-size-xl);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0 0 var(--tao-spacing-xs);
+    line-height: 1.15;
+  }
+
+  .works__subtitle {
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    margin: 0;
+  }
+
+  /* ─── Nav arrows ─────────────────────────────────────── */
+
+  .works__nav {
+    display: flex;
+    gap: var(--tao-spacing-xs);
+    padding-top: var(--tao-spacing-xxs);
+    flex-shrink: 0;
+  }
+
+  .works__nav-btn {
+    transition: transform 0.15s, opacity 0.15s;
+  }
+
+  .works__nav-btn:hover {
+    border-color: var(--tao-border-brand-2);
+    transform: scale(1.06);
+  }
+
+  .works__nav-btn:disabled {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* ─── Outer grid (carousel row + bottom row) ─────────── */
+
+  .works__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--tao-spacing-md);
+  }
+
+  /* ─── Carousel wrapper ───────────────────────────────── */
+
+  .works__carousel {
+    grid-column: 1 / -1;
+    min-width: 0;
+    padding-top: var(--tao-spacing-md);
+    padding-bottom: var(--tao-spacing-xxl);
+    margin-top: calc(-1 * var(--tao-spacing-md));
+    margin-bottom: calc(-1 * var(--tao-spacing-xxl));
+    opacity: 0;
+    transform: translateY(calc(var(--tao-spacing-md) + var(--tao-spacing-xs)));
+    transition:
+      opacity  600ms cubic-bezier(0, 0, 0.2, 1),
+      transform 600ms cubic-bezier(0, 0, 0.2, 1);
+    transition-delay: 80ms;
+  }
+
+  .works.in-view .works__carousel { opacity: 1; transform: translateY(0); }
+
+  .works__carousel-wrap {
+    overflow: clip;
+    overflow-clip-margin: var(--tao-spacing-md);
+    width: 100%;
+  }
+
+  .works__carousel-track {
+    display: flex;
+    gap: var(--tao-spacing-md);
+    transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  /* ─── Dots (mobile only) ─────────────────────────────── */
+
+  .works__dots {
+    display: none;
+    justify-content: center;
+    gap: var(--tao-spacing-xs);
+    margin-top: var(--tao-spacing-lg);
+  }
+
+  .works__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--tao-radius-circular);
+    background: var(--tao-border-default);
+    transition: background 0.2s, width 0.2s;
+  }
+
+  .works__dot--active {
+    width: 20px;
+    background: var(--tao-border-brand-1);
+  }
+
+  /* ─── Base card ──────────────────────────────────────── */
+
+  .work-card {
+    border-radius: var(--tao-radius-lg);
+    padding: var(--tao-spacing-xl);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+  }
+
+  /* Cards inside carousel: exactly 1/3 of the carousel width */
+  .works__carousel-track .work-card {
+    /* 3 cards visible, accounting for 2 gaps */
+    width: calc((100% - 2 * var(--tao-spacing-md)) / 3);
+  }
+
+  /* ─── Light cards ────────────────────────────────────── */
+
+  .work-card--light {
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    min-height: 280px;
+    gap: var(--tao-spacing-md);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .works.in-view .work-card--light:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      0 2px 4px  color-mix(in srgb, var(--tao-border-brand-2) 5%,  transparent),
+      0 8px 20px color-mix(in srgb, var(--tao-border-brand-2) 8%, transparent);
+  }
+
+  /* ─── Icon wrap ──────────────────────────────────────── */
+
+  .work-card__icon-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--tao-radius-md);
+    background: var(--tao-surface-brand-2-subtlest);
+    color: var(--tao-text-brand-2);
+    flex-shrink: 0;
+  }
+
+  /* ─── Logo ───────────────────────────────────────────── */
+
+  .work-card__logo {
+    position: absolute;
+    top: var(--tao-spacing-xl);
+    right: var(--tao-spacing-xl);
+    height: 18px;
+    width: auto;
+    object-fit: contain;
+  }
+
+  /* ─── Card text ──────────────────────────────────────── */
+
+  .work-card__body { flex: 1; }
+
+  .work-card__title {
+    font-size: var(--tao-typography-size-lg);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0 0 var(--tao-spacing-xs);
+    line-height: 1.3;
+  }
+
+  .work-card__desc {
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* ─── Learn more link ───────────────────────────────── */
+
+  .work-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tao-spacing-xxs);
+    font-size: var(--tao-typography-size-md);
+    font-weight: 600;
+    color: var(--tao-text-brand-2);
+    text-decoration: none;
+    transition: gap 0.15s;
+  }
+  .work-card__link:hover { gap: var(--tao-spacing-xs); }
+
+  /* ─── Tag chips ──────────────────────────────────────── */
+
+  .work-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--tao-spacing-xs);
+  }
+
+  .work-card__tag {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    color: var(--tao-text-default);
+    border: var(--tao-border-width-sm) solid var(--tao-border-default);
+    border-radius: var(--tao-radius-pill);
+    padding: var(--tao-spacing-xxs) var(--tao-spacing-sm);
+  }
+
+  /* ─── Image card ─────────────────────────────────────── */
+
+  .work-card--image {
+    padding: 0;
+    min-height: 280px;
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+  }
+
+  .work-card__image-art {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      145deg,
+      var(--tao-surface-brand-2-subtlest) 0%,
+      var(--tao-surface-brand-1-subtle)   55%,
+      var(--tao-surface-brand-3-subtlest) 100%
+    );
+  }
+
+  .image-art__grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, color-mix(in srgb, var(--tao-border-brand-1) 18%, transparent) 0px, transparent 1px, transparent 36px),
+      repeating-linear-gradient(90deg, color-mix(in srgb, var(--tao-border-brand-1) 18%, transparent) 0px, transparent 1px, transparent 36px);
+  }
+
+  .image-art__glow {
+    position: absolute;
+    border-radius: var(--tao-radius-circular);
+    filter: blur(28px);
+  }
+  .image-art__glow--a { width: 160px; height: 160px; background: var(--tao-surface-brand-2-subtle); top: 10%; left: 15%; opacity: 0.6; }
+  .image-art__glow--b { width: 120px; height: 120px; background: var(--tao-surface-brand-3-subtle); bottom: 15%; right: 20%; opacity: 0.5; }
+
+  /* ─── Bottom row cards ───────────────────────────────── */
+
+  .work-card--bottom-1,
+  .work-card--bottom-2 {
+    opacity: 0;
+    transform: translateY(calc(var(--tao-spacing-md) + var(--tao-spacing-xs)));
+    transition:
+      opacity  600ms cubic-bezier(0, 0, 0.2, 1),
+      transform 600ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  .works.in-view .work-card--bottom-1 { opacity: 1; transform: translateY(0); transition-delay: 130ms; }
+  .works.in-view .work-card--bottom-2 { opacity: 1; transform: translateY(0); transition-delay: 230ms; }
+
+  /* ─── Dark card ──────────────────────────────────────── */
+
+  .work-card--dark {
+    background: var(--tao-surface-brand-1-strongest);
+    flex-direction: row;
+    align-items: center;
+    gap: var(--tao-spacing-xl);
+    min-height: 300px;
+  }
+
+  .work-card--wide { grid-column: span 2; }
+
+  .work-card__dark-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-lg);
+    min-width: 0;
+  }
+
+  .work-card--dark .work-card__title { color: var(--tao-text-inverse); font-size: var(--tao-typography-size-xxl); }
+  .work-card--dark .work-card__desc  { color: color-mix(in srgb, var(--tao-text-inverse) 80%, transparent); }
+
+  /* ─── Pill button ────────────────────────────────────── */
+
+  .work-card__pill-btn {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 600;
+    color: var(--tao-text-inverse);
+    background: transparent;
+    border: var(--tao-border-width-sm) solid color-mix(in srgb, var(--tao-text-inverse) 35%, transparent);
+    border-radius: var(--tao-radius-pill);
+    padding: var(--tao-spacing-xs) var(--tao-spacing-lg);
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+  }
+  .work-card__pill-btn:hover {
+    background: color-mix(in srgb, var(--tao-text-inverse) 10%, transparent);
+    border-color: color-mix(in srgb, var(--tao-text-inverse) 55%, transparent);
+  }
+  .work-card__pill-btn:focus-visible { outline: var(--tao-border-width-md) solid var(--tao-state-focus); outline-offset: 3px; }
+
+  /* ─── Decorative orb ─────────────────────────────────── */
+
+  .work-card__dark-visual {
+    width: 210px; height: 210px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .work-card__orb {
+    width: 190px; height: 190px;
+    border-radius: 55% 45% 60% 40% / 50% 60% 40% 55%;
+    background: radial-gradient(
+      ellipse at 38% 32%,
+      var(--tao-surface-brand-3-subtle),
+      var(--tao-surface-brand-2-subtle) 45%,
+      var(--tao-surface-brand-1-subtle) 78%,
+      transparent 100%
+    );
+    filter: blur(3px);
+    animation: orb-breathe 7s ease-in-out infinite;
+  }
+
+  @keyframes orb-breathe {
+    0%, 100% { border-radius: 55% 45% 60% 40% / 50% 60% 40% 55%; transform: scale(1) rotate(0deg); }
+    33%       { border-radius: 42% 58% 38% 62% / 58% 42% 62% 38%; transform: scale(1.04) rotate(6deg); }
+    66%       { border-radius: 60% 40% 55% 45% / 44% 56% 48% 52%; transform: scale(0.97) rotate(-4deg); }
+  }
+
+  /* ─── Brand card ─────────────────────────────────────── */
+
+  .work-card--brand {
+    background: var(--tao-surface-brand-2-bold);
+    justify-content: space-between;
+    min-height: 300px;
+  }
+
+  .work-card__brand-icon { color: var(--tao-text-inverse); }
+  .work-card--brand .work-card__title { color: var(--tao-text-inverse); font-size: var(--tao-typography-size-xxl); }
+  .work-card--brand .work-card__desc  { color: color-mix(in srgb, var(--tao-text-inverse) 85%, transparent); }
+
+  /* ─── Circle arrow button ────────────────────────────── */
+
+  .work-card__circle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px; height: 48px;
+    border-radius: var(--tao-radius-circular);
+    background: var(--tao-text-inverse);
+    border: none;
+    cursor: pointer;
+    color: var(--tao-surface-brand-2-bold);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    align-self: flex-start;
+    margin-top: var(--tao-spacing-xs);
+  }
+  .work-card__circle-btn:hover { transform: scale(1.1) translateX(4px); }
+  .work-card__circle-btn:focus-visible {
+    outline: var(--tao-border-width-md) solid color-mix(in srgb, var(--tao-text-inverse) 60%, transparent);
+    outline-offset: 3px;
+  }
+
+  .work-card__cta {
+    align-self: flex-start;
+    margin-top: var(--tao-spacing-xs);
+    --tao-button-bg:                  var(--tao-surface-neutral-white);
+    --tao-button-text:                var(--tao-text-default);
+    --tao-button-hover-overlay-color: var(--tao-state-hover);
+    --tao-button-press-overlay-color: var(--tao-state-active);
+  }
+
+  /* ─── Reduced motion ─────────────────────────────────── */
+
+  /* ─── Clickable cards ───────────────────────────────────── */
+
+  .work-card[data-project] {
+    cursor: pointer;
+  }
+
+  .work-card[data-project]:focus-visible {
+    outline: var(--tao-border-width-md) solid var(--tao-state-focus);
+    outline-offset: 3px;
+  }
+
+  /* ─── Modal backdrop ─────────────────────────────────────── */
+
+  .cs-modal {
+    border: none;
+    padding: var(--tao-spacing-md);
+    background: transparent;
+    max-width: 100%;
+    max-height: 100%;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    position: fixed;
+    overflow: hidden;
+  }
+
+  .cs-modal[open] {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .cs-modal::backdrop {
+    background: color-mix(in srgb, var(--tao-surface-brand-1-strongest) 55%, transparent);
+    backdrop-filter: blur(4px);
+    transition: opacity 400ms ease, backdrop-filter 400ms ease;
+  }
+
+  .cs-modal[open]::backdrop {
+    opacity: 1;
+  }
+
+  @starting-style {
+    .cs-modal[open]::backdrop {
+      opacity: 0;
+    }
+  }
+
+  /* ─── Modal inner panel ──────────────────────────────────── */
+
+  .cs-modal__inner {
+    position: relative;
+    transform-origin: center center;
+    width: min(1400px, calc(100vw - var(--tao-spacing-xl) * 2));
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    border-radius: var(--tao-radius-xl);
+    overflow-y: auto;
+    transition:
+      opacity  400ms cubic-bezier(0.34, 1.56, 0.64, 1),
+      transform 400ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--tao-border-subtle) 60%, transparent) transparent;
+  }
+  .cs-modal__inner::-webkit-scrollbar {
+    width: 6px;
+  }
+  .cs-modal__inner::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .cs-modal__inner::-webkit-scrollbar-thumb {
+    background: color-mix(in srgb, var(--tao-border-subtle) 80%, transparent);
+    border-radius: var(--tao-radius-pill);
+  }
+  .cs-modal__inner::-webkit-scrollbar-thumb:hover {
+    background: var(--tao-border-default);
+  }
+
+  .cs-modal[open] .cs-modal__inner {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @starting-style {
+    .cs-modal[open] .cs-modal__inner {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+  }
+
+  .cs-modal__inner--closing {
+    opacity: 0 !important;
+    transform: scale(0.85) !important;
+    transition:
+      opacity  220ms cubic-bezier(0.4, 0, 1, 1),
+      transform 220ms cubic-bezier(0.4, 0, 1, 1) !important;
+  }
+
+  /* ─── Close button ───────────────────────────────────────── */
+
+  .cs-modal__close-wrap {
+    position: absolute;
+    top: calc(var(--tao-spacing-xl) - var(--tao-spacing-md));
+    right: calc(var(--tao-spacing-xxl) - var(--tao-spacing-md));
+    z-index: 20;
+  }
+
+  .cs-modal__close {
+    position: relative;
+    flex-shrink: 0;
+    background: color-mix(in srgb, var(--tao-surface-neutral-white) 82%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  /* ─── Modal header ───────────────────────────────────────── */
+
+  .cs-modal__header {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-md);
+    padding: var(--tao-spacing-xxl) var(--tao-spacing-xxl) 0;
+    /* clear the floated close btn */
+    clear: right;
+    margin-top: calc(-1 * var(--tao-spacing-lg));
+  }
+
+  .cs-modal__icon {
+    width: 52px;
+    height: 52px;
+    flex-shrink: 0;
+  }
+
+  .cs-modal__label {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    color: var(--tao-text-brand-2);
+    text-transform: uppercase;
+    margin: 0 0 var(--tao-spacing-xxs);
+  }
+
+  .cs-modal__title {
+    font-size: var(--tao-typography-size-xxl);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  /* ─── Tags row ───────────────────────────────────────────── */
+
+  .cs-modal__tags {
+    padding: var(--tao-spacing-md) var(--tao-spacing-xxl) 0;
+  }
+
+  /* ─── Hero band ──────────────────────────────────────────── */
+
+  .cs-modal__hero {
+    position: relative;
+    height: 180px;
+    margin: var(--tao-spacing-xl) var(--tao-spacing-xxl) 0;
+    border-radius: var(--tao-radius-lg);
+    overflow: hidden;
+    background: linear-gradient(
+      135deg,
+      var(--tao-surface-brand-2-subtlest) 0%,
+      var(--tao-surface-brand-1-subtle)   50%,
+      var(--tao-surface-brand-3-subtlest) 100%
+    );
+  }
+
+  .cs-modal__hero-glow {
+    position: absolute;
+    border-radius: var(--tao-radius-circular);
+    filter: blur(36px);
+  }
+  .cs-modal__hero-glow--a {
+    width: 220px; height: 220px;
+    background: var(--tao-surface-brand-2-subtle);
+    top: -40px; left: 10%;
+    opacity: 0.6;
+  }
+  .cs-modal__hero-glow--b {
+    width: 180px; height: 180px;
+    background: var(--tao-surface-brand-3-subtle);
+    bottom: -40px; right: 15%;
+    opacity: 0.5;
+  }
+
+  /* ─── Body ───────────────────────────────────────────────── */
+
+  .cs-modal__body {
+    padding: var(--tao-spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xl);
+  }
+
+  .cs-modal__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-xl);
+  }
+
+  .cs-modal__section-title {
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tao-text-subtle);
+    margin: 0 0 var(--tao-spacing-sm);
+  }
+
+  .cs-modal__text {
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  .cs-modal__outcomes {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-sm);
+  }
+
+  .cs-modal__outcomes li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--tao-spacing-sm);
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    line-height: 1.5;
+  }
+
+  .cs-modal__outcomes li::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: var(--tao-radius-circular);
+    background: var(--tao-surface-brand-2-default);
+    margin-top: var(--tao-spacing-xs);
+    flex-shrink: 0;
+  }
+
+  /* ─── Rich case study ───────────────────────────────────── */
+
+  .cs-rich { display: flex; flex-direction: column; }
+  .cs-rich[hidden] { display: none; }
+
+  /* Hero */
+  .cs-rich__hero {
+    padding: var(--tao-spacing-xxxl) var(--tao-spacing-xxl) var(--tao-spacing-xl);
+    background: color-mix(in srgb, var(--tao-surface-brand-2-subtlest) 50%, var(--tao-surface-neutral-white));
+    border-bottom: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+  }
+  .cs-rich__hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-xxl);
+    align-items: center;
+  }
+  .cs-rich__hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-lg);
+  }
+  .cs-rich__badge {
+    display: inline-flex;
+    align-self: flex-start;
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tao-text-ai);
+    background: var(--tao-surface-ai-subtlest);
+    border: var(--tao-border-width-sm) solid color-mix(in srgb, var(--tao-border-ai) calc(var(--tao-opacity-64) * 100%), transparent);
+    border-radius: var(--tao-radius-pill);
+    padding: var(--tao-spacing-xs) var(--tao-spacing-md);
+  }
+  .cs-rich__h1 {
+    font-size: var(--tao-typography-size-xxxl);
+    font-weight: 800;
+    line-height: 1.08;
+    color: var(--tao-text-default);
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .cs-rich__h1 em {
+    font-style: italic;
+    color: var(--tao-text-brand-2);
+  }
+  .cs-rich__lead {
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    line-height: 1.65;
+    margin: 0;
+    max-width: 52ch;
+  }
+
+  .cs-rich__problem {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xs);
+  }
+  .cs-rich__problem-label {
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 700;
+    color: var(--tao-text-default);
+  }
+  .cs-rich__problem-text {
+    font-size: var(--tao-typography-size-lg);
+    font-weight: 700;
+    color: var(--tao-text-brand-2);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Task block inside hypothesis */
+  .cs-rich__task {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-sm);
+    padding: var(--tao-spacing-lg) var(--tao-spacing-xl);
+    background: var(--tao-surface-neutral-subtlest);
+    border-radius: var(--tao-radius-lg);
+  }
+  .cs-rich__task-label {
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 700;
+    color: var(--tao-text-brand-1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* Business outcome rows */
+  .cs-rich__outcomes {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xs);
+  }
+  .cs-rich__outcome {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--tao-spacing-sm);
+    background: var(--tao-surface-news-subtlest);
+    border-radius: var(--tao-radius-md);
+    padding: var(--tao-spacing-sm) var(--tao-spacing-md);
+    font-size: var(--tao-typography-size-sm);
+    color: var(--tao-text-default);
+  }
+  .cs-rich__outcome-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    color: var(--tao-text-news);
+  }
+  .cs-rich__outcome-text {
+    font-weight: 400;
+  }
+  .cs-rich__stat-row {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-lg);
+    padding: var(--tao-spacing-md) var(--tao-spacing-lg);
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    border-radius: var(--tao-radius-lg);
+    width: fit-content;
+  }
+  .cs-rich__stat-box { display: flex; flex-direction: column; gap: 2px; }
+  .cs-rich__stat-value {
+    font-size: var(--tao-typography-size-xxl);
+    font-weight: 800;
+    color: var(--tao-text-brand-2);
+    line-height: 1;
+  }
+  .cs-rich__stat-label {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tao-text-subtle);
+  }
+  .cs-rich__stat-sep {
+    width: 1px;
+    height: 40px;
+    background: var(--tao-border-subtle);
+    flex-shrink: 0;
+  }
+  .cs-rich__stat-info { display: flex; flex-direction: column; gap: 2px; }
+  .cs-rich__stat-info-title {
+    font-size: var(--tao-typography-size-md);
+    font-weight: 700;
+    color: var(--tao-text-default);
+  }
+  .cs-rich__stat-info-desc {
+    font-size: var(--tao-typography-size-sm);
+    color: var(--tao-text-subtle);
+  }
+
+  /* Hero visual */
+  .cs-rich__hero-visual { position: relative; }
+  .cs-rich__hero-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--tao-radius-lg);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    display: block;
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--tao-border-brand-2) 12%, transparent);
+  }
+  .cs-rich__wf { width: 100%; display: flex; flex-direction: column; gap: var(--tao-spacing-md); }
+  .cs-rich__wf-bar {
+    height: 12px;
+    width: 40%;
+    background: var(--tao-surface-brand-2-subtle);
+    border-radius: var(--tao-radius-pill);
+  }
+  .cs-rich__wf-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-sm);
+  }
+  .cs-rich__wf-card {
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    border-radius: var(--tao-radius-md);
+    padding: var(--tao-spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xs);
+  }
+  .cs-rich__wf-thumb {
+    aspect-ratio: 1;
+    background: color-mix(in srgb, var(--tao-surface-brand-2-subtle) 40%, transparent);
+    border-radius: var(--tao-radius-sm);
+  }
+  .cs-rich__wf-line {
+    height: 6px;
+    background: var(--tao-border-subtle);
+    border-radius: var(--tao-radius-pill);
+  }
+  .cs-rich__wf-line--short { width: 65%; }
+
+  /* Sections */
+  .cs-rich__section {
+    padding: var(--tao-spacing-xxl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xxl);
+    border-bottom: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+  }
+  .cs-rich__section--alt {
+    background: color-mix(in srgb, var(--tao-surface-brand-1-subtlest) 40%, var(--tao-surface-neutral-white));
+  }
+  .cs-rich__section-hd { display: flex; flex-direction: column; gap: var(--tao-spacing-sm); max-width: 60ch; }
+  .cs-rich__section-hd--center { max-width: 100%; }
+  .cs-rich__h2 {
+    font-size: var(--tao-typography-size-xxl);
+    font-weight: 800;
+    color: var(--tao-text-default);
+    margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .cs-rich__body-text {
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    line-height: 1.65;
+    margin: 0;
+  }
+
+  /* Steps */
+  .cs-rich__steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--tao-spacing-xl);
+  }
+
+  .cs-rich__steps--5 {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .cs-rich__steps--4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .cs-rich__steps--architecture {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .cs-rich__step { display: flex; flex-direction: column; gap: var(--tao-spacing-md); }
+  .cs-rich__step-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: var(--tao-radius-lg);
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tao-text-brand-2);
+    flex-shrink: 0;
+  }
+  .cs-rich__step-title {
+    font-size: var(--tao-typography-size-md);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0;
+  }
+  .cs-rich__step-desc {
+    font-size: var(--tao-typography-size-sm);
+    color: var(--tao-text-subtle);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Hypothesis */
+  .cs-rich__hyp {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-xxl);
+    align-items: start;
+  }
+  /* Two-column variant: content left, image right */
+  .cs-rich__hyp--split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: var(--tao-spacing-xxl);
+    align-items: start;
+  }
+  /* Inner content column stacks vertically */
+  .cs-rich__hyp--solo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xl);
+  }
+  .cs-rich__hyp-visual { position: relative; }
+  .cs-rich__hyp-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--tao-radius-lg);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    display: block;
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--tao-border-brand-2) 12%, transparent);
+  }
+  video.cs-rich__hyp-img {
+    overflow: hidden;
+  }
+  /* --flip handled via DOM order in --split layouts */
+
+  /* Hypothesis divider */
+  .cs-rich__divider {
+    border: none;
+    border-top: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    margin: 0 var(--tao-spacing-xxl);
+  }
+
+  /* ── Contribution System ─────────────────────────────────── */
+  .cs-rich__contribution {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-xxl);
+    align-items: center;
+  }
+  .cs-rich__contribution-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-lg);
+  }
+  .cs-rich__contribution-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* ── Contribution loop diagram — mirrors hero triangle structure ── */
+  .cs-loop-diagram {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    aspect-ratio: 560 / 340;
+    margin: 0 auto;
+  }
+
+  .cs-loop-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Marching-ant circles (mirrors hero .tri-line animation) */
+  .cs-loop-circle {
+    stroke: var(--tao-border-brand-2);
+    stroke-width: 1.5;
+    stroke-dasharray: 7 5;
+    stroke-dashoffset: 0;
+    opacity: 0.4;
+    fill: none;
+  }
+  .cs-loop-circle--l { animation: cs-loop-dash 5s linear infinite; }
+  .cs-loop-circle--r { animation: cs-loop-dash 5s 2.5s linear infinite; }
+  @keyframes cs-loop-dash { to { stroke-dashoffset: -48; } }
+
+  /* Traveller dot — transparent overlay */
+  #cs-contrib-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  /* Node chips — same look as hero .node */
+  .cs-loop-node {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-xxs);
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--tao-text-default);
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-default);
+    border-radius: var(--tao-radius-sm);
+    padding: var(--tao-spacing-xxs) var(--tao-spacing-sm);
+    box-shadow: 0 2px 8px color-mix(in srgb, var(--tao-border-default) 32%, transparent);
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+  }
+  .cs-loop-node__icon {
+    color: var(--tao-text-brand-2);
+    flex-shrink: 0;
+  }
+  /* Positions: circles at (150,170,r=110) and (410,170,r=110) in 560×340 */
+  /* Top nodes at y=60  → 17.6%  |  Bottom at y=280 → 82.4%            */
+  /* Left  x=150 → 26.8%         |  Right  x=410    → 73.2%            */
+  .cs-loop-node--tl { left: 26.8%; top: 17.6%; }
+  .cs-loop-node--bl { left: 26.8%; top: 82.4%; }
+  .cs-loop-node--tr { left: 73.2%; top: 17.6%; }
+  .cs-loop-node--br { left: 73.2%; top: 82.4%; }
+
+  /* Centre intersection card — mirrors hero .center-card */
+  .cs-loop-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-loop-center__ring {
+    position: absolute;
+    width: 58px;
+    height: 58px;
+    border-radius: var(--tao-radius-circular);
+    border: var(--tao-border-width-sm) solid var(--tao-border-brand-2);
+    opacity: 0;
+    animation: cs-loop-pulse-ring 3s 1s ease-out infinite;
+  }
+  .cs-loop-center__ring--2 {
+    animation: cs-loop-pulse-ring 3s 2s ease-out infinite;
+  }
+  @keyframes cs-loop-pulse-ring {
+    0%   { transform: scale(1);   opacity: 0.7; }
+    100% { transform: scale(2.2); opacity: 0;   }
+  }
+  .cs-loop-center__body {
+    position: relative;
+    z-index: 1;
+    width: 52px;
+    height: 52px;
+    background: var(--tao-surface-neutral-white);
+    border-radius: var(--tao-radius-lg);
+    border: var(--tao-border-width-sm) solid var(--tao-border-default);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--tao-border-default) 48%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ── Design Tokens section ──────────────────────────────── */
+  .cs-rich__tokens-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-xxl);
+    align-items: center;
+  }
+  .cs-rich__tokens-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-lg);
+  }
+  .cs-rich__tokens-text em {
+    font-style: italic;
+    color: var(--tao-text-brand-1);
+  }
+  .cs-rich__tokens-visual {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cs-tokens-img-wrap {
+    position: relative;
+    width: 100%;
+    border-radius: var(--tao-radius-md);
+    overflow: hidden;
+    border: var(--tao-border-width-sm) solid var(--tao-border-default);
+    box-shadow: 0 8px 32px color-mix(in srgb, var(--tao-border-default) 40%, transparent);
+    aspect-ratio: 16 / 10;
+    background: var(--tao-surface-brand-1-subtlest);
+  }
+  .cs-tokens-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+  }
+  .cs-tokens-img--active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  /* Toggle */
+  .cs-tokens-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0;
+    background: var(--tao-surface-brand-1-subtlest);
+    border: var(--tao-border-width-sm) solid var(--tao-border-default);
+    border-radius: var(--tao-radius-md);
+    padding: var(--tao-spacing-xxs);
+    align-self: flex-start;
+  }
+  .cs-tokens-toggle__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tao-spacing-xxs);
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 600;
+    color: var(--tao-text-subtle);
+    background: transparent;
+    border: none;
+    border-radius: calc(var(--tao-radius-md) - 3px);
+    padding: var(--tao-spacing-xs) var(--tao-spacing-md);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .cs-tokens-toggle__btn--active {
+    background: var(--tao-surface-neutral-white);
+    color: var(--tao-text-default);
+    box-shadow: 0 1px 4px color-mix(in srgb, var(--tao-border-default) 40%, transparent);
+  }
+  .cs-tokens-toggle__btn:hover:not(.cs-tokens-toggle__btn--active) {
+    background: var(--tao-state-hover);
+    color: var(--tao-text-default);
+  }
+  .cs-tokens-toggle__btn:focus-visible {
+    outline: var(--tao-border-width-md) solid var(--tao-border-brand-2);
+    outline-offset: 2px;
+    border-radius: var(--tao-radius-sm);
+  }
+
+  /* ── Pillar 4-col grid (Design Systems modal) ───────────── */
+  .cs-rich__pillars-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--tao-spacing-sm) var(--tao-spacing-md);
+    align-items: start;
+  }
+  .cs-rich__pillar-col-label {
+    display: flex;
+    align-items: center;
+    padding-bottom: var(--tao-spacing-xs);
+  }
+  .cs-rich__pillar-label {
+    display: inline-block;
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--tao-text-brand-1);
+    background: var(--tao-surface-brand-1-subtlest);
+    border: var(--tao-border-width-sm) solid var(--tao-border-brand-1);
+    border-radius: var(--tao-radius-pill);
+    padding: var(--tao-spacing-xxs) var(--tao-spacing-md);
+  }
+  .cs-rich__pillar-label--culture {
+    color: var(--tao-text-brand-3);
+    background: var(--tao-surface-brand-3-subtlest);
+    border-color: var(--tao-border-brand-3);
+  }
+  .cs-rich__pillar {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-sm);
+    background: var(--tao-surface-brand-1-subtlest);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    border-radius: var(--tao-radius-lg);
+    padding: var(--tao-spacing-lg);
+    height: 100%;
+  }
+  .cs-rich__pillar--culture {
+    background: var(--tao-surface-brand-3-subtlest);
+    border-color: var(--tao-border-brand-3);
+  }
+  .cs-rich__pillar .cs-rich__step-icon {
+    flex-shrink: 0;
+  }
+  .cs-rich__pillar--culture .cs-rich__step-icon {
+    color: var(--tao-text-brand-3);
+  }
+  .cs-rich__pillar-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xs);
+    flex: 1;
+  }
+  .cs-rich__pillar .cs-rich__step-title {
+    font-size: var(--tao-typography-size-lg);
+  }
+  .cs-rich__pillar-url {
+    font-size: var(--tao-typography-size-md);
+    font-weight: 600;
+    color: var(--tao-text-brand-1);
+    letter-spacing: 0.02em;
+    margin: 0;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tao-spacing-xxs);
+  }
+  .cs-rich__pillar-url--link {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    text-decoration-color: color-mix(in srgb, var(--tao-text-brand-1) 40%, transparent);
+    transition: text-decoration-color 0.15s ease, color 0.15s ease;
+  }
+  .cs-rich__pillar-url--link:hover {
+    text-decoration-color: var(--tao-text-brand-1);
+    color: var(--tao-text-brand-2);
+  }
+  .cs-rich__pillar--culture .cs-rich__pillar-url {
+    color: var(--tao-text-brand-3);
+  }
+  .cs-rich__pillar .cs-rich__step-desc {
+    font-size: var(--tao-typography-size-md);
+  }
+  .cs-rich__pillar-goal {
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    margin: var(--tao-spacing-xs) 0 0;
+    line-height: 1.5;
+    border-top: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    padding-top: var(--tao-spacing-sm);
+  }
+  .cs-rich__pillar-goal strong {
+    color: var(--tao-text-default);
+    font-weight: 600;
+  }
+  .cs-rich__hyp-content { display: flex; flex-direction: column; gap: var(--tao-spacing-lg); }
+  .cs-rich__hyp-badge {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--tao-text-brand-1);
+    background: var(--tao-surface-brand-1-subtlest);
+    padding: var(--tao-spacing-xxs) var(--tao-spacing-sm);
+    border-radius: var(--tao-radius-pill);
+    width: fit-content;
+  }
+  .cs-rich__h3 {
+    font-size: var(--tao-typography-size-xl);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0;
+  }
+  .cs-rich__quote {
+    font-size: var(--tao-typography-size-xl);
+    font-style: normal;
+    font-weight: 700;
+    color: var(--tao-text-default);
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Diagrams */
+  .cs-rich__hyp-diagram {
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    border-radius: var(--tao-radius-xl);
+    padding: var(--tao-spacing-xl);
+  }
+  .cs-rich__diagram {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-lg);
+    align-items: stretch;
+  }
+  .cs-rich__diagram-row {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-md);
+  }
+  .cs-rich__diagram-box {
+    border: var(--tao-border-width-md) dashed color-mix(in srgb, var(--tao-border-brand-2) 40%, transparent);
+    border-radius: var(--tao-radius-md);
+    padding: var(--tao-spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xs);
+    flex: 1;
+  }
+  .cs-rich__diagram-box--narrow { flex: 0 0 45%; }
+  .cs-rich__diagram-bar {
+    height: 8px;
+    width: 50%;
+    background: color-mix(in srgb, var(--tao-surface-brand-2-subtle) 80%, transparent);
+    border-radius: var(--tao-radius-pill);
+  }
+  .cs-rich__diagram-fill {
+    height: 32px;
+    background: color-mix(in srgb, var(--tao-surface-brand-2-subtlest) 80%, transparent);
+    border-radius: var(--tao-radius-sm);
+  }
+  .cs-rich__diagram-fill--tall { height: 52px; }
+  .cs-rich__diagram-arrow { color: var(--tao-text-subtlest); font-size: var(--tao-typography-size-lg); flex-shrink: 0; }
+  .cs-rich__diagram-label {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--tao-text-subtlest);
+    text-align: center;
+  }
+
+  /* Density grid */
+  .cs-rich__density-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--tao-spacing-xs);
+  }
+  .cs-rich__density-cell {
+    aspect-ratio: 1;
+    background: color-mix(in srgb, var(--tao-surface-brand-2-subtle) 30%, transparent);
+    border-radius: var(--tao-radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--tao-typography-size-md);
+    font-weight: 700;
+    color: var(--tao-text-brand-2);
+  }
+  .cs-rich__density-exceeded {
+    grid-column: 1 / -1;
+    border: var(--tao-border-width-md) dashed color-mix(in srgb, var(--tao-border-danger) 60%, transparent);
+    border-radius: var(--tao-radius-sm);
+    padding: var(--tao-spacing-sm);
+    text-align: center;
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--tao-text-danger);
+  }
+
+  /* Results two-group row */
+  .cs-rich__results-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-lg);
+    align-items: start;
+  }
+  .cs-rich__results-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-sm);
+  }
+  .cs-rich__results-title {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--tao-text-subtle);
+  }
+
+  /* Metrics */
+  .cs-rich__metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--tao-spacing-md);
+  }
+  .cs-rich__metrics--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cs-rich__metric {
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    border-radius: var(--tao-radius-lg);
+    padding: var(--tao-spacing-md) var(--tao-spacing-lg);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-xs);
+  }
+  .cs-rich__metric-val {
+    font-size: var(--tao-typography-size-xxl);
+    font-weight: 800;
+    color: var(--tao-text-default);
+    line-height: 1;
+  }
+  .cs-rich__metric--brand .cs-rich__metric-val {
+    color: var(--tao-text-brand-1);
+  }
+  .cs-rich__metric-lbl {
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 400;
+    color: var(--tao-text-subtle);
+  }
+
+  /* ─── Reduced motion ─────────────────────────────────────── */
+
+  @media (prefers-reduced-motion: reduce) {
+    .works__header, .work-card, .works__carousel { transition: none; opacity: 1; transform: none; }
+    .works__carousel-track { transition: none; }
+    .works__dot { transition: none; }
+    .work-card__orb { animation: none; }
+    .cs-modal__inner { transition: none; }
+    .cs-modal::backdrop { transition: none; }
+    .cs-loop-circle { animation: none; }
+    .cs-loop-center__ring { animation: none; }
+    .cs-tokens-img { transition: none; }
+  }
+
+  /* ─── Responsive · tablet ────────────────────────────── */
+
+  @media (max-width: 960px) {
+    .works__grid { grid-template-columns: repeat(2, 1fr); }
+    .work-card--wide { grid-column: 1 / -1; }
+    .works__carousel-track .work-card {
+      width: calc((100% - var(--tao-spacing-md)) / 2);
+    }
+    .cs-modal__cols { grid-template-columns: 1fr; }
+
+    /* Modal · tablet */
+    .cs-modal__inner { padding: var(--tao-spacing-xl); }
+    .cs-modal__close-wrap {
+      top: calc(var(--tao-spacing-lg) - var(--tao-spacing-md));
+      right: calc(var(--tao-spacing-xl) - var(--tao-spacing-md));
+    }
+    .cs-rich__hero-inner { grid-template-columns: 1fr; }
+    .cs-rich__hero-visual { display: none; }
+    .cs-rich__hyp--split { grid-template-columns: 1fr; }
+    .cs-rich__contribution { grid-template-columns: 1fr; }
+    .cs-rich__hyp--flip .cs-rich__hyp-visual { order: -1; }
+    .cs-rich__results-row { grid-template-columns: 1fr; }
+    .cs-rich__pillars-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .cs-rich__pillar-col-label[style] { grid-column: span 1 !important; }
+    .cs-rich__steps--5,
+    .cs-rich__steps--4,
+    .cs-rich__steps--architecture,
+    .cs-rich__steps { grid-template-columns: repeat(2, 1fr); }
+    .cs-rich__metrics { grid-template-columns: repeat(2, 1fr); }
+    .cs-rich__metrics--3 { grid-template-columns: repeat(3, 1fr); }
+    .cs-rich__section { padding: var(--tao-spacing-xl); }
+    .cs-rich__section-hd { margin-bottom: var(--tao-spacing-lg); }
+    .cs-rich__h1 { font-size: var(--tao-typography-size-xxl); }
+    .cs-rich__quote { font-size: var(--tao-typography-size-lg); }
+    .cs-rich__divider { margin: 0 var(--tao-spacing-lg); }
+  }
+
+  /* ─── Responsive · mobile ────────────────────────────── */
+
+  @media (max-width: 600px) {
+    .works__grid { grid-template-columns: 1fr; }
+    .work-card--wide { grid-column: 1; flex-direction: column; }
+    .work-card__dark-visual { width: 100%; height: 160px; }
+    .works__carousel-track .work-card { flex: 0 0 85%; width: 85%; }
+    .works__dots { display: flex; }
+    .works__title { font-size: var(--tao-typography-size-xl); }
+    .work-card--dark .work-card__title,
+    .work-card--brand .work-card__title { font-size: var(--tao-typography-size-xl); }
+    .cs-modal__title { font-size: var(--tao-typography-size-xl); }
+    .cs-modal__hero { height: 120px; }
+    .cs-modal__header { flex-direction: column; align-items: flex-start; }
+
+    /* Modal · mobile */
+    .cs-modal__inner { padding: var(--tao-spacing-lg) var(--tao-spacing-md); }
+    .cs-modal__close-wrap {
+      top: calc(var(--tao-spacing-md) - var(--tao-spacing-md));
+      right: calc(var(--tao-spacing-md) - var(--tao-spacing-md));
+    }
+    .cs-rich__section { padding: var(--tao-spacing-lg) var(--tao-spacing-md); }
+    .cs-rich__hero { padding: var(--tao-spacing-xl) var(--tao-spacing-md) var(--tao-spacing-lg); }
+    .cs-rich__h1 { font-size: var(--tao-typography-size-xl); }
+    .cs-rich__h2 { font-size: var(--tao-typography-size-xl); }
+    .cs-rich__quote { font-size: var(--tao-typography-size-md); }
+    .cs-rich__stat-row { flex-direction: column; gap: var(--tao-spacing-md); }
+    .cs-rich__pillars-4 { grid-template-columns: 1fr; }
+    .cs-rich__pillar-col-label { display: none; }
+    .cs-rich__stat-sep { display: none; }
+    .cs-rich__steps--5,
+    .cs-rich__steps--4,
+    .cs-rich__steps--architecture,
+    .cs-rich__steps { grid-template-columns: 1fr; }
+    .cs-rich__metrics,
+    .cs-rich__metrics--3 { grid-template-columns: 1fr 1fr; }
+    .cs-rich__hyp { grid-template-columns: 1fr; }
+    .cs-rich__results-row { grid-template-columns: 1fr; }
+    .cs-rich__problem-text { font-size: var(--tao-typography-size-md); }
+    .cs-rich__divider { margin: 0 var(--tao-spacing-md); }
+    .cs-rich__badge { font-size: var(--tao-typography-size-xs); }
+  }
+</style>
+
+<script>
+  (function () {
+    const section = document.getElementById('work');
+    if (!section) return;
+
+    // ── Intersection observer for entrance animation
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            section.classList.add('in-view');
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(section);
+
+    // ── Carousel
+    const track    = document.getElementById('carousel-track');
+    const btnPrev  = document.getElementById('carousel-prev');
+    const btnNext  = document.getElementById('carousel-next');
+    const dotsEl   = document.getElementById('carousel-dots');
+
+    if (track) {
+      const cards  = Array.from(track.children);
+      const total  = cards.length;
+      let current  = 0;
+
+      function visibleCount() {
+        return window.innerWidth <= 600 ? 1 : window.innerWidth <= 960 ? 2 : 3;
+      }
+
+      function getCardWidth() {
+        return cards[0]?.getBoundingClientRect().width ?? 0;
+      }
+
+      function getGap() {
+        return parseFloat(getComputedStyle(track).gap) || 0;
+      }
+
+      function update() {
+        const vis = visibleCount();
+        const max = total - vis;
+        current = Math.max(0, Math.min(current, max));
+        const offset = current * (getCardWidth() + getGap());
+        track.style.transform = `translateX(-${offset}px)`;
+        if (btnPrev) btnPrev.disabled = current === 0;
+        if (btnNext) btnNext.disabled = current >= max;
+
+        // Dots
+        const dots = dotsEl?.querySelectorAll('.works__dot');
+        dots?.forEach((d, i) => d.classList.toggle('works__dot--active', i === current));
+      }
+
+      if (btnPrev) {
+        btnPrev.addEventListener('click', () => { current--; update(); });
+      }
+      if (btnNext) {
+        btnNext.addEventListener('click', () => { current++; update(); });
+      }
+
+      // Arrow key navigation — only when focus is inside this section
+      document.addEventListener('keydown', (e) => {
+        if (!section?.contains(document.activeElement)) return;
+        if (e.key === 'ArrowLeft')  { current--; update(); }
+        if (e.key === 'ArrowRight') { current++; update(); }
+      });
+
+      // Touch / swipe
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) { dx < 0 ? current++ : current--; update(); }
+      }, { passive: true });
+
+      window.addEventListener('resize', update);
+
+      update();
+    }
+
+    // ── Modal ─────────────────────────────────────────────────────
+
+    const PROJECTS = {
+      'business-value': {
+        label: 'Strategy · 2024',
+        title: 'Business Value',
+        tags: ['STRATEGY', 'ROI', 'DISCOVERY'],
+        overview: 'Working with a mid-size SaaS company, I facilitated a series of discovery workshops to surface misaligned product priorities. By mapping every feature request to a measurable business objective we cut the backlog by 40% and focused engineering effort on the top three revenue drivers.',
+        role: 'Lead UX Strategist — responsible for stakeholder interviews, OKR mapping, and presenting findings to the C-suite.',
+        outcomes: [
+          '40% backlog reduction in 6 weeks',
+          'Engineering velocity up 28% after scope clarification',
+          '$1.2M in deferred development costs avoided',
+          'Unified product vision across 4 cross-functional teams',
+        ],
+      },
+      'technical-precision': {
+        label: 'Engineering · 2024',
+        title: 'Technical Precision Meets Design',
+        tags: ['REACT', 'UI/UX', 'WEBGL'],
+        overview: 'A data-heavy SaaS dashboard was suffering from poor perceived performance and inconsistent component behaviour across browsers. I partnered with the front-end team to audit the component library, replace ad-hoc styles with a token system, and introduce WebGL-powered micro-visualisations.',
+        role: 'Design Engineer — component audit, token migration, and WebGL prototyping with Three.js.',
+        outcomes: [
+          'First Contentful Paint reduced by 1.4s',
+          'Component library cut from 340 to 190 unique styles',
+          'Cross-browser consistency score raised to 98%',
+          'Developer onboarding time down from 3 days to 4 hours',
+        ],
+      },
+      'design-systems': {
+        label: 'Design Systems · 2023',
+        title: 'Design Systems at Scale',
+        tags: ['TOKENS', 'FIGMA', 'STYLE DICTIONARY'],
+        overview: 'Three product lines were sharing zero design DNA. I architected a multi-tier token system in Style Dictionary, published to npm, and built a Figma variables file that synced automatically via CI. The system now powers web, iOS, and Android from a single source of truth.',
+        role: 'Systems Design Lead — token taxonomy, CI pipeline, Figma library governance, and team enablement.',
+        outcomes: [
+          'One token source serving 3 platforms and 7 product teams',
+          'Design-to-dev handoff time cut by 60%',
+          'Brand refresh shipped in 2 days vs estimated 6 weeks',
+          'Zero visual regressions in first post-launch quarter',
+        ],
+      },
+      'accessibility': {
+        label: 'Accessibility · 2024',
+        title: 'Accessibility First',
+        tags: ['WCAG 2.2', 'A11Y', 'SCREEN READER'],
+        overview: 'A government-facing portal was failing WCAG 2.1 AA on 34 criteria. I led an accessibility audit, prioritised remediations by user impact, and embedded a11y checkpoints into the team\'s design and QA processes so regressions could not be merged without passing automated checks.',
+        role: 'Accessibility Lead — audit, remediation roadmap, axe-core CI integration, and NVDA/VoiceOver testing.',
+        outcomes: [
+          'WCAG 2.1 AA compliance achieved across all 80 pages',
+          '34 critical violations resolved in 8-week sprint',
+          'Keyboard navigation coverage at 100%',
+          'Accessibility CI gate blocks 100% of new regressions',
+        ],
+      },
+      'motion-design': {
+        label: 'Motion · 2023',
+        title: 'Motion & Interaction Design',
+        tags: ['GSAP', 'CSS', 'FRAMER'],
+        overview: 'A fintech app felt clinical and transactional. I introduced a motion language — easing curves, duration scales, and choreography rules — that gave every state transition a physical weight. The result was a product that users described as "responsive" and "trustworthy" in post-launch research.',
+        role: 'Motion Designer — motion language definition, GSAP implementation, and Framer prototyping for user testing.',
+        outcomes: [
+          'Perceived performance score up 22 points (SUS)',
+          'Task abandonment down 18% after motion overhaul',
+          'Motion system adopted by 2 sister products within 3 months',
+          '"Feels polished" mentions in NPS comments up 3×',
+        ],
+      },
+      'ai-dashboard': {
+        label: 'AI / Data · 2025',
+        title: 'AI Analytics Dashboard',
+        tags: ['AI/ML', 'D3.JS', 'DATA VIZ'],
+        overview: 'A machine learning platform was producing accurate predictions that nobody trusted because the outputs were opaque. I redesigned the insights layer — replacing raw probability scores with progressive disclosure charts, confidence bands, and plain-language summaries generated at the edge.',
+        role: 'Product Designer + Data Viz Engineer — information architecture, D3.js charts, and prompt-engineered summary UI.',
+        outcomes: [
+          'Model trust score up from 42% to 79% (user survey)',
+          'Time-to-insight reduced from 14 min to 3 min',
+          'Dashboard adopted by 6 non-technical teams within a month',
+          'Support tickets about "confusing charts" dropped to zero',
+        ],
+      },
+      'mobile-banking': {
+        label: 'Fintech · 2023',
+        title: 'Mobile Banking Redesign',
+        tags: ['MOBILE', 'FINTECH', 'RESEARCH'],
+        overview: 'A challenger bank\'s flagship app had a 4.1-star rating dragged down by a cluttered home screen and a multi-step transfer flow that generated 2,000 support tickets a month. Through continuous discovery and iterative testing I simplified the IA and redesigned the money-movement experience.',
+        role: 'Senior Product Designer — user research, IA redesign, interaction design, and handoff to a React Native team.',
+        outcomes: [
+          '38% drop in transfer-related support tickets',
+          'App store rating improved from 4.1 to 4.7 in 3 months',
+          'Transfer completion rate up from 71% to 94%',
+          'Onboarding drop-off reduced by 31%',
+        ],
+      },
+      'ecommerce': {
+        label: 'E-Commerce · 2024',
+        title: 'E-Commerce Platform',
+        tags: ['CONVERSION', 'A/B TEST', 'CRO'],
+        overview: 'A fashion retailer\'s checkout converted at 2.1% — well below the industry average of 3.5%. A combination of session recordings, funnel analysis, and qualitative interviews revealed three drop-off clusters: form anxiety, unexpected costs at payment, and mobile tap-target failures.',
+        role: 'CRO Designer — heuristic audit, A/B test design in VWO, and final handoff of the winning variant.',
+        outcomes: [
+          'Checkout conversion lifted from 2.1% to 3.6% (+71%)',
+          'Mobile cart abandonment down 29%',
+          'Average order value up 11% via smart upsell placement',
+          'Annualised revenue impact estimated at €2.4M',
+        ],
+      },
+    };
+
+    // ── Canvas loop diagram ────────────────────────────────────────
+    let loopRafId = null;
+
+    function startLoopCanvas() {
+      const canvas = document.getElementById('cs-contrib-canvas');
+      if (!canvas || loopRafId) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const ctx = canvas.getContext('2d');
+      const W = canvas.width;   // 560
+      const H = canvas.height;  // 340
+
+      // Resolve design tokens at runtime
+      const rootStyle  = getComputedStyle(document.documentElement);
+      const brandBlue  = rootStyle.getPropertyValue('--tao-border-brand-1').trim()         || '#1a2edb';
+      const brandLight = rootStyle.getPropertyValue('--tao-surface-brand-1-subtle').trim()  || '#c7d0ff';
+
+      // Lemniscate parameters aligned to SVG circle geometry:
+      // left cx=150, right cx=410 → half-distance=130, midpoint cx=280
+      const speed   = 0.012;
+      const cx      = W / 2;   // 280
+      const cy      = H / 2;   // 170
+      const hSpread = 130;     // (410-150)/2
+      const vAmp    = 95;      // vertical sweep in px
+
+      let t = 0;
+
+      function drawFrame() {
+        ctx.clearRect(0, 0, W, H);
+
+        const px = cx + hSpread * Math.sin(t);
+        const py = cy + vAmp    * Math.sin(2 * t) / 2;
+
+        // Soft glow halo
+        ctx.save();
+        ctx.beginPath();
+        ctx.arc(px, py, 17, 0, Math.PI * 2);
+        ctx.fillStyle   = brandLight;
+        ctx.globalAlpha = 0.28;
+        ctx.fill();
+        ctx.restore();
+
+        // Main dot
+        ctx.save();
+        ctx.shadowBlur  = 14;
+        ctx.shadowColor = brandBlue;
+        ctx.fillStyle   = brandBlue;
+        const r = 7 + Math.sin(t * 4) * 1.5;
+        ctx.beginPath();
+        ctx.arc(px, py, r, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+
+        t += speed;
+        if (t > Math.PI * 2) t = 0;
+        loopRafId = requestAnimationFrame(drawFrame);
+      }
+
+      drawFrame();
+    }
+
+    function stopLoopCanvas() {
+      if (loopRafId) {
+        cancelAnimationFrame(loopRafId);
+        loopRafId = null;
+      }
+    }
+    // ── /Canvas loop diagram ───────────────────────────────────────
+
+    // ── Tokens light/dark toggle ───────────────────────────────────
+    document.querySelectorAll('.cs-tokens-toggle__btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const mode = btn.dataset.mode;
+        // Update buttons
+        document.querySelectorAll('.cs-tokens-toggle__btn').forEach(b => {
+          b.classList.toggle('cs-tokens-toggle__btn--active', b === btn);
+          b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+        });
+        // Swap images
+        document.getElementById('cs-tokens-light').classList.toggle('cs-tokens-img--active', mode === 'light');
+        document.getElementById('cs-tokens-dark').classList.toggle('cs-tokens-img--active',  mode === 'dark');
+        document.getElementById('cs-tokens-light').setAttribute('aria-hidden', mode === 'dark' ? 'true' : 'false');
+        document.getElementById('cs-tokens-dark').setAttribute('aria-hidden', mode === 'light' ? 'true' : 'false');
+      });
+    });
+    // ── /Tokens toggle ─────────────────────────────────────────────
+
+    const modal     = document.getElementById('cs-modal');
+    const closeBtn  = document.getElementById('cs-modal-close');
+    const inner     = modal?.querySelector('.cs-modal__inner');
+    if (!modal || !inner) return;
+
+    function openModal(projectId, sourceCard) {
+      // Calculate where the card center is relative to the modal center (viewport center)
+      if (sourceCard) {
+        const cr = sourceCard.getBoundingClientRect();
+        const cardCx = cr.left + cr.width  / 2;
+        const cardCy = cr.top  + cr.height / 2;
+        const vw = window.innerWidth;
+        const vh = window.innerHeight;
+        // Express origin as percentage from the inner panel's top-left
+        // The inner panel is centered in the viewport
+        const innerW = Math.min(1400, vw - 48);
+        const innerH = vh - 24;
+        const innerLeft = (vw - innerW) / 2;
+        const innerTop  = 12;
+        const ox = ((cardCx - innerLeft) / innerW * 100).toFixed(1) + '%';
+        const oy = ((cardCy - innerTop)  / innerH * 100).toFixed(1) + '%';
+        inner.style.transformOrigin = `${ox} ${oy}`;
+      } else {
+        inner.style.transformOrigin = 'center center';
+      }
+
+      // Show the right rich panel
+      const richPanels = modal.querySelectorAll('.cs-rich');
+      const panelMap = {
+        'business-value':      'cs-modal-rich',
+        'technical-precision': 'cs-modal-rich-filters',
+        'design-systems':      'cs-modal-rich-design-systems',
+        'arya':                'cs-modal-rich-arya',
+        'agentic-engine':      'cs-modal-rich-agentic',
+      };
+      richPanels.forEach(p => p.hidden = true);
+      const targetId = panelMap[projectId] || 'cs-modal-rich';
+      const target = document.getElementById(targetId);
+      if (target) target.hidden = false;
+
+      inner.classList.remove('cs-modal__inner--closing');
+      document.body.style.overflow = 'hidden';
+      modal.showModal();
+
+      // Start canvas animation only for the design-systems panel
+      if (projectId === 'design-systems') {
+        requestAnimationFrame(startLoopCanvas);
+      }
+    }
+
+    function closeModal() {
+      stopLoopCanvas();
+      inner.classList.add('cs-modal__inner--closing');
+      inner.addEventListener('transitionend', () => {
+        inner.classList.remove('cs-modal__inner--closing');
+        document.body.style.overflow = '';
+        modal.close();
+      }, { once: true });
+    }
+
+    // Open on card click / Enter / Space
+    document.querySelectorAll('[data-project]').forEach((card) => {
+      card.addEventListener('click', () => openModal(card.dataset.project, card));
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(card.dataset.project, card);
+        }
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closeModal);
+    }
+
+    // Click on backdrop closes modal
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Escape key
+    modal.addEventListener('cancel', (e) => {
+      e.preventDefault();
+      closeModal();
+    });
+  })();
+</script>

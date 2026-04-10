@@ -1,0 +1,549 @@
+---
+import { CarouselPrev, CarouselNext } from './CarouselNav.jsx';
+---
+
+<section class="rec" id="recommendations" aria-labelledby="rec-heading">
+  <div class="rec__container">
+
+    <div class="rec__header">
+      <div>
+        <h2 class="rec__title" id="rec-heading">LinkedIn Recommendations</h2>
+        <p class="rec__subtitle">What colleagues say</p>
+      </div>
+      <nav class="rec__nav" aria-label="Browse recommendations">
+        <CarouselPrev
+          client:load
+          id="rec-prev"
+          ariaLabel="Previous recommendation"
+          className="works__nav-btn rec__nav-btn"
+        />
+        <CarouselNext
+          client:load
+          id="rec-next"
+          ariaLabel="Next recommendation"
+          className="works__nav-btn rec__nav-btn"
+        />
+      </nav>
+    </div>
+
+    <div class="rec__track-wrap">
+      <ul class="rec__track" id="rec-track" role="list">
+
+        <!-- 1 · Margherita Crippa -->
+        <li class="rec__card">
+          <div class="rec__card-header">
+            <img class="rec__avatar" src="/marghe.jpeg" alt="Margherita Crippa" />
+            <div>
+              <p class="rec__name">Margherita Crippa</p>
+              <p class="rec__role">Senior Product Designer</p>
+            </div>
+            <svg class="rec__li-icon" width="18" height="18" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <rect x="24" y="24" width="208" height="208" rx="32" fill="var(--tao-surface-brand-1-strong)"/>
+              <rect x="56" y="100" width="32" height="100" fill="white"/>
+              <circle cx="72" cy="68" r="20" fill="white"/>
+              <path d="M168 100c-20 0-40 10-40 30v70h32v-60c0-10 8-16 16-16s16 6 16 16v60h32v-70c0-20-16-30-36-30z" fill="white"/>
+            </svg>
+          </div>
+          <div class="rec__quote-wrap">
+            <div class="rec__quote-fade"></div>
+            <blockquote class="rec__quote">
+            <p>I have the opportunity to work closely with Alessandro.</p>
+            <p>Alessandro is a strong and trustworthy design manager with a deep understanding of design and how it works in practice. He brings clarity, structure, and direction to the work, helping maintain a high level of quality without overcomplicating things.</p>
+            <p>He is a thoughtful and reliable collaborator, communicates clearly, and approaches challenges with a pragmatic mindset. His judgment is solid, and he's someone people naturally rely on for guidance and decision-making.</p>
+            <p>I highly recommend Alessandro to any team looking for an experienced design manager with a hands-on mindset and strong design foundations.</p>
+          </blockquote>
+          </div>
+          <button class="rec__show-more" aria-expanded="false">
+            Show more
+            <svg width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <polyline points="48 96 128 176 208 96" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+
+        <!-- 2 · Niccolò Servidio -->
+        <li class="rec__card">
+          <div class="rec__card-header">
+            <img class="rec__avatar" src="/Nico.jpeg" alt="Niccolò Servidio" />
+            <div>
+              <p class="rec__name">Niccolò Servidio</p>
+              <p class="rec__role">Software Engineer Manager</p>
+            </div>
+            <svg class="rec__li-icon" width="18" height="18" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <rect x="24" y="24" width="208" height="208" rx="32" fill="var(--tao-surface-brand-1-strong)"/>
+              <rect x="56" y="100" width="32" height="100" fill="white"/>
+              <circle cx="72" cy="68" r="20" fill="white"/>
+              <path d="M168 100c-20 0-40 10-40 30v70h32v-60c0-10 8-16 16-16s16 6 16 16v60h32v-70c0-20-16-30-36-30z" fill="white"/>
+            </svg>
+          </div>
+          <div class="rec__quote-wrap">
+            <div class="rec__quote-fade"></div>
+            <blockquote class="rec__quote">
+            <p>I've had the pleasure of working closely with Alessandro for over five years, and he has been a key driver of our design maturity as a company.</p>
+            <p>He joined as a Product Designer but, through vision and initiative, built the Design System practice from the ground up—at a time when there was no UI kit, no structured system, and no clear ownership. He shaped the culture, influenced teams, and helped define a shared design vision that brought consistency and scalability across products.</p>
+            <p>I supported this journey first as a Developer and later as an Engineering Manager, helping translate his guidelines into a robust internal UI kit: responsive, accessible, flexible, and built to scale.</p>
+            <p>Beyond the design system, Alessandro has a strong instinct for UI innovation and a refined eye for modern interfaces. I'd highly recommend him to any team looking for a leader who can drive design system strategy and elevate the overall product experience.</p>
+          </blockquote>
+          </div>
+          <button class="rec__show-more" aria-expanded="false">
+            Show more
+            <svg width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <polyline points="48 96 128 176 208 96" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+
+        <!-- 3 · Sara Etminan -->
+        <li class="rec__card">
+          <div class="rec__card-header">
+            <img class="rec__avatar" src="/Sara.jpeg" alt="Sara Etminan" />
+            <div>
+              <p class="rec__name">Sara Etminan</p>
+              <p class="rec__role">Senior Product Designer</p>
+            </div>
+            <svg class="rec__li-icon" width="18" height="18" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <rect x="24" y="24" width="208" height="208" rx="32" fill="var(--tao-surface-brand-1-strong)"/>
+              <rect x="56" y="100" width="32" height="100" fill="white"/>
+              <circle cx="72" cy="68" r="20" fill="white"/>
+              <path d="M168 100c-20 0-40 10-40 30v70h32v-60c0-10 8-16 16-16s16 6 16 16v60h32v-70c0-20-16-30-36-30z" fill="white"/>
+            </svg>
+          </div>
+          <div class="rec__quote-wrap">
+            <div class="rec__quote-fade"></div>
+            <blockquote class="rec__quote">
+            <p>I really enjoyed working with Alessandro. He is highly knowledgeable, supportive, and always focused on building scalable and high quality solutions.</p>
+            <p>His leadership and vision made a big difference for the team and the product. I learned a lot from him and truly appreciated his guidance and trust. I would highly recommend him.</p>
+          </blockquote>
+          </div>
+          <button class="rec__show-more" aria-expanded="false">
+            Show more
+            <svg width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <polyline points="48 96 128 176 208 96" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+
+        <!-- 4 · Damiano Colombo -->
+        <li class="rec__card">
+          <div class="rec__card-header">
+            <img class="rec__avatar" src="/Damiano.jpeg" alt="Damiano Colombo" />
+            <div>
+              <p class="rec__name">Damiano Colombo</p>
+              <p class="rec__role">Senior Product Manager</p>
+            </div>
+            <svg class="rec__li-icon" width="18" height="18" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <rect x="24" y="24" width="208" height="208" rx="32" fill="var(--tao-surface-brand-1-strong)"/>
+              <rect x="56" y="100" width="32" height="100" fill="white"/>
+              <circle cx="72" cy="68" r="20" fill="white"/>
+              <path d="M168 100c-20 0-40 10-40 30v70h32v-60c0-10 8-16 16-16s16 6 16 16v60h32v-70c0-20-16-30-36-30z" fill="white"/>
+            </svg>
+          </div>
+          <div class="rec__quote-wrap">
+            <div class="rec__quote-fade"></div>
+            <blockquote class="rec__quote">
+            <p>I worked directly with Alessandro for 4 years when he was the designer of my product team, then I witnessed firsthand the exceptional value he brought as Design System Manager for an additional 4 years.</p>
+            <p>His accountability was unwavering—consistently delivering precise, production-ready components while maintaining meticulous documentation that reduced implementation errors by our engineering teams. His attention to detail extended beyond pixels to governance, versioning, and cross-team adoption strategies, creating a design system that became the foundation for consistent, scalable product development.</p>
+          </blockquote>
+          </div>
+          <button class="rec__show-more" aria-expanded="false">
+            Show more
+            <svg width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <polyline points="48 96 128 176 208 96" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+
+        <!-- 5 · Andrea Biraghi -->
+        <li class="rec__card">
+          <div class="rec__card-header">
+            <img class="rec__avatar" src="/Bira.jpeg" alt="Andrea Biraghi" />
+            <div>
+              <p class="rec__name">Andrea Biraghi</p>
+              <p class="rec__role">Former Head of Design in Docebo</p>
+            </div>
+            <svg class="rec__li-icon" width="18" height="18" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <rect x="24" y="24" width="208" height="208" rx="32" fill="var(--tao-surface-brand-1-strong)"/>
+              <rect x="56" y="100" width="32" height="100" fill="white"/>
+              <circle cx="72" cy="68" r="20" fill="white"/>
+              <path d="M168 100c-20 0-40 10-40 30v70h32v-60c0-10 8-16 16-16s16 6 16 16v60h32v-70c0-20-16-30-36-30z" fill="white"/>
+            </svg>
+          </div>
+          <div class="rec__quote-wrap">
+            <div class="rec__quote-fade"></div>
+            <blockquote class="rec__quote">
+            <p>I worked with Alessandro at Docebo, as part of my team, where I witnessed a remarkable professional growth. Alessandro has that rare combination of strategic thinking and genuine care for the people he works with. What I value most is his sense of (strong) ownership.</p>
+            <p>He sees projects through end-to-end, sets clear objectives, and drives toward results. He's detail-oriented and process-driven, but never loses sight of the bigger product vision. Alessandro is exceptional at cross-functional collaboration.</p>
+            <p>He knows how to bring together designers, engineers, and PMs, align them around shared goals, and keep everyone moving forward.</p>
+          </blockquote>
+          </div>
+          <button class="rec__show-more" aria-expanded="false">
+            Show more
+            <svg width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <polyline points="48 96 128 176 208 96" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+
+        <!-- 6 · Riccardo Venturato -->
+        <li class="rec__card">
+          <div class="rec__card-header">
+            <img class="rec__avatar" src="/Ricky.jpeg" alt="Riccardo Venturato" />
+            <div>
+              <p class="rec__name">Riccardo Venturato</p>
+              <p class="rec__role">Senior Product Designer</p>
+            </div>
+            <svg class="rec__li-icon" width="18" height="18" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <rect x="24" y="24" width="208" height="208" rx="32" fill="var(--tao-surface-brand-1-strong)"/>
+              <rect x="56" y="100" width="32" height="100" fill="white"/>
+              <circle cx="72" cy="68" r="20" fill="white"/>
+              <path d="M168 100c-20 0-40 10-40 30v70h32v-60c0-10 8-16 16-16s16 6 16 16v60h32v-70c0-20-16-30-36-30z" fill="white"/>
+            </svg>
+          </div>
+          <div class="rec__quote-wrap">
+            <div class="rec__quote-fade"></div>
+            <blockquote class="rec__quote">
+            <p>I've had the pleasure of collaborating closely with Alessandro, and his impact as a Design System Manager has been truly transformative. He combines a strong design vision with a deep understanding of technical architecture, acting as a vital bridge between design and engineering.</p>
+            <p>Alessandro doesn't just build components; he builds scalable ecosystems. He excels at turning complex design languages into structured, efficient, and well-documented systems that enable teams to move faster without compromising quality. His focus on governance, accessibility, and consistency has significantly elevated our product's maturity.</p>
+            <p>Beyond his technical expertise, Alessandro understands that a design system is as much about people and processes as it is about pixels. He is highly effective at driving adoption, aligning stakeholders, and fostering collaboration across teams.</p>
+            <p>Any organization aiming to scale design operations and build a world-class design system would greatly benefit from Alessandro's leadership. He is a true expert in his field and an outstanding colleague to work with.</p>
+          </blockquote>
+          </div>
+          <button class="rec__show-more" aria-expanded="false">
+            Show more
+            <svg width="12" height="12" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+              <polyline points="48 96 128 176 208 96" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </li>
+
+      </ul>
+    </div>
+
+    <!-- Dots indicator -->
+    <div class="rec__dots" id="rec-dots" aria-hidden="true">
+      <span class="rec__dot rec__dot--active"></span>
+      <span class="rec__dot"></span>
+      <span class="rec__dot"></span>
+      <span class="rec__dot"></span>
+      <span class="rec__dot"></span>
+      <span class="rec__dot"></span>
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .rec {
+    background: color-mix(in srgb, var(--tao-surface-brand-1-subtlest) 50%, var(--tao-surface-neutral-white));
+    padding: var(--tao-spacing-xxxl) 0;
+    overflow: hidden;
+  }
+
+  .rec__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--tao-spacing-xl);
+  }
+
+  /* ── Header ─────────────────────────────────────────────── */
+  .rec__header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: var(--tao-spacing-xl);
+  }
+
+  .rec__title {
+    font-size: var(--tao-typography-size-xl);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0 0 var(--tao-spacing-xs);
+    line-height: 1.15;
+  }
+
+  .rec__subtitle {
+    font-size: var(--tao-typography-size-md);
+    color: var(--tao-text-subtle);
+    margin: 0;
+  }
+
+  /* ── Nav arrows ─────────────────────────────────────────── */
+  .rec__nav {
+    display: flex;
+    gap: var(--tao-spacing-xs);
+  }
+
+  .rec__nav-btn {
+    flex-shrink: 0;
+  }
+
+  .rec__nav-btn:disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  /* ── Track ──────────────────────────────────────────────── */
+  .rec__track-wrap {
+    overflow: hidden;
+  }
+
+  .rec__track {
+    display: flex;
+    gap: var(--tao-spacing-lg);
+    list-style: none;
+    margin: 0;
+    padding: var(--tao-spacing-xs) 0 var(--tao-spacing-sm);
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  /* ── Card ───────────────────────────────────────────────── */
+  .rec__card {
+    flex: 0 0 calc((100% - var(--tao-spacing-lg) * 2) / 3);
+    background: var(--tao-surface-neutral-white);
+    border: var(--tao-border-width-sm) solid var(--tao-border-default);
+    border-radius: var(--tao-radius-lg);
+    padding: var(--tao-spacing-xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-lg);
+    box-shadow: 0 2px 12px color-mix(in srgb, var(--tao-border-default) 30%, transparent);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .rec__card:hover {
+    box-shadow: 0 6px 24px color-mix(in srgb, var(--tao-border-brand-1) 14%, transparent);
+    transform: translateY(-2px);
+  }
+
+  /* ── Card header ─────────────────────────────────────────── */
+  .rec__card-header {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-md);
+  }
+
+  .rec__avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: var(--tao-radius-circular);
+    object-fit: cover;
+    flex-shrink: 0;
+    letter-spacing: 0.02em;
+  }
+
+  .rec__name {
+    font-size: var(--tao-typography-size-md);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    margin: 0 0 2px;
+  }
+
+  .rec__role {
+    font-size: var(--tao-typography-size-sm);
+    color: var(--tao-text-subtle);
+    margin: 0;
+  }
+
+  .rec__li-icon {
+    margin-left: auto;
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+
+  /* ── Quote ───────────────────────────────────────────────── */
+  .rec__quote {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-sm);
+  }
+
+  .rec__quote p {
+    font-size: var(--tao-typography-size-md);
+    line-height: 1.65;
+    color: var(--tao-text-subtle);
+    margin: 0;
+  }
+
+  /* Collapsed state */
+  .rec__quote-wrap {
+    position: relative;
+    overflow: hidden;
+    max-height: 140px;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .rec__quote-wrap--expanded {
+    max-height: 1000px;
+  }
+  .rec__quote-fade {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 56px;
+    background: linear-gradient(to bottom, transparent, var(--tao-surface-neutral-white));
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  .rec__quote-wrap--expanded .rec__quote-fade {
+    opacity: 0;
+  }
+
+  /* Show more button */
+  .rec__show-more {
+    align-self: flex-start;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 600;
+    color: var(--tao-text-brand-1);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-xxs);
+    transition: opacity 0.15s;
+  }
+  .rec__show-more:hover { opacity: 0.75; }
+  .rec__show-more svg {
+    transition: transform 0.3s;
+  }
+  .rec__show-more--expanded svg {
+    transform: rotate(180deg);
+  }
+
+  /* ── Dots ────────────────────────────────────────────────── */
+  .rec__dots {
+    display: flex;
+    justify-content: center;
+    gap: var(--tao-spacing-xs);
+    margin-top: var(--tao-spacing-xl);
+  }
+
+  .rec__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: var(--tao-radius-circular);
+    background: var(--tao-border-default);
+    transition: background 0.2s, width 0.2s;
+  }
+
+  .rec__dot--active {
+    width: 20px;
+    background: var(--tao-border-brand-1);
+  }
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 960px) {
+    .rec__card {
+      flex: 0 0 calc((100% - var(--tao-spacing-lg)) / 2);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .rec__card {
+      flex: 0 0 85%;
+    }
+    .rec__container {
+      padding: 0 var(--tao-spacing-lg);
+    }
+  }
+
+  .rec__show-more:focus-visible {
+    outline: var(--tao-border-width-md) solid var(--tao-border-brand-1);
+    outline-offset: 3px;
+    border-radius: var(--tao-radius-xs);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rec__track { transition: none; }
+    .rec__card { transition: none; }
+    .rec__card:hover { transform: none; }
+    .rec__show-more svg { transition: none; }
+    .rec__dot { transition: none; }
+  }
+</style>
+
+<script>
+  (function () {
+    const track   = document.getElementById('rec-track');
+    const btnPrev = document.getElementById('rec-prev');
+    const btnNext = document.getElementById('rec-next');
+    const dotsEl  = document.getElementById('rec-dots');
+    if (!track || !btnPrev || !btnNext) return;
+
+    const cards   = Array.from(track.children);
+    const total   = cards.length;
+
+    function visibleCount() {
+      return window.innerWidth <= 600 ? 1 : window.innerWidth <= 960 ? 2 : 3;
+    }
+
+    let current = 0;
+
+    function cardWidth() {
+      return cards[0]?.getBoundingClientRect().width ?? 0;
+    }
+
+    function gap() {
+      return parseFloat(getComputedStyle(track).gap) || 0;
+    }
+
+    function update() {
+      const vis   = visibleCount();
+      const max   = total - vis;
+      current     = Math.max(0, Math.min(current, max));
+      const offset = current * (cardWidth() + gap());
+      track.style.transform = `translateX(-${offset}px)`;
+      btnPrev.disabled = current === 0;
+      btnNext.disabled = current >= max;
+
+      // Dots
+      const dots = dotsEl?.querySelectorAll('.rec__dot');
+      dots?.forEach((d, i) => d.classList.toggle('rec__dot--active', i === current));
+    }
+
+    btnPrev.addEventListener('click', () => { current--; update(); });
+    btnNext.addEventListener('click', () => { current++; update(); });
+
+    // Arrow key navigation — only when focus is inside this section
+    const section = document.getElementById('recommendations');
+    document.addEventListener('keydown', (e) => {
+      if (!section?.contains(document.activeElement)) return;
+      if (e.key === 'ArrowLeft')  { current--; update(); }
+      if (e.key === 'ArrowRight') { current++; update(); }
+    });
+
+    // Touch / swipe
+    let startX = 0;
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 40) { dx < 0 ? current++ : current--; update(); }
+    }, { passive: true });
+
+    update();
+    window.addEventListener('resize', update);
+
+    // ── Show more / less ──────────────────────────────────────
+    document.querySelectorAll('.rec__show-more').forEach(btn => {
+      const wrap = btn.previousElementSibling; // .rec__quote-wrap
+      // Hide button if content fits without truncation
+      if (wrap.scrollHeight <= 145) {
+        btn.style.display = 'none';
+        wrap.style.maxHeight = 'none';
+        wrap.querySelector('.rec__quote-fade').style.display = 'none';
+        return;
+      }
+      btn.addEventListener('click', () => {
+        const expanded = wrap.classList.toggle('rec__quote-wrap--expanded');
+        btn.classList.toggle('rec__show-more--expanded', expanded);
+        btn.setAttribute('aria-expanded', expanded);
+        btn.childNodes[0].textContent = expanded ? 'Show less ' : 'Show more ';
+      });
+    });
+  })();
+</script>

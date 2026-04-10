@@ -1,4 +1,5 @@
 import React from 'react';
+import { useGlobals } from '@storybook/preview-api';
 import { IconGallery } from '../components/IconGallery';
 
 const meta = {
@@ -81,4 +82,13 @@ export default meta;
 
 export const Default = {
   name: 'Icon Gallery',
+  render: () => {
+    const [globals, updateGlobals] = useGlobals();
+    return (
+      <IconGallery
+        weight={globals.iconWeight || 'regular'}
+        onWeightChange={(w) => updateGlobals({ iconWeight: w })}
+      />
+    );
+  },
 };

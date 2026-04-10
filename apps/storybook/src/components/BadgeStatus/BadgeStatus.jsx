@@ -14,9 +14,13 @@ export function BadgeStatus({
   iconLeft  = null,
   iconRight = null,
   className,
+  style,
 }) {
   return (
-    <span className={`badge-status badge-status--${color}${className ? ` ${className}` : ''}`}>
+    <span
+      className={`badge-status badge-status--${color}${className ? ` ${className}` : ''}`}
+      style={style}
+    >
       {iconLeft && (
         <span className="badge-status__icon badge-status__icon--left" aria-hidden="true">
           {iconLeft}

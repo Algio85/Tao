@@ -104,9 +104,8 @@ function IconCell({ iconKey, displayName, weight, size, copied, onCopy }) {
   );
 }
 
-export function IconGallery() {
-  const [weight, setWeight] = useState('regular');
-  const [size,   setSize]   = useState(24);
+export function IconGallery({ weight = 'regular', onWeightChange }) {
+  const [size, setSize] = useState(24);
   const [search, setSearch] = useState('');
   const [copied, setCopied] = useState(null);
 
@@ -177,7 +176,7 @@ export function IconGallery() {
             }}
           />
         </div>
-        <PillSelector label="Weight" options={WEIGHTS} value={weight} onChange={setWeight} />
+        <PillSelector label="Weight" options={WEIGHTS} value={weight} onChange={w => onWeightChange?.(w)} />
         <PillSelector label="Size"   options={SIZES}   value={size}   onChange={setSize}   />
       </div>
 

@@ -11,6 +11,7 @@ const TOKENS = [
   { name: 'subtle',  group: 'Neutral' },
   { name: 'strong',  group: 'Neutral' },
   { name: 'focus',   group: 'Neutral' },
+  { name: 'inverse', group: 'Neutral' },
   { name: 'brand-1', group: 'Role' },
   { name: 'brand-2', group: 'Role' },
   { name: 'brand-3', group: 'Role' },
@@ -26,6 +27,7 @@ function BorderRow({ name }) {
   const [copied, setCopied] = useState(false);
   const tokenName = `border.${name}`;
   const value = resolved[tokenName];
+  const isInverse = name === 'inverse';
 
   const handleCopy = () => {
     navigator.clipboard?.writeText(tokenName).then(() => {
@@ -47,13 +49,13 @@ function BorderRow({ name }) {
         borderRadius: theme.spacing.xxs,
         cursor: 'pointer',
         transition: 'background 0.12s',
-        background: copied ? '#f0fdf4' : 'transparent',
+        background: copied ? '#f0fdf4' : isInverse ? 'var(--tao-surface-neutral-strongest)' : 'transparent',
         borderBottom: `1px solid ${theme.border.subtle}`,
       }}
-      onMouseEnter={e => { if (!copied) e.currentTarget.style.background = theme.bg.hover; }}
-      onMouseLeave={e => { if (!copied) e.currentTarget.style.background = copied ? '#f0fdf4' : 'transparent'; }}
+      onMouseEnter={e => { if (!copied) e.currentTarget.style.background = isInverse ? 'var(--tao-surface-neutral-stronger, #2a2a2a)' : theme.bg.hover; }}
+      onMouseLeave={e => { if (!copied) e.currentTarget.style.background = copied ? '#f0fdf4' : isInverse ? 'var(--tao-surface-neutral-strongest)' : 'transparent'; }}
     >
-      <span style={{ fontFamily: theme.font, fontSize: 11, color: copied ? '#16a34a' : theme.text.subtle, transition: 'color 0.2s' }}>
+      <span style={{ fontFamily: theme.font, fontSize: 11, color: copied ? '#16a34a' : isInverse ? 'var(--tao-text-inverse)' : theme.text.subtle, transition: 'color 0.2s' }}>
         {copied ? '✓ copied' : tokenName}
       </span>
 
@@ -64,26 +66,26 @@ function BorderRow({ name }) {
           border: `2px solid ${value}`,
           flexShrink: 0,
         }} />
-        <span style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest }}>{value}</span>
+        <span style={{ fontFamily: theme.font, fontSize: 10, color: isInverse ? 'var(--tao-text-inverse)' : theme.text.subtlest }}>{value}</span>
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: theme.spacing.md }}>
         <div style={{
           width: 120, height: 40,
           borderRadius: theme.spacing.xs,
-          background: theme.bg.raised,
+          background: isInverse ? 'var(--tao-surface-neutral-stronger)' : theme.bg.raised,
           border: `1px solid ${value}`,
         }} />
         <div style={{
           width: 120, height: 40,
           borderRadius: theme.spacing.xs,
-          background: theme.bg.raised,
+          background: isInverse ? 'var(--tao-surface-neutral-stronger)' : theme.bg.raised,
           border: `2px solid ${value}`,
         }} />
         <div style={{
           width: 120, height: 40,
           borderRadius: theme.spacing.xs,
-          background: theme.bg.raised,
+          background: isInverse ? 'var(--tao-surface-neutral-stronger)' : theme.bg.raised,
           borderBottom: `3px solid ${value}`,
         }} />
       </div>

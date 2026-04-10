@@ -1,0 +1,8 @@
+{
+  "name": "my-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build-tokens": "style-dictionary build --config tao-sd.config.json"
+  }
+}

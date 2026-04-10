@@ -3,12 +3,12 @@
     "hover": {
       "value": "{color.shade.palette-11.3}",
       "type": "color",
-      "$description": "Hover background — neutral tint"
+      "$description": "Hover background — neutral tint for generic interactive surfaces"
     },
     "active": {
       "value": "{color.shade.palette-11.4}",
       "type": "color",
-      "$description": "Active/pressed background"
+      "$description": "Active/pressed background — neutral tint for generic interactive surfaces"
     },
     "selected": {
       "value": "{color.shade.palette-1.2}",

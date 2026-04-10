@@ -1,0 +1,239 @@
+/* ─── Button component ────────────────────────────────────────────────────────
+   Token hierarchy:
+     Primitive  → --tao-color-shade-*
+     Semantic   → --tao-surface-*, --tao-text-*, --tao-state-*
+     Component  → --tao-button-*  (defined per variant/size/state below)
+     Override   → component tokens exposed as CSS custom properties
+
+   Figma: https://www.figma.com/design/WrV3bhb7Rbkbp5D8sxbMD0/Components?node-id=257-1352
+
+   Component tokens (all overridable):
+     --tao-button-bg           → background-color
+     --tao-button-text         → color
+     --tao-button-radius       → border-radius
+     --tao-button-font-size    → font-size
+     --tao-button-padding-h    → horizontal padding
+     --tao-button-padding-v    → vertical padding
+     --tao-button-gap          → gap between icon and label
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Overlay tokens (state × component layer) ───────────────────────────── */
+/*
+  Figma variable chain:
+    button/hover/overlay/color        → state/hover
+    button/press/overlay/color        → state/active
+    button/active-hover/overlay/color → state/hover
+    button/active-press/overlay/color → state/active
+
+  CSS resolution (palette alias + opacity via color-mix — no raw values):
+    state/hover  → color-mix(in srgb, --tao-color-shade-palette-2-10  8%, transparent)
+    state/active → color-mix(in srgb, --tao-color-shade-palette-2-10 16%, transparent)
+
+  When palette-2 changes the overlay tint follows automatically.
+  Fill opacity stays at 1 in Figma (alpha carried by the token value itself).
+*/
+:root {
+  --tao-button-hover-overlay-color:        color-mix(in srgb, var(--tao-state-hover)  8%, transparent);
+  --tao-button-press-overlay-color:        color-mix(in srgb, var(--tao-state-active) 16%, transparent);
+  --tao-button-active-hover-overlay-color: color-mix(in srgb, var(--tao-state-hover)  8%, transparent);
+  --tao-button-active-press-overlay-color: color-mix(in srgb, var(--tao-state-active) 16%, transparent);
+}
+
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+
+.tao-button {
+  position:        relative;
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  overflow:        hidden;
+
+  font-family:     'DM Sans', sans-serif;
+  font-weight:     600;
+  line-height:     1;
+  white-space:     nowrap;
+  text-decoration: none;
+  cursor:          pointer;
+  border:          var(--tao-button-border, none);
+  outline:         0;
+  user-select:     none;
+  -webkit-user-select: none;
+
+  background-color: var(--tao-button-bg);
+  color:            var(--tao-button-text);
+
+  gap:           var(--tao-button-gap);
+  padding:       var(--tao-button-padding-v) var(--tao-button-padding-h);
+  border-radius: var(--tao-button-radius);
+  font-size:     var(--tao-button-font-size);
+
+  transition: background-color var(--tao-duration-fast) var(--tao-easing-ease-in-out);
+}
+
+/* Overlay layer — alpha is carried by the token itself, fill opacity always 1 */
+.tao-button::after {
+  content:          '';
+  position:         absolute;
+  inset:            0;
+  background-color: transparent;
+  pointer-events:   none;
+  transition:       background-color var(--tao-duration-fast) var(--tao-easing-ease-in-out);
+}
+
+.tao-button:hover::after  { background-color: var(--tao-button-hover-overlay-color); }
+.tao-button:active::after { background-color: var(--tao-button-press-overlay-color); }
+
+.tao-button:focus:not(:focus-visible) { outline: 0; }
+
+.tao-button:focus-visible {
+  outline:        var(--tao-border-width-md) solid var(--tao-border-focus);
+  outline-offset: var(--tao-spacing-xxs);
+}
+
+/* ─── Disabled ────────────────────────────────────────────────────────────── */
+
+.tao-button:disabled,
+.tao-button[aria-disabled="true"] {
+  cursor:           not-allowed;
+  background-color: var(--tao-state-disabled-bg);
+  color:            var(--tao-state-disabled-text);
+}
+
+.tao-button:disabled::after,
+.tao-button[aria-disabled="true"]::after { display: none; }
+
+/* ─── Loading ─────────────────────────────────────────────────────────────── */
+
+.tao-button--loading {
+  cursor: wait;
+}
+
+.tao-button--loading::after { display: none; }
+
+/* ─── Active (toggled/pressed) ────────────────────────────────────────────── */
+
+.tao-button[data-active="true"]:hover::after  { background-color: var(--tao-button-active-hover-overlay-color); }
+.tao-button[data-active="true"]:active::after { background-color: var(--tao-button-active-press-overlay-color); }
+
+/* ─── Sizes ───────────────────────────────────────────────────────────────── */
+
+/* sm: h-pad 12px · v-pad 8px · gap 8px · 13px · radius 4px */
+.tao-button--sm {
+  --tao-button-padding-h: var(--tao-button-sm-spacing-h,   var(--tao-spacing-sm));
+  --tao-button-padding-v: var(--tao-button-sm-spacing-v,   var(--tao-spacing-xs));
+  --tao-button-gap:       var(--tao-button-sm-spacing-gap, var(--tao-spacing-xs));
+  --tao-button-font-size: var(--tao-button-sm-font-size,   var(--tao-typography-size-sm));
+  --tao-button-radius:    var(--tao-button-sm-radius,      var(--tao-radius-xs));
+}
+
+/* md: h-pad 16px · v-pad 8px · gap 8px · 16px · radius 8px */
+.tao-button--md {
+  --tao-button-padding-h: var(--tao-button-md-spacing-h,   var(--tao-spacing-md));
+  --tao-button-padding-v: var(--tao-button-md-spacing-v,   var(--tao-spacing-xs));
+  --tao-button-gap:       var(--tao-button-md-spacing-gap, var(--tao-spacing-xs));
+  --tao-button-font-size: var(--tao-button-md-font-size,   var(--tao-typography-size-md));
+  --tao-button-radius:    var(--tao-button-md-radius,      var(--tao-radius-md));
+}
+
+/* lg: h-pad 24px · v-pad 16px · gap 12px · 19px · radius 8px */
+.tao-button--lg {
+  --tao-button-padding-h: var(--tao-button-lg-spacing-h,   var(--tao-spacing-lg));
+  --tao-button-padding-v: var(--tao-button-lg-spacing-v,   var(--tao-spacing-md));
+  --tao-button-gap:       var(--tao-button-lg-spacing-gap, var(--tao-spacing-sm));
+  --tao-button-font-size: var(--tao-button-lg-font-size,   var(--tao-typography-size-lg));
+  --tao-button-radius:    var(--tao-button-lg-radius,      var(--tao-radius-md));
+}
+
+/* icon: fixed 36×36 · circular · no gap · no label */
+.tao-button--icon {
+  --tao-button-radius: var(--tao-radius-circular);
+  width:   var(--tao-button-icon-size, 36px);
+  height:  var(--tao-button-icon-size, 36px);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+/* ─── Variant: primary ────────────────────────────────────────────────────── */
+
+.tao-button--primary {
+  --tao-button-bg:   var(--tao-surface-brand-2-strong);
+  --tao-button-text: var(--tao-text-inverse);
+  /* On a filled brand surface: darken with a brand overlay, not a neutral grey */
+  --tao-button-hover-overlay-color: color-mix(in srgb, var(--tao-surface-brand-2-strongest)  8%, transparent);
+  --tao-button-press-overlay-color: color-mix(in srgb, var(--tao-surface-brand-2-strongest) 16%, transparent);
+}
+
+.tao-button--primary[data-active="true"] {
+  --tao-button-bg: var(--tao-surface-brand-2-strongest);
+}
+
+/* ─── Variant: ghost ──────────────────────────────────────────────────────── */
+
+.tao-button--ghost {
+  --tao-button-bg:   var(--tao-surface-neutral-subtlest);
+  --tao-button-text: var(--tao-text-default);
+}
+
+.tao-button--ghost[data-active="true"] {
+  --tao-button-bg:   var(--tao-surface-neutral-subtle);
+  --tao-button-text: var(--tao-text-default);
+}
+
+/* ─── Variant: outline ────────────────────────────────────────────────────── */
+
+.tao-button--outline {
+  --tao-button-bg:     transparent;
+  --tao-button-text:   var(--tao-text-default);
+  --tao-button-border: var(--tao-border-width-sm) solid var(--tao-border-default);
+}
+
+.tao-button--outline[data-active="true"] {
+  --tao-button-bg:     var(--tao-surface-neutral-subtle);
+  --tao-button-border: var(--tao-border-width-sm) solid var(--tao-border-strong);
+}
+
+/* ─── Variant: danger ─────────────────────────────────────────────────────── */
+
+.tao-button--danger {
+  --tao-button-bg:   var(--tao-surface-danger-strong);
+  --tao-button-text: var(--tao-text-inverse);
+  --tao-button-hover-overlay-color: color-mix(in srgb, var(--tao-surface-danger-strongest)  8%, transparent);
+  --tao-button-press-overlay-color: color-mix(in srgb, var(--tao-surface-danger-strongest) 16%, transparent);
+}
+
+.tao-button--danger[data-active="true"] {
+  --tao-button-bg: var(--tao-surface-danger-strongest);
+}
+
+/* ─── Icon slot ───────────────────────────────────────────────────────────── */
+
+.tao-button__icon {
+  display:     inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  color:       inherit;
+}
+
+/* ─── Spinner (loading) ───────────────────────────────────────────────────── */
+
+.tao-button__spinner {
+  flex-shrink: 0;
+  /* animation and sizing handled by the Spinner component */
+}
+
+/* ─── Reduced motion ──────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .tao-button,
+  .tao-button::after { transition: none; }
+
+  /* Static spinner gets a pulsing opacity so loading state remains perceivable */
+  .tao-button--loading .tao-button__spinner {
+    animation: tao-button-loading-pulse 1.2s var(--tao-easing-ease-in-out) infinite;
+  }
+}
+
+@keyframes tao-button-loading-pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.4; }
+}

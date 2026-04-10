@@ -2,7 +2,7 @@ import React from 'react';
 import { BorderColors } from '../components/BorderColors';
 
 const meta = {
-  title: 'Foundations / Colors / Border Colors',
+  title: 'Foundations / Borders / Border Colors',
   component: BorderColors,
   tags: ['autodocs'],
   parameters: {
@@ -29,6 +29,7 @@ Semantic border color tokens for the design system.
 | \`border.subtle\` | palette-11.4 | Subtle dividers, separators |
 | \`border.strong\` | palette-11.7 | Strong borders, emphasis |
 | \`border.focus\` | palette-1.8 | Focus rings, keyboard navigation |
+| \`border.inverse\` | palette-11.1 | Borders on dark/inverted backgrounds |
 
 ### Role-based borders
 
@@ -37,12 +38,12 @@ Semantic border color tokens for the design system.
 | \`border.brand-1\` | palette-1 | Brand 1 bordered elements |
 | \`border.brand-2\` | palette-2 | Brand 2 bordered elements |
 | \`border.brand-3\` | palette-3 | Brand 3 bordered elements |
-| \`border.success\` | palette-4 | Success states, valid inputs |
+| \`border.success\` | palette-8 | Success states, valid inputs |
 | \`border.danger\` | palette-5 | Error states, invalid inputs |
 | \`border.alert\` | palette-6 | Warning states |
 | \`border.info\` | palette-7 | Info states |
-| \`border.news\` | palette-8 | News bordered elements |
-| \`border.ai\` | palette-9 | AI content borders |
+| \`border.news\` | palette-9 | News bordered elements |
+| \`border.ai\` | palette-10 | AI content borders |
 
 ---
 

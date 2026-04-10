@@ -9,10 +9,11 @@ const resolved = resolveTokens(surfaceTokens, '', shades);
 const ROLES = [
   'brand-1', 'brand-2', 'brand-3',
   'success', 'danger', 'alert',
-  'info', 'news', 'ai', 'neutral'
+  'info', 'news', 'ai',
 ];
 
-const VARIANTS = ['subtlest', 'subtle', 'default', 'bold', 'strong', 'strongest'];
+const VARIANTS         = ['subtlest', 'subtle', 'default', 'bold', 'strong', 'strongest'];
+const NEUTRAL_VARIANTS = ['white', 'subtlest', 'subtle', 'default', 'bold', 'strong', 'strongest', 'black'];
 
 function SwatchCell({ role, variant }) {
   const [copied, setCopied] = useState(false);
@@ -45,18 +46,18 @@ function SwatchCell({ role, variant }) {
   );
 }
 
-function SurfaceRow({ role }) {
+function SurfaceRow({ role, variants, columns }) {
   return (
     <div style={{
       display: 'grid',
-      gridTemplateColumns: '100px repeat(6, 1fr)',
+      gridTemplateColumns: `100px repeat(${columns}, 1fr)`,
       alignItems: 'center',
       gap: theme.spacing.sm,
       padding: `${theme.spacing.sm}px ${theme.spacing.md}px`,
       borderBottom: `1px solid ${theme.border.subtle}`,
     }}>
       <span style={{ fontFamily: theme.font, fontSize: 12, color: theme.text.subtle, textTransform: 'capitalize' }}>{role}</span>
-      {VARIANTS.map(variant => (
+      {variants.map(variant => (
         <SwatchCell key={variant} role={role} variant={variant} />
       ))}
     </div>
@@ -73,26 +74,40 @@ export function SurfaceTokens() {
           Surface Tokens
         </h1>
         <p style={{ fontFamily: theme.font, fontSize: 10, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-          Semantic surfaces · 6 variants per role · click to copy token name
+          Semantic surfaces · click to copy token name
         </p>
       </div>
 
+      {/* Standard roles — 6 variants */}
       <div style={{
         display: 'grid',
         gridTemplateColumns: '100px repeat(6, 1fr)',
         gap: theme.spacing.sm,
         padding: `0 ${theme.spacing.md}px ${theme.spacing.xs}px`,
         borderBottom: `1px solid ${theme.border.default}`,
-        marginBottom: 0,
       }}>
         {['Role', ...VARIANTS].map(h => (
           <span key={h} style={{ fontFamily: theme.font, fontSize: 9, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em', textAlign: h === 'Role' ? 'left' : 'center' }}>{h}</span>
         ))}
       </div>
-
       {ROLES.map(role => (
-        <SurfaceRow key={role} role={role} />
+        <SurfaceRow key={role} role={role} variants={VARIANTS} columns={6} />
       ))}
+
+      {/* Neutral — 8 variants including white + black */}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: '100px repeat(8, 1fr)',
+        gap: theme.spacing.sm,
+        padding: `${theme.spacing.lg}px ${theme.spacing.md}px ${theme.spacing.xs}px`,
+        borderBottom: `1px solid ${theme.border.default}`,
+        marginTop: theme.spacing.lg,
+      }}>
+        {['Role', ...NEUTRAL_VARIANTS].map(h => (
+          <span key={h} style={{ fontFamily: theme.font, fontSize: 9, color: theme.text.subtlest, textTransform: 'uppercase', letterSpacing: '0.1em', textAlign: h === 'Role' ? 'left' : 'center' }}>{h}</span>
+        ))}
+      </div>
+      <SurfaceRow role="neutral" variants={NEUTRAL_VARIANTS} columns={8} />
     </div>
   );
 }

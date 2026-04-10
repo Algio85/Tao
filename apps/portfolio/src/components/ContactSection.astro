@@ -1,0 +1,201 @@
+---
+---
+
+<section class="contact" id="contact" aria-labelledby="contact-heading">
+  <div class="contact__container">
+
+    <div class="contact__layout">
+
+      <div class="contact__left">
+        <h2 class="contact__title" id="contact-heading">Let's connect.</h2>
+        <p class="contact__subtitle">Open to new opportunities — feel free to reach out.</p>
+      </div>
+
+      <ul class="contact__list" role="list">
+
+        <li class="contact__item">
+          <span class="contact__icon-wrap" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="none">
+              <rect x="24" y="56" width="208" height="160" rx="16" stroke="currentColor" stroke-width="18"/>
+              <polyline points="24 96 128 160 232 96" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="contact__detail">
+            <span class="contact__label">Email</span>
+            <a class="contact__value contact__link" href="mailto:a.giordano.mi@gmail.com">a.giordano.mi@gmail.com</a>
+          </div>
+        </li>
+
+        <li class="contact__item">
+          <span class="contact__icon-wrap" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="none">
+              <path d="M164.39,145.34l-28.29,28.28a4,4,0,0,1-5.16.4,124.18,124.18,0,0,1-49-49,4,4,0,0,1,.4-5.16L110.66,91.6a8,8,0,0,0,.67-10.56L86.12,48.28a8,8,0,0,0-10.42-1.93l-32,19.12A8,8,0,0,0,40,72c0,112,88,192,176,192a8,8,0,0,0,6.53-3.72l19.12-32a8,8,0,0,0-1.93-10.42l-32.76-25.21A8,8,0,0,0,196.39,145.34Z" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="contact__detail">
+            <span class="contact__label">Phone</span>
+            <a class="contact__value contact__link" href="tel:+393920071817">(+39) 392 00 71 817</a>
+          </div>
+        </li>
+
+        <li class="contact__item">
+          <span class="contact__icon-wrap" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="none">
+              <rect x="24" y="24" width="208" height="208" rx="32" fill="var(--tao-surface-brand-1-strong)"/>
+              <rect x="56" y="100" width="32" height="100" fill="white"/>
+              <circle cx="72" cy="68" r="20" fill="white"/>
+              <path d="M168 100c-20 0-40 10-40 30v70h32v-60c0-10 8-16 16-16s16 6 16 16v60h32v-70c0-20-16-30-36-30z" fill="white"/>
+            </svg>
+          </span>
+          <div class="contact__detail">
+            <span class="contact__label">LinkedIn</span>
+            <a class="contact__value contact__link" href="https://www.linkedin.com/in/alessandrogiordano" target="_blank" rel="noopener noreferrer">
+              See my LinkedIn page
+              <svg width="11" height="11" viewBox="0 0 256 256" fill="none" aria-hidden="true">
+                <path d="M224 104V56h-48" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+                <line x1="224" y1="56" x2="128" y2="152" stroke="currentColor" stroke-width="24" stroke-linecap="round"/>
+                <path d="M184 136v72H48V72h72" stroke="currentColor" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </li>
+
+        <li class="contact__item">
+          <span class="contact__icon-wrap" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 256 256" fill="none">
+              <circle cx="128" cy="104" r="40" stroke="currentColor" stroke-width="18"/>
+              <path d="M200,104c0,72-72,120-72,120S56,176,56,104a72,72,0,0,1,144,0Z" stroke="currentColor" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+          <div class="contact__detail">
+            <span class="contact__label">Location</span>
+            <span class="contact__value">Milan / Remote</span>
+          </div>
+        </li>
+
+      </ul>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  .contact {
+    background: var(--tao-surface-brand-1-strongest);
+    padding: var(--tao-spacing-xxxl) 0;
+  }
+
+  .contact__container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--tao-spacing-xl);
+  }
+
+  .contact__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--tao-spacing-xxxl);
+    align-items: center;
+  }
+
+  /* ── Left ───────────────────────────────────────────────── */
+  .contact__title {
+    font-size: clamp(var(--tao-typography-size-xxl), 3vw, var(--tao-typography-size-xxxl));
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--tao-text-inverse);
+    margin: 0 0 var(--tao-spacing-sm);
+    line-height: 1.1;
+  }
+
+  .contact__subtitle {
+    font-size: var(--tao-typography-size-md);
+    color: color-mix(in srgb, var(--tao-text-inverse) 75%, transparent);
+    margin: 0;
+  }
+
+  /* ── List ───────────────────────────────────────────────── */
+  .contact__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--tao-spacing-lg);
+  }
+
+  .contact__item {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-md);
+  }
+
+  .contact__icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--tao-radius-circular);
+    background: color-mix(in srgb, var(--tao-text-inverse) 10%, transparent);
+    border: var(--tao-border-width-sm) solid color-mix(in srgb, var(--tao-text-inverse) 15%, transparent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--tao-text-inverse);
+    flex-shrink: 0;
+  }
+
+  .contact__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .contact__label {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: color-mix(in srgb, var(--tao-text-inverse) 70%, transparent);
+    text-transform: uppercase;
+  }
+
+  .contact__value {
+    font-size: var(--tao-typography-size-md);
+    font-weight: 500;
+    color: var(--tao-text-inverse);
+  }
+
+  .contact__link {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tao-spacing-xxs);
+    transition: opacity 0.15s;
+  }
+
+  .contact__link:hover { opacity: 0.75; }
+
+  .contact__link:focus-visible {
+    outline: var(--tao-border-width-md) solid var(--tao-text-inverse);
+    outline-offset: 3px;
+    border-radius: var(--tao-radius-xs);
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact__link { transition: none; }
+  }
+
+  /* ── Responsive ─────────────────────────────────────────── */
+  @media (max-width: 768px) {
+    .contact__layout {
+      grid-template-columns: 1fr;
+      gap: var(--tao-spacing-xxl);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .contact__container {
+      padding: 0 var(--tao-spacing-lg);
+    }
+  }
+</style>

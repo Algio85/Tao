@@ -1,0 +1,675 @@
+---
+const palettes = {
+  'palette-1':  ['#dff0ff','#c4d9ff','#acc3ff','#98aeff','#8699ff','#7586ff','#6572ff','#565fef','#484cdb','#3b38c6','#2f22b2','#25039d','#1d0085','#15006b','#0d004c','#040028'],
+  'palette-2':  ['#e1efff','#c7d6ff','#b0bfff','#9da9ff','#8b94ff','#7a80ff','#6b6cff','#5c59f8','#4e44e3','#412ecf','#3612ba','#2c00a4','#23008c','#1a0071','#100051','#06002b'],
+  'palette-3':  ['#f8e6ff','#e7c9ff','#d6afff','#c698ff','#b481ff','#a36cff','#9358ff','#8243f5','#722be1','#6305cc','#5500b8','#4600a2','#39008a','#2a006f','#1b004f','#0b002a'],
+  'palette-4':  ['#ffd7f1','#ffb4dc','#ff95c9','#ff7bb6','#ff63a3','#fb4c91','#e63580','#d1186f','#bc005e','#a7004e','#92003f','#7d0030','#660022','#4e0015','#340009','#190002'],
+  'palette-5':  ['#ffdace','#ffb8a9','#ff9a8b','#ff8072','#ff685c','#ff5148','#ec3a35','#d71f21','#c20007','#ad0000','#980000','#820000','#6b0000','#520000','#380000','#1b0000'],
+  'palette-6':  ['#ffe0c3','#ffc298','#ffa675','#ff8e58','#ff783d','#f66422','#e15000','#cd3c00','#b82500','#a40000','#8f0000','#7a0000','#640000','#4d0000','#340000','#190000'],
+  'palette-7':  ['#ffe9c1','#ffcf95','#ffb871','#ffa352','#f08f36','#dd7c16','#ca6900','#b75800','#a34600','#903400','#7d2100','#6a0c00','#560000','#410000','#2a0000','#130000'],
+  'palette-8':  ['#ceffd6','#a7f9b6','#85e99a','#68d882','#4ec66e','#34b45b','#12a149','#008f37','#007d24','#006c0f','#005a00','#004900','#003900','#002800','#001700','#000800'],
+  'palette-9':  ['#cffff9','#a9f3e8','#88e2d6','#6cd1c4','#52bfb2','#3aada0','#1d9b8f','#00897d','#00776c','#00665c','#00564c','#00453c','#00352d','#00251f','#001511','#000705'],
+  'palette-10': ['#cdfeff','#a6efff','#85defb','#68ccec','#4eb9db','#34a7c9','#1595b6','#0083a4','#007292','#006180','#00506e','#00405d','#00304b','#002038','#001124','#000510'],
+  'palette-11': ['#f5f5f5','#e2e2e2','#cfcfcf','#bcbcbc','#aaaaaa','#989898','#878787','#757575','#656565','#555555','#454545','#363636','#272727','#1a1a1a','#0d0d0d','#030303'],
+};
+
+const typographyTokens = [
+  { name: '--tao-typography-size-xs',   value: '8px'  },
+  { name: '--tao-typography-size-sm',   value: '11px' },
+  { name: '--tao-typography-size-md',   value: '14px' },
+  { name: '--tao-typography-size-lg',   value: '19px' },
+  { name: '--tao-typography-size-xl',   value: '25px' },
+  { name: '--tao-typography-size-xxl',  value: '33px' },
+  { name: '--tao-typography-size-xxxl', value: '44px' },
+];
+
+const spacingTokens = [
+  { name: '--tao-spacing-xxs',  value: '3px'  },
+  { name: '--tao-spacing-xs',   value: '6px'  },
+  { name: '--tao-spacing-sm',   value: '9px'  },
+  { name: '--tao-spacing-md',   value: '12px' },
+  { name: '--tao-spacing-lg',   value: '18px' },
+  { name: '--tao-spacing-xl',   value: '24px' },
+  { name: '--tao-spacing-xxl',  value: '36px' },
+  { name: '--tao-spacing-xxxl', value: '48px' },
+];
+
+const otherTokens = [
+  { name: '--tao-icon-weight', value: 'regular' },
+];
+
+const componentTokens = [
+  { name: '--nav-height',       value: '64px',   source: 'Layout' },
+  { name: '--container-max',    value: '1200px',  source: 'Layout' },
+  { name: '--process-dot-size', value: '44px',    source: 'ProcessSection' },
+];
+
+const colorCount  = Object.keys(palettes).length * 16; // 176
+const totalCount  = colorCount + typographyTokens.length + spacingTokens.length + otherTokens.length + componentTokens.length; // 195
+
+const cssExport = `/* Tao token overrides — portfolio */
+/* Import after @tao/tokens/tokens.css */
+/* Generated: 2026-03-31T20:02:15.052Z */
+
+:root {
+${Object.entries(palettes).map(([name, shades]) =>
+  shades.map((hex, i) => `  --tao-color-shade-${name}-${i + 1}: ${hex};`).join('\n')
+).join('\n')}
+${typographyTokens.map(t => `  ${t.name}: ${t.value};`).join('\n')}
+${spacingTokens.map(t => `  ${t.name}: ${t.value};`).join('\n')}
+${otherTokens.map(t => `  ${t.name}: ${t.value};`).join('\n')}
+
+  /* Component overrides */
+${componentTokens.map(t => `  ${t.name}: ${t.value}; /* ${t.source} */`).join('\n')}
+}
+`;
+---
+
+<div class="top__trigger-wrap" id="token-panel-root">
+  <button class="top__trigger" id="top-trigger" aria-expanded="false" aria-controls="top-drawer">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <rect x="1" y="3" width="5" height="10" rx="1.5" fill="currentColor" opacity=".5"/>
+      <rect x="8" y="1" width="7" height="5" rx="1.5" fill="currentColor"/>
+      <rect x="8" y="8" width="7" height="5" rx="1.5" fill="currentColor" opacity=".5"/>
+    </svg>
+    <span>Overrides</span>
+    <span class="top__count">{totalCount}</span>
+  </button>
+</div>
+
+<div class="top__backdrop" id="top-backdrop" aria-hidden="true" hidden></div>
+
+<aside
+  class="top__drawer"
+  id="top-drawer"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Token overrides panel"
+  hidden
+>
+  <header class="top__header">
+    <div class="top__header-left">
+      <span class="top__title">Token Overrides</span>
+      <span class="top__badge">{totalCount}</span>
+    </div>
+    <button class="top__close" id="top-close" aria-label="Close panel">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+        <path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </header>
+
+  <div class="top__body">
+
+    <!-- Color Palettes -->
+    <section class="top__section">
+      <button class="top__section-toggle" aria-expanded="true" aria-controls="top-palettes">
+        <span class="top__section-label">
+          <span class="top__dot top__dot--color"></span>
+          Color Palettes
+        </span>
+        <span class="top__section-meta">
+          <span class="top__section-count">{colorCount}</span>
+          <svg class="top__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+      <div class="top__section-body" id="top-palettes">
+        {Object.entries(palettes).map(([name, shades]) => (
+          <div class="top__palette-row">
+            <span class="top__palette-name">{name}</span>
+            <div class="top__palette-strip">
+              {shades.map((hex) => (
+                <span
+                  class="top__swatch"
+                  style={`background:${hex}`}
+                  title={hex}
+                  aria-label={hex}
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Typography -->
+    <section class="top__section">
+      <button class="top__section-toggle" aria-expanded="true" aria-controls="top-typography">
+        <span class="top__section-label">
+          <span class="top__dot top__dot--type"></span>
+          Typography
+        </span>
+        <span class="top__section-meta">
+          <span class="top__section-count">{typographyTokens.length}</span>
+          <svg class="top__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+      <div class="top__section-body" id="top-typography">
+        {typographyTokens.map(t => (
+          <div class="top__token-row">
+            <span class="top__token-name">{t.name}</span>
+            <span class="top__token-value">{t.value}</span>
+            <span class="top__type-sample" style={`font-size:${t.value}`}>Aa</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Spacing -->
+    <section class="top__section">
+      <button class="top__section-toggle" aria-expanded="true" aria-controls="top-spacing">
+        <span class="top__section-label">
+          <span class="top__dot top__dot--spacing"></span>
+          Spacing
+        </span>
+        <span class="top__section-meta">
+          <span class="top__section-count">{spacingTokens.length}</span>
+          <svg class="top__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+      <div class="top__section-body" id="top-spacing">
+        {spacingTokens.map(t => (
+          <div class="top__token-row">
+            <span class="top__token-name">{t.name}</span>
+            <span class="top__token-value">{t.value}</span>
+            <span class="top__spacing-bar" style={`width:${t.value}`}></span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Other -->
+    <section class="top__section">
+      <button class="top__section-toggle" aria-expanded="true" aria-controls="top-other">
+        <span class="top__section-label">
+          <span class="top__dot top__dot--other"></span>
+          Other
+        </span>
+        <span class="top__section-meta">
+          <span class="top__section-count">{otherTokens.length}</span>
+          <svg class="top__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+      <div class="top__section-body" id="top-other">
+        {otherTokens.map(t => (
+          <div class="top__token-row">
+            <span class="top__token-name">{t.name}</span>
+            <span class="top__token-value">{t.value}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Components -->
+    <section class="top__section">
+      <button class="top__section-toggle" aria-expanded="true" aria-controls="top-components">
+        <span class="top__section-label">
+          <span class="top__dot top__dot--component"></span>
+          Components
+        </span>
+        <span class="top__section-meta">
+          <span class="top__section-count">{componentTokens.length}</span>
+          <svg class="top__chevron" width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+            <path d="M2 4l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </button>
+      <div class="top__section-body" id="top-components">
+        {componentTokens.map(t => (
+          <div class="top__token-row">
+            <span class="top__token-name">{t.name}</span>
+            <span class="top__token-value">{t.value}</span>
+            <span class="top__token-source">{t.source}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="top__footer">
+    <button class="top__export" id="top-export">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+        <path d="M7 1v8M4 6l3 3 3-3M2 10v1.5A1.5 1.5 0 003.5 13h7A1.5 1.5 0 0012 11.5V10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Export CSS
+    </button>
+    <span class="top__footer-meta">{totalCount} overrides · {componentTokens.length} component</span>
+  </footer>
+</aside>
+
+<script define:vars={{ cssExport }}>
+  const trigger  = document.getElementById('top-trigger');
+  const drawer   = document.getElementById('top-drawer');
+  const backdrop = document.getElementById('top-backdrop');
+  const closeBtn = document.getElementById('top-close');
+  const exportBtn = document.getElementById('top-export');
+
+  function openPanel() {
+    drawer.hidden = false;
+    backdrop.hidden = false;
+    trigger.setAttribute('aria-expanded', 'true');
+    requestAnimationFrame(() => {
+      drawer.classList.add('top__drawer--open');
+      backdrop.classList.add('top__backdrop--visible');
+    });
+    closeBtn.focus();
+  }
+
+  function closePanel() {
+    drawer.classList.remove('top__drawer--open');
+    backdrop.classList.remove('top__backdrop--visible');
+    trigger.setAttribute('aria-expanded', 'false');
+    drawer.addEventListener('transitionend', () => {
+      drawer.hidden = true;
+      backdrop.hidden = true;
+    }, { once: true });
+    trigger.focus();
+  }
+
+  trigger.addEventListener('click', openPanel);
+  closeBtn.addEventListener('click', closePanel);
+  backdrop.addEventListener('click', closePanel);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !drawer.hidden) closePanel();
+  });
+
+  // Section toggles
+  document.querySelectorAll('.top__section-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      const targetId = btn.getAttribute('aria-controls');
+      const body = document.getElementById(targetId);
+      btn.setAttribute('aria-expanded', String(!expanded));
+      body.classList.toggle('top__section-body--collapsed', expanded);
+      btn.querySelector('.top__chevron').classList.toggle('top__chevron--up', !expanded);
+    });
+  });
+
+  // Export
+  exportBtn.addEventListener('click', () => {
+    const blob = new Blob([cssExport], { type: 'text/css' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href     = url;
+    a.download = 'tao-overrides.css';
+    a.click();
+    URL.revokeObjectURL(url);
+  });
+</script>
+
+<style>
+  /* ── Trigger ──────────────────────────────────────────── */
+  .top__trigger-wrap {
+    position: fixed;
+    bottom: var(--tao-spacing-xl);
+    right: var(--tao-spacing-xl);
+    z-index: 900;
+  }
+
+  .top__trigger {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-xs);
+    padding: var(--tao-spacing-sm) var(--tao-spacing-md);
+    background: var(--tao-surface-brand-1-bold);
+    color: var(--tao-text-inverse);
+    border: none;
+    border-radius: var(--tao-radius-pill);
+    font-family: inherit;
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--tao-surface-brand-1-strongest) 32%, transparent);
+    transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+  }
+
+  .top__trigger:hover {
+    background: var(--tao-surface-brand-1-strong);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--tao-surface-brand-1-strongest) 40%, transparent);
+  }
+
+  .top__trigger:active {
+    transform: translateY(0);
+  }
+
+  .top__count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+    height: 20px;
+    padding: 0 var(--tao-spacing-xs);
+    background: color-mix(in srgb, var(--tao-surface-neutral-white) 20%, transparent);
+    border-radius: var(--tao-radius-pill);
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  /* ── Backdrop ─────────────────────────────────────────── */
+  .top__backdrop {
+    position: fixed;
+    inset: 0;
+    background: color-mix(in srgb, var(--tao-surface-brand-1-strongest) 40%, transparent);
+    z-index: 910;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+
+  .top__backdrop--visible {
+    opacity: 1;
+  }
+
+  /* ── Drawer ───────────────────────────────────────────── */
+  .top__drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 360px;
+    max-width: 92vw;
+    z-index: 920;
+    display: flex;
+    flex-direction: column;
+    background: var(--tao-surface-brand-2-subtlest);
+    border-left: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
+    overflow: hidden;
+  }
+
+  .top__drawer--open {
+    transform: translateX(0);
+  }
+
+  /* ── Header ───────────────────────────────────────────── */
+  .top__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--tao-spacing-md) var(--tao-spacing-lg);
+    border-bottom: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    flex-shrink: 0;
+  }
+
+  .top__header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-sm);
+  }
+
+  .top__title {
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 700;
+    color: var(--tao-text-default);
+  }
+
+  .top__badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1px var(--tao-spacing-xs);
+    background: var(--tao-surface-brand-1-subtle);
+    color: var(--tao-text-brand-1);
+    border-radius: var(--tao-radius-pill);
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 700;
+  }
+
+  .top__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    border-radius: var(--tao-radius-sm);
+    color: var(--tao-text-subtle);
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+  }
+
+  .top__close:hover {
+    background: var(--tao-state-hover);
+    color: var(--tao-text-default);
+  }
+
+  /* ── Body ─────────────────────────────────────────────── */
+  .top__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: var(--tao-spacing-sm) 0;
+    overscroll-behavior: contain;
+  }
+
+  /* ── Sections ─────────────────────────────────────────── */
+  .top__section {
+    border-bottom: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+  }
+
+  .top__section:last-child {
+    border-bottom: none;
+  }
+
+  .top__section-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--tao-spacing-sm) var(--tao-spacing-lg);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .top__section-toggle:hover {
+    background: var(--tao-state-hover);
+  }
+
+  .top__section-label {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-xs);
+    font-size: var(--tao-typography-size-sm);
+    font-weight: 600;
+    color: var(--tao-text-default);
+  }
+
+  .top__section-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-xs);
+  }
+
+  .top__section-count {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 600;
+    color: var(--tao-text-subtlest);
+  }
+
+  .top__dot {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--tao-radius-circle);
+    flex-shrink: 0;
+  }
+  .top__dot--color    { background: linear-gradient(135deg, #6572ff, #9358ff, #fb4c91); }
+  .top__dot--type     { background: var(--tao-surface-brand-1-bold); }
+  .top__dot--spacing  { background: var(--tao-surface-success-bold); }
+  .top__dot--other      { background: var(--tao-surface-info-bold); }
+  .top__dot--component  { background: var(--tao-surface-alert-bold); }
+
+  .top__chevron {
+    color: var(--tao-text-subtlest);
+    transition: transform 0.2s ease;
+  }
+  .top__chevron--up { transform: rotate(180deg); }
+
+  .top__section-body {
+    overflow: hidden;
+    max-height: 9999px;
+    transition: max-height 0.25s ease;
+  }
+
+  .top__section-body--collapsed {
+    max-height: 0;
+  }
+
+  /* ── Color Palettes ───────────────────────────────────── */
+  .top__palette-row {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-sm);
+    padding: var(--tao-spacing-xs) var(--tao-spacing-lg);
+  }
+
+  .top__palette-name {
+    flex-shrink: 0;
+    width: 68px;
+    font-size: var(--tao-typography-size-xs);
+    color: var(--tao-text-subtlest);
+    font-variant-numeric: tabular-nums;
+  }
+
+  .top__palette-strip {
+    display: flex;
+    flex: 1;
+    gap: 1px;
+    border-radius: var(--tao-radius-sm);
+    overflow: hidden;
+  }
+
+  .top__swatch {
+    flex: 1;
+    height: 20px;
+    display: block;
+    cursor: default;
+    transition: transform 0.1s;
+  }
+
+  .top__swatch:hover {
+    transform: scaleY(1.4);
+    z-index: 1;
+  }
+
+  /* ── Token Rows ───────────────────────────────────────── */
+  .top__token-row {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-sm);
+    padding: var(--tao-spacing-xs) var(--tao-spacing-lg);
+  }
+
+  .top__token-name {
+    flex: 1;
+    font-size: var(--tao-typography-size-xs);
+    color: var(--tao-text-subtle);
+    font-family: 'DM Mono', 'Fira Code', 'Consolas', monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .top__token-value {
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 600;
+    color: var(--tao-text-brand-1);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+
+  .top__type-sample {
+    flex-shrink: 0;
+    line-height: 1;
+    color: var(--tao-text-subtlest);
+    font-weight: 700;
+    width: 28px;
+    text-align: right;
+  }
+
+  .top__token-source {
+    flex-shrink: 0;
+    font-size: var(--tao-typography-size-xs);
+    color: var(--tao-text-subtlest);
+    background: var(--tao-surface-neutral-subtle, color-mix(in srgb, var(--tao-border-subtle) 40%, transparent));
+    padding: 1px var(--tao-spacing-xs);
+    border-radius: var(--tao-radius-sm);
+  }
+
+  .top__spacing-bar {
+    display: block;
+    height: 8px;
+    background: var(--tao-surface-success-subtle);
+    border-radius: var(--tao-radius-pill);
+    flex-shrink: 0;
+    max-width: 48px;
+  }
+
+  /* ── Footer ───────────────────────────────────────────── */
+  .top__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--tao-spacing-md) var(--tao-spacing-lg);
+    border-top: var(--tao-border-width-sm) solid var(--tao-border-subtle);
+    flex-shrink: 0;
+    gap: var(--tao-spacing-sm);
+  }
+
+  .top__export {
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-xs);
+    padding: var(--tao-spacing-xs) var(--tao-spacing-md);
+    background: var(--tao-surface-brand-1-bold);
+    color: var(--tao-text-inverse);
+    border: none;
+    border-radius: var(--tao-radius-sm);
+    font-family: inherit;
+    font-size: var(--tao-typography-size-xs);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+    flex-shrink: 0;
+  }
+
+  .top__export:hover {
+    background: var(--tao-surface-brand-1-strong);
+  }
+
+  .top__footer-meta {
+    font-size: var(--tao-typography-size-xs);
+    color: var(--tao-text-subtlest);
+    text-align: right;
+  }
+
+  /* ── Focus ────────────────────────────────────────────── */
+  .top__trigger:focus-visible,
+  .top__close:focus-visible,
+  .top__section-toggle:focus-visible,
+  .top__export:focus-visible {
+    outline: var(--tao-border-width-md) solid var(--tao-border-brand-2);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .top__drawer,
+    .top__backdrop,
+    .top__section-body,
+    .top__swatch,
+    .top__chevron { transition: none; }
+  }
+</style>

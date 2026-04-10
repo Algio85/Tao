@@ -1,0 +1,90 @@
+/* ─── Spinner component ────────────────────────────────────────────────────────
+   Token hierarchy:
+     Primitive  → --tao-color-shade-*
+     Semantic   → --tao-border-*, --tao-opacity-*, --tao-duration-*, --tao-easing-*
+     Component  → --tao-spinner-*  (size, stroke, color per variant below)
+
+   Figma: https://www.figma.com/design/WrV3bhb7Rbkbp5D8sxbMD0/Components?node-id=404-576
+
+   Component tokens (all overridable):
+     --tao-spinner-size           → width / height of the spinner
+     --tao-spinner-stroke         → stroke width for both layers
+     --tao-spinner-color          → resolves to the currentColor via the span's color property
+     --tao-spinner-duration       → one full rotation duration
+     --tao-spinner-easing         → rotation easing (linear for continuous spin)
+   ─────────────────────────────────────────────────────────────────────────── */
+
+/* ─── Motion tokens ───────────────────────────────────────────────────────── */
+/*
+  duration/slower (500ms) — described as "loading states", fits continuous spinner
+  easing/linear           — constant-speed rotation, no acceleration artefacts
+*/
+:root {
+  --tao-spinner-duration: var(--tao-duration-slower);
+  --tao-spinner-easing:   var(--tao-easing-linear);
+}
+
+/* ─── Base ────────────────────────────────────────────────────────────────── */
+
+.tao-spinner {
+  display:        inline-flex;
+  align-items:    center;
+  justify-content: center;
+  flex-shrink:    0;
+  width:          var(--tao-spinner-size);
+  height:         var(--tao-spinner-size);
+  animation:      tao-spinner-spin var(--tao-spinner-duration) var(--tao-spinner-easing) infinite;
+}
+
+@keyframes tao-spinner-spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tao-spinner { animation: none; }
+}
+
+/* ─── Layers ──────────────────────────────────────────────────────────────── */
+
+.tao-spinner__track {
+  stroke-width: var(--tao-spinner-stroke);
+  opacity:      var(--tao-opacity-32);
+}
+
+.tao-spinner__indicator {
+  stroke-width: var(--tao-spinner-stroke);
+}
+
+/* ─── Sizes ───────────────────────────────────────────────────────────────── */
+
+/* sm: 16px — maps to --tao-spacing-md · stroke: border-width-sm (1px) */
+.tao-spinner--sm {
+  --tao-spinner-size:   var(--tao-spacing-md);       /* 16px */
+  --tao-spinner-stroke: var(--tao-border-width-sm);  /* 1px  */
+}
+
+/* md: 20px (spacing-md + spacing-xxs) · stroke: border-width-md (2px) */
+.tao-spinner--md {
+  --tao-spinner-size:   calc(var(--tao-spacing-md) + var(--tao-spacing-xxs)); /* 20px */
+  --tao-spinner-stroke: var(--tao-border-width-md);                           /* 2px  */
+}
+
+/* lg: 24px — maps to --tao-spacing-lg · stroke: border-width-md (2px) */
+.tao-spinner--lg {
+  --tao-spinner-size:   var(--tao-spacing-lg);       /* 24px */
+  --tao-spinner-stroke: var(--tao-border-width-md);  /* 2px  */
+}
+
+/* xl: 32px — maps to --tao-spacing-xl · stroke: border-width-md (2px) */
+.tao-spinner--xl {
+  --tao-spinner-size:   var(--tao-spacing-xl);       /* 32px */
+  --tao-spinner-stroke: var(--tao-border-width-md);  /* 2px  */
+}
+
+/* ─── Color variants ──────────────────────────────────────────────────────── */
+
+.tao-spinner--default { color: var(--tao-border-default); }
+.tao-spinner--brand   { color: var(--tao-border-brand-2); }
+.tao-spinner--success { color: var(--tao-border-success); }
+.tao-spinner--danger  { color: var(--tao-border-danger);  }
+.tao-spinner--inverse { color: var(--tao-text-inverse); }

@@ -1,0 +1,19 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "portfolio",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/algio85/Projects/workspace/.claude/start-portfolio.sh"],
+      "cwd": "/Users/algio85/Projects/workspace/apps/portfolio",
+      "port": 4321
+    },
+    {
+      "name": "storybook",
+      "runtimeExecutable": "/bin/bash",
+      "runtimeArgs": ["/Users/algio85/Projects/workspace/.claude/start-storybook.sh"],
+      "cwd": "/Users/algio85/Projects/workspace/apps/storybook",
+      "port": 9999
+    }
+  ]
+}

@@ -7,7 +7,7 @@
     "brand-1":  { "value": "{color.shade.palette-1.10}",  "type": "color", "$description": "Brand 1 colored icons" },
     "brand-2":  { "value": "{color.shade.palette-2.10}",  "type": "color", "$description": "Brand 2 colored icons" },
     "brand-3":  { "value": "{color.shade.palette-3.10}",  "type": "color", "$description": "Brand 3 colored icons" },
-    "success":  { "value": "{color.shade.palette-4.10}",  "type": "color", "$description": "Success state icons" },
+    "success":  { "value": "{color.shade.palette-8.10}",  "type": "color", "$description": "Success state icons" },
     "danger":   { "value": "{color.shade.palette-5.10}",  "type": "color", "$description": "Error / destructive icons" },
     "alert":    { "value": "{color.shade.palette-6.10}",  "type": "color", "$description": "Warning icons" },
     "info":     { "value": "{color.shade.palette-7.10}",  "type": "color", "$description": "Info icons" },

@@ -1,0 +1,112 @@
+---
+import { NavResumeButton } from './NavResumeButton.jsx';
+---
+
+<header class="nav" role="banner">
+  <div class="nav__inner">
+
+    <a href="/" class="nav__logo" aria-label="Home — stark.lab">
+      <img src="/stark.lab.svg" alt="stark.lab" class="nav__logo-img" />
+    </a>
+
+    <div class="nav__end">
+      <NavResumeButton />
+    </div>
+
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: color-mix(in srgb, var(--tao-surface-neutral-white) 0%, transparent);
+    border-bottom: var(--tao-border-width-sm) solid color-mix(in srgb, var(--tao-border-subtle) 0%, transparent);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background 0.3s ease, border-bottom-color 0.3s ease, backdrop-filter 0.3s ease;
+  }
+
+  .nav.scrolled {
+    background: color-mix(in srgb, var(--tao-surface-neutral-white) 72%, transparent);
+    border-bottom-color: color-mix(in srgb, var(--tao-border-subtle) calc(var(--tao-opacity-24) * 100%), transparent);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .nav__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--tao-spacing-xl);
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav__logo {
+    font-family: 'Plus Jakarta Sans', 'DM Sans', sans-serif;
+    font-size: var(--tao-typography-size-md);
+    font-weight: 700;
+    color: var(--tao-text-default);
+    text-decoration: none;
+    letter-spacing: -0.03em;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: var(--tao-spacing-xs);
+    transition: opacity 0.15s;
+  }
+  .nav__logo-img { height: 20px; width: auto; display: block; }
+  .nav__logo:hover { opacity: 0.75; }
+  .nav__logo:focus-visible {
+    outline: var(--tao-border-width-md) solid var(--tao-border-brand-2);
+    outline-offset: 4px;
+    border-radius: var(--tao-radius-sm);
+  }
+
+  .nav__end {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav__resume {
+    font-size: var(--tao-typography-size-md);
+    font-weight: 600;
+    color: var(--tao-text-inverse);
+    background: var(--tao-surface-brand-2-strong);
+    text-decoration: none;
+    padding: var(--tao-spacing-xs) var(--tao-spacing-lg);
+    border-radius: var(--tao-radius-md);
+    transition: background 0.15s, transform 0.1s;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--tao-spacing-xs);
+  }
+  .nav__resume:hover { background: var(--tao-surface-brand-2-strongest); transform: translateY(-1px); }
+  .nav__resume:active { transform: translateY(0); }
+  .nav__resume:focus-visible {
+    outline: var(--tao-border-width-md) solid var(--tao-border-brand-2);
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 720px) {
+    .nav__inner {
+      padding: 0 var(--tao-spacing-lg);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav__logo,
+    .nav__resume { transition: none; }
+  }
+</style>
+
+<script>
+  const nav = document.querySelector<HTMLElement>('.nav');
+  window.addEventListener('scroll', () => {
+    if (nav) nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+</script>

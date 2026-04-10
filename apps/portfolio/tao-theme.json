@@ -1,0 +1,705 @@
+{
+  "_meta": {
+    "name": "portfolio",
+    "generated": "2026-04-10T10:19:06.296Z",
+    "source": "Tao Design System — Storybook export"
+  },
+  "config": {
+    "palette": {
+      "palette-1": "#3228b8",
+      "palette-2": "#4F46E5",
+      "palette-3": "#7C3AED",
+      "palette-4": "#DB2777",
+      "palette-5": "#DC2626",
+      "palette-6": "#EA580C",
+      "palette-7": "#D97706",
+      "palette-8": "#16A34A",
+      "palette-9": "#0D9488",
+      "palette-10": "#0891B2",
+      "palette-11": "#525252"
+    },
+    "typescale": "1.333",
+    "typescaleBase": "16",
+    "density": "1",
+    "iconWeight": "regular"
+  },
+  "tokens": {
+    "color-shade-palette-1-1": {
+      "value": "#dff0ff"
+    },
+    "color-shade-palette-1-2": {
+      "value": "#c4d9ff"
+    },
+    "color-shade-palette-1-3": {
+      "value": "#acc3ff"
+    },
+    "color-shade-palette-1-4": {
+      "value": "#98aeff"
+    },
+    "color-shade-palette-1-5": {
+      "value": "#8699ff"
+    },
+    "color-shade-palette-1-6": {
+      "value": "#7586ff"
+    },
+    "color-shade-palette-1-7": {
+      "value": "#6572ff"
+    },
+    "color-shade-palette-1-8": {
+      "value": "#565fef"
+    },
+    "color-shade-palette-1-9": {
+      "value": "#484cdb"
+    },
+    "color-shade-palette-1-10": {
+      "value": "#3b38c6"
+    },
+    "color-shade-palette-1-11": {
+      "value": "#2f22b2"
+    },
+    "color-shade-palette-1-12": {
+      "value": "#25039d"
+    },
+    "color-shade-palette-1-13": {
+      "value": "#1d0085"
+    },
+    "color-shade-palette-1-14": {
+      "value": "#15006b"
+    },
+    "color-shade-palette-1-15": {
+      "value": "#0d004c"
+    },
+    "color-shade-palette-1-16": {
+      "value": "#040028"
+    },
+    "color-shade-palette-2-1": {
+      "value": "#e1efff"
+    },
+    "color-shade-palette-2-2": {
+      "value": "#c7d6ff"
+    },
+    "color-shade-palette-2-3": {
+      "value": "#b0bfff"
+    },
+    "color-shade-palette-2-4": {
+      "value": "#9da9ff"
+    },
+    "color-shade-palette-2-5": {
+      "value": "#8b94ff"
+    },
+    "color-shade-palette-2-6": {
+      "value": "#7a80ff"
+    },
+    "color-shade-palette-2-7": {
+      "value": "#6b6cff"
+    },
+    "color-shade-palette-2-8": {
+      "value": "#5c59f8"
+    },
+    "color-shade-palette-2-9": {
+      "value": "#4e44e3"
+    },
+    "color-shade-palette-2-10": {
+      "value": "#412ecf"
+    },
+    "color-shade-palette-2-11": {
+      "value": "#3612ba"
+    },
+    "color-shade-palette-2-12": {
+      "value": "#2c00a4"
+    },
+    "color-shade-palette-2-13": {
+      "value": "#23008c"
+    },
+    "color-shade-palette-2-14": {
+      "value": "#1a0071"
+    },
+    "color-shade-palette-2-15": {
+      "value": "#100051"
+    },
+    "color-shade-palette-2-16": {
+      "value": "#06002b"
+    },
+    "color-shade-palette-3-1": {
+      "value": "#f8e6ff"
+    },
+    "color-shade-palette-3-2": {
+      "value": "#e7c9ff"
+    },
+    "color-shade-palette-3-3": {
+      "value": "#d6afff"
+    },
+    "color-shade-palette-3-4": {
+      "value": "#c698ff"
+    },
+    "color-shade-palette-3-5": {
+      "value": "#b481ff"
+    },
+    "color-shade-palette-3-6": {
+      "value": "#a36cff"
+    },
+    "color-shade-palette-3-7": {
+      "value": "#9358ff"
+    },
+    "color-shade-palette-3-8": {
+      "value": "#8243f5"
+    },
+    "color-shade-palette-3-9": {
+      "value": "#722be1"
+    },
+    "color-shade-palette-3-10": {
+      "value": "#6305cc"
+    },
+    "color-shade-palette-3-11": {
+      "value": "#5500b8"
+    },
+    "color-shade-palette-3-12": {
+      "value": "#4600a2"
+    },
+    "color-shade-palette-3-13": {
+      "value": "#39008a"
+    },
+    "color-shade-palette-3-14": {
+      "value": "#2a006f"
+    },
+    "color-shade-palette-3-15": {
+      "value": "#1b004f"
+    },
+    "color-shade-palette-3-16": {
+      "value": "#0b002a"
+    },
+    "color-shade-palette-4-1": {
+      "value": "#ffd7f1"
+    },
+    "color-shade-palette-4-2": {
+      "value": "#ffb4dc"
+    },
+    "color-shade-palette-4-3": {
+      "value": "#ff95c9"
+    },
+    "color-shade-palette-4-4": {
+      "value": "#ff7bb6"
+    },
+    "color-shade-palette-4-5": {
+      "value": "#ff63a3"
+    },
+    "color-shade-palette-4-6": {
+      "value": "#fb4c91"
+    },
+    "color-shade-palette-4-7": {
+      "value": "#e63580"
+    },
+    "color-shade-palette-4-8": {
+      "value": "#d1186f"
+    },
+    "color-shade-palette-4-9": {
+      "value": "#bc005e"
+    },
+    "color-shade-palette-4-10": {
+      "value": "#a7004e"
+    },
+    "color-shade-palette-4-11": {
+      "value": "#92003f"
+    },
+    "color-shade-palette-4-12": {
+      "value": "#7d0030"
+    },
+    "color-shade-palette-4-13": {
+      "value": "#660022"
+    },
+    "color-shade-palette-4-14": {
+      "value": "#4e0015"
+    },
+    "color-shade-palette-4-15": {
+      "value": "#340009"
+    },
+    "color-shade-palette-4-16": {
+      "value": "#190002"
+    },
+    "color-shade-palette-5-1": {
+      "value": "#ffdace"
+    },
+    "color-shade-palette-5-2": {
+      "value": "#ffb8a9"
+    },
+    "color-shade-palette-5-3": {
+      "value": "#ff9a8b"
+    },
+    "color-shade-palette-5-4": {
+      "value": "#ff8072"
+    },
+    "color-shade-palette-5-5": {
+      "value": "#ff685c"
+    },
+    "color-shade-palette-5-6": {
+      "value": "#ff5148"
+    },
+    "color-shade-palette-5-7": {
+      "value": "#ec3a35"
+    },
+    "color-shade-palette-5-8": {
+      "value": "#d71f21"
+    },
+    "color-shade-palette-5-9": {
+      "value": "#c20007"
+    },
+    "color-shade-palette-5-10": {
+      "value": "#ad0000"
+    },
+    "color-shade-palette-5-11": {
+      "value": "#980000"
+    },
+    "color-shade-palette-5-12": {
+      "value": "#820000"
+    },
+    "color-shade-palette-5-13": {
+      "value": "#6b0000"
+    },
+    "color-shade-palette-5-14": {
+      "value": "#520000"
+    },
+    "color-shade-palette-5-15": {
+      "value": "#380000"
+    },
+    "color-shade-palette-5-16": {
+      "value": "#1b0000"
+    },
+    "color-shade-palette-6-1": {
+      "value": "#ffe0c3"
+    },
+    "color-shade-palette-6-2": {
+      "value": "#ffc298"
+    },
+    "color-shade-palette-6-3": {
+      "value": "#ffa675"
+    },
+    "color-shade-palette-6-4": {
+      "value": "#ff8e58"
+    },
+    "color-shade-palette-6-5": {
+      "value": "#ff783d"
+    },
+    "color-shade-palette-6-6": {
+      "value": "#f66422"
+    },
+    "color-shade-palette-6-7": {
+      "value": "#e15000"
+    },
+    "color-shade-palette-6-8": {
+      "value": "#cd3c00"
+    },
+    "color-shade-palette-6-9": {
+      "value": "#b82500"
+    },
+    "color-shade-palette-6-10": {
+      "value": "#a40000"
+    },
+    "color-shade-palette-6-11": {
+      "value": "#8f0000"
+    },
+    "color-shade-palette-6-12": {
+      "value": "#7a0000"
+    },
+    "color-shade-palette-6-13": {
+      "value": "#640000"
+    },
+    "color-shade-palette-6-14": {
+      "value": "#4d0000"
+    },
+    "color-shade-palette-6-15": {
+      "value": "#340000"
+    },
+    "color-shade-palette-6-16": {
+      "value": "#190000"
+    },
+    "color-shade-palette-7-1": {
+      "value": "#ffe9c1"
+    },
+    "color-shade-palette-7-2": {
+      "value": "#ffcf95"
+    },
+    "color-shade-palette-7-3": {
+      "value": "#ffb871"
+    },
+    "color-shade-palette-7-4": {
+      "value": "#ffa352"
+    },
+    "color-shade-palette-7-5": {
+      "value": "#f08f36"
+    },
+    "color-shade-palette-7-6": {
+      "value": "#dd7c16"
+    },
+    "color-shade-palette-7-7": {
+      "value": "#ca6900"
+    },
+    "color-shade-palette-7-8": {
+      "value": "#b75800"
+    },
+    "color-shade-palette-7-9": {
+      "value": "#a34600"
+    },
+    "color-shade-palette-7-10": {
+      "value": "#903400"
+    },
+    "color-shade-palette-7-11": {
+      "value": "#7d2100"
+    },
+    "color-shade-palette-7-12": {
+      "value": "#6a0c00"
+    },
+    "color-shade-palette-7-13": {
+      "value": "#560000"
+    },
+    "color-shade-palette-7-14": {
+      "value": "#410000"
+    },
+    "color-shade-palette-7-15": {
+      "value": "#2a0000"
+    },
+    "color-shade-palette-7-16": {
+      "value": "#130000"
+    },
+    "color-shade-palette-8-1": {
+      "value": "#ceffd6"
+    },
+    "color-shade-palette-8-2": {
+      "value": "#a7f9b6"
+    },
+    "color-shade-palette-8-3": {
+      "value": "#85e99a"
+    },
+    "color-shade-palette-8-4": {
+      "value": "#68d882"
+    },
+    "color-shade-palette-8-5": {
+      "value": "#4ec66e"
+    },
+    "color-shade-palette-8-6": {
+      "value": "#34b45b"
+    },
+    "color-shade-palette-8-7": {
+      "value": "#12a149"
+    },
+    "color-shade-palette-8-8": {
+      "value": "#008f37"
+    },
+    "color-shade-palette-8-9": {
+      "value": "#007d24"
+    },
+    "color-shade-palette-8-10": {
+      "value": "#006c0f"
+    },
+    "color-shade-palette-8-11": {
+      "value": "#005a00"
+    },
+    "color-shade-palette-8-12": {
+      "value": "#004900"
+    },
+    "color-shade-palette-8-13": {
+      "value": "#003900"
+    },
+    "color-shade-palette-8-14": {
+      "value": "#002800"
+    },
+    "color-shade-palette-8-15": {
+      "value": "#001700"
+    },
+    "color-shade-palette-8-16": {
+      "value": "#000800"
+    },
+    "color-shade-palette-9-1": {
+      "value": "#cffff9"
+    },
+    "color-shade-palette-9-2": {
+      "value": "#a9f3e8"
+    },
+    "color-shade-palette-9-3": {
+      "value": "#88e2d6"
+    },
+    "color-shade-palette-9-4": {
+      "value": "#6cd1c4"
+    },
+    "color-shade-palette-9-5": {
+      "value": "#52bfb2"
+    },
+    "color-shade-palette-9-6": {
+      "value": "#3aada0"
+    },
+    "color-shade-palette-9-7": {
+      "value": "#1d9b8f"
+    },
+    "color-shade-palette-9-8": {
+      "value": "#00897d"
+    },
+    "color-shade-palette-9-9": {
+      "value": "#00776c"
+    },
+    "color-shade-palette-9-10": {
+      "value": "#00665c"
+    },
+    "color-shade-palette-9-11": {
+      "value": "#00564c"
+    },
+    "color-shade-palette-9-12": {
+      "value": "#00453c"
+    },
+    "color-shade-palette-9-13": {
+      "value": "#00352d"
+    },
+    "color-shade-palette-9-14": {
+      "value": "#00251f"
+    },
+    "color-shade-palette-9-15": {
+      "value": "#001511"
+    },
+    "color-shade-palette-9-16": {
+      "value": "#000705"
+    },
+    "color-shade-palette-10-1": {
+      "value": "#cdfeff"
+    },
+    "color-shade-palette-10-2": {
+      "value": "#a6efff"
+    },
+    "color-shade-palette-10-3": {
+      "value": "#85defb"
+    },
+    "color-shade-palette-10-4": {
+      "value": "#68ccec"
+    },
+    "color-shade-palette-10-5": {
+      "value": "#4eb9db"
+    },
+    "color-shade-palette-10-6": {
+      "value": "#34a7c9"
+    },
+    "color-shade-palette-10-7": {
+      "value": "#1595b6"
+    },
+    "color-shade-palette-10-8": {
+      "value": "#0083a4"
+    },
+    "color-shade-palette-10-9": {
+      "value": "#007292"
+    },
+    "color-shade-palette-10-10": {
+      "value": "#006180"
+    },
+    "color-shade-palette-10-11": {
+      "value": "#00506e"
+    },
+    "color-shade-palette-10-12": {
+      "value": "#00405d"
+    },
+    "color-shade-palette-10-13": {
+      "value": "#00304b"
+    },
+    "color-shade-palette-10-14": {
+      "value": "#002038"
+    },
+    "color-shade-palette-10-15": {
+      "value": "#001124"
+    },
+    "color-shade-palette-10-16": {
+      "value": "#000510"
+    },
+    "color-shade-palette-11-1": {
+      "value": "#f5f5f5"
+    },
+    "color-shade-palette-11-2": {
+      "value": "#e2e2e2"
+    },
+    "color-shade-palette-11-3": {
+      "value": "#cfcfcf"
+    },
+    "color-shade-palette-11-4": {
+      "value": "#bcbcbc"
+    },
+    "color-shade-palette-11-5": {
+      "value": "#aaaaaa"
+    },
+    "color-shade-palette-11-6": {
+      "value": "#989898"
+    },
+    "color-shade-palette-11-7": {
+      "value": "#878787"
+    },
+    "color-shade-palette-11-8": {
+      "value": "#757575"
+    },
+    "color-shade-palette-11-9": {
+      "value": "#656565"
+    },
+    "color-shade-palette-11-10": {
+      "value": "#555555"
+    },
+    "color-shade-palette-11-11": {
+      "value": "#454545"
+    },
+    "color-shade-palette-11-12": {
+      "value": "#363636"
+    },
+    "color-shade-palette-11-13": {
+      "value": "#272727"
+    },
+    "color-shade-palette-11-14": {
+      "value": "#1a1a1a"
+    },
+    "color-shade-palette-11-15": {
+      "value": "#0d0d0d"
+    },
+    "color-shade-palette-11-16": {
+      "value": "#030303"
+    },
+    "typography-size-xs": {
+      "value": "9px"
+    },
+    "typography-size-sm": {
+      "value": "12px"
+    },
+    "typography-size-md": {
+      "value": "16px"
+    },
+    "typography-size-lg": {
+      "value": "21px"
+    },
+    "typography-size-xl": {
+      "value": "28px"
+    },
+    "typography-size-xxl": {
+      "value": "38px"
+    },
+    "typography-size-xxxl": {
+      "value": "51px"
+    },
+    "spacing-xxs": {
+      "value": "4px"
+    },
+    "spacing-xs": {
+      "value": "8px"
+    },
+    "spacing-sm": {
+      "value": "12px"
+    },
+    "spacing-md": {
+      "value": "16px"
+    },
+    "spacing-lg": {
+      "value": "24px"
+    },
+    "spacing-xl": {
+      "value": "32px"
+    },
+    "spacing-xxl": {
+      "value": "48px"
+    },
+    "spacing-xxxl": {
+      "value": "64px"
+    },
+    "icon-weight": {
+      "value": "regular"
+    }
+  },
+  "componentTokens": {
+    "slots": [
+      {
+        "component": "Button",
+        "token": "--tao-button-bg",
+        "fallback": "variant default",
+        "description": "background-color"
+      },
+      {
+        "component": "Button",
+        "token": "--tao-button-text",
+        "fallback": "variant default",
+        "description": "color"
+      },
+      {
+        "component": "Button",
+        "token": "--tao-button-radius",
+        "fallback": "size default",
+        "description": "border-radius"
+      },
+      {
+        "component": "Button",
+        "token": "--tao-button-font-size",
+        "fallback": "size default",
+        "description": "font-size"
+      },
+      {
+        "component": "Button",
+        "token": "--tao-button-padding-h",
+        "fallback": "size default",
+        "description": "horizontal padding"
+      },
+      {
+        "component": "Button",
+        "token": "--tao-button-padding-v",
+        "fallback": "size default",
+        "description": "vertical padding"
+      },
+      {
+        "component": "Button",
+        "token": "--tao-button-gap",
+        "fallback": "size default",
+        "description": "icon ↔ label gap"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-bg",
+        "fallback": "--tao-surface-*",
+        "description": "background-color (set by variant class)"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-text",
+        "fallback": "--tao-text-*",
+        "description": "color (set by variant class)"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-border-color",
+        "fallback": "transparent",
+        "description": "border-color (transparent by default)"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-border-width",
+        "fallback": "--tao-border-width-sm",
+        "description": "border-width"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-radius",
+        "fallback": "--tao-radius-md",
+        "description": "border-radius"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-font-size",
+        "fallback": "--tao-typography-size-xs",
+        "description": "font-size"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-spacing-gap",
+        "fallback": "--tao-spacing-xxs",
+        "description": "gap between icon and label"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-spacing-h",
+        "fallback": "--tao-spacing-xs",
+        "description": "horizontal padding"
+      },
+      {
+        "component": "BadgeStatus",
+        "token": "--tao-badge-status-spacing-v",
+        "fallback": "--tao-spacing-xxs",
+        "description": "vertical padding"
+      }
+    ],
+    "overrides": {}
+  }
+}

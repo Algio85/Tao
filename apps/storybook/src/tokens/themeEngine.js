@@ -104,7 +104,7 @@ function generateSpacing(factor) {
  * @param {string} [options.typescaleRatio] — e.g. '1.2'
  * @param {string} [options.densityFactor]  — e.g. '1'
  */
-export function applyTheme({ palettes, typescaleRatio, densityFactor }) {
+export function applyTheme({ palettes, typescaleRatio, typescaleBase, densityFactor }) {
   const overrides = {};
 
   // All palette shades
@@ -121,7 +121,8 @@ export function applyTheme({ palettes, typescaleRatio, densityFactor }) {
 
   // Type scale
   if (typescaleRatio) {
-    const sizes = generateTypeScale(16, parseFloat(typescaleRatio));
+    const base  = typescaleBase ? parseInt(typescaleBase) : 16;
+    const sizes = generateTypeScale(base, parseFloat(typescaleRatio));
     Object.entries(sizes).forEach(([key, val]) => {
       overrides[`--tao-typography-size-${key}`] = val;
     });
@@ -135,15 +136,17 @@ export function applyTheme({ palettes, typescaleRatio, densityFactor }) {
     });
   }
 
-  // Inject into DOM
+  // Inject into DOM — always move to the END of <head> so this block comes
+  // after any Vite-injected CSS (e.g. tokens.css) which shares the same
+  // :root specificity. appendChild on an existing node moves it, not duplicates.
   let style = document.getElementById('tao-theme-overrides');
   if (!style) {
     style = document.createElement('style');
     style.id = 'tao-theme-overrides';
-    document.head.appendChild(style);
   }
   const css = ':root {\n' +
     Object.entries(overrides).map(([k, v]) => `  ${k}: ${v};`).join('\n') +
     '\n}';
   style.textContent = css;
+  document.head.appendChild(style); // moves to end on every call
 }

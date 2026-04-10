@@ -7,7 +7,7 @@
     "brand-1":   { "value": "{color.shade.palette-1.10}",  "type": "color", "$description": "Brand 1 colored text" },
     "brand-2":   { "value": "{color.shade.palette-2.10}",  "type": "color", "$description": "Brand 2 colored text" },
     "brand-3":   { "value": "{color.shade.palette-3.10}",  "type": "color", "$description": "Brand 3 colored text" },
-    "success":   { "value": "{color.shade.palette-4.10}",  "type": "color", "$description": "Success text" },
+    "success":   { "value": "{color.shade.palette-8.10}",  "type": "color", "$description": "Success text" },
     "danger":    { "value": "{color.shade.palette-5.10}",  "type": "color", "$description": "Error text" },
     "alert":     { "value": "{color.shade.palette-6.10}",  "type": "color", "$description": "Warning text" },
     "info":      { "value": "{color.shade.palette-7.10}",  "type": "color", "$description": "Info text" },

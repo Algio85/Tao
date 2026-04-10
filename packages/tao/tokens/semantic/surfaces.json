@@ -25,12 +25,12 @@
       "strongest":{ "value": "{color.shade.palette-3.10}", "type": "color" }
     },
     "success":  {
-      "subtlest": { "value": "{color.shade.palette-4.1}",  "type": "color" },
-      "subtle":   { "value": "{color.shade.palette-4.2}",  "type": "color" },
-      "default":  { "value": "{color.shade.palette-4.3}",  "type": "color" },
-      "bold":     { "value": "{color.shade.palette-4.5}",  "type": "color" },
-      "strong":   { "value": "{color.shade.palette-4.8}",  "type": "color" },
-      "strongest":{ "value": "{color.shade.palette-4.10}", "type": "color" }
+      "subtlest": { "value": "{color.shade.palette-8.1}",  "type": "color" },
+      "subtle":   { "value": "{color.shade.palette-8.2}",  "type": "color" },
+      "default":  { "value": "{color.shade.palette-8.3}",  "type": "color" },
+      "bold":     { "value": "{color.shade.palette-8.5}",  "type": "color" },
+      "strong":   { "value": "{color.shade.palette-8.8}",  "type": "color" },
+      "strongest":{ "value": "{color.shade.palette-8.10}", "type": "color" }
     },
     "danger":   {
       "subtlest": { "value": "{color.shade.palette-5.1}",  "type": "color" },
@@ -73,12 +73,14 @@
       "strongest":{ "value": "{color.shade.palette-9.10}", "type": "color" }
     },
     "neutral":  {
+      "white":    { "value": "#ffffff",                      "type": "color" },
       "subtlest": { "value": "{color.shade.palette-11.1}",  "type": "color" },
       "subtle":   { "value": "{color.shade.palette-11.2}",  "type": "color" },
       "default":  { "value": "{color.shade.palette-11.3}",  "type": "color" },
       "bold":     { "value": "{color.shade.palette-11.5}",  "type": "color" },
       "strong":   { "value": "{color.shade.palette-11.8}",  "type": "color" },
-      "strongest":{ "value": "{color.shade.palette-11.10}", "type": "color" }
+      "strongest":{ "value": "{color.shade.palette-11.10}", "type": "color" },
+      "black":    { "value": "#000000",                      "type": "color" }
     }
   }
 }

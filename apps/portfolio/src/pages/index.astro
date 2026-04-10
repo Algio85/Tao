@@ -1,14 +1,25 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SiteNav from '../components/SiteNav.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ProcessSection from '../components/ProcessSection.astro';
+import CaseStudiesSection from '../components/CaseStudiesSection.astro';
+import RecommendationsSection from '../components/RecommendationsSection.astro';
+import ManifestoSection from '../components/ManifestoSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import TokenOverridesPanel from '../components/TokenOverridesPanel.astro';
 ---
-<Layout title="Portfolio">
-  <main>
-    <h1>Hello</h1>
-  </main>
-</Layout>
 
-<style>
-  main {
-    padding: 2rem;
-  }
-</style>
+<Layout title="Portfolio.OS — Design that connects">
+  <a href="#main-content" class="skip-link">Skip to content</a>
+  <SiteNav />
+  <main id="main-content">
+    <HeroSection />
+    <ProcessSection />
+    <CaseStudiesSection />
+    <RecommendationsSection />
+    <ManifestoSection />
+    <ContactSection />
+  </main>
+  <TokenOverridesPanel />
+</Layout>
